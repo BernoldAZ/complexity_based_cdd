@@ -1,0 +1,25 @@
+# Jupyter
+jupyterlab
+notebook
+ipykernel
+
+# Core scientific stack
+# numpy < 2.0: cdrift/evaluation.py uses np.NaN (removed in NumPy 2.0); 1.26.4 supports Python 3.12
+numpy==1.26.4
+scipy==1.15.3
+pandas==2.2.3
+matplotlib==3.10.1
+
+# Change point detection (KernelCPD)
+ruptures==1.1.10
+
+# Process mining
+pm4py==2.7.20.1
+
+# cdrift evaluation dependencies
+networkx==3.4.2
+pulp==2.9.0
+tqdm==4.67.1
+
+# Utilities
+joblib==1.4.2

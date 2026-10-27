@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+.idea/
+~$*
+.DS_Store
+sample_based_process_comparison/

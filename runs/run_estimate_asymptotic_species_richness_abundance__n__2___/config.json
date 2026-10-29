@@ -1,0 +1,17 @@
+{
+  "run_name": "run_estimate_asymptotic_species_richness_abundance__n__2___",
+  "measures": [
+    "estimate_asymptotic_species_richness_abundance (n=(2,))"
+  ],
+  "pen": {
+    "Bose": 2.0,
+    "Ceravolo": 2.0,
+    "Ostovar": 2.0
+  },
+  "n_windows": {
+    "Bose": 75,
+    "Ceravolo": 100,
+    "Ostovar": 75
+  },
+  "lag_window": 200
+}

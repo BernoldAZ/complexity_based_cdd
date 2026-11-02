@@ -325,7 +325,6 @@ def calc_versatility(df, lag_window):
     versatility = np.nanmean(list(recalls_per_param[best_param].values()))
     return versatility, recalls_per_param, best_param
 
-
 def calc_robustnesses(df, lag_window):
     """{noise_level: robustness} -- harmonic mean of accuracy, latency and versatility per noise level."""
     means = dict()
@@ -335,6 +334,59 @@ def calc_robustnesses(df, lag_window):
         versatility, _, _ = calc_versatility(noise_df, lag_window)
         means[noise_level] = harmonic_mean([accuracy, latency, versatility])
     return means
+
+def calc_versatility_by_noise(df, lag_window):
+    """Recall per change pattern for every (log source, noise level), plus one pooled level "noisy"
+    per source (all its logs with noise above 0). Bose has no noise levels."""
+    df_v = df[df["Log Source"].isin(["Ceravolo", "Ostovar"])]
+    groups = [((source, noise), group) for (source, noise), group in df_v.groupby(["Log Source", "Noise Level"])]
+    for source, group in df_v[df_v["Noise Level"] != "0"].groupby("Log Source"):
+        groups.append(((source, "noisy"), group))
+    rows = []
+    for (source, noise), group in groups:
+        _, recalls, best_param = calc_versatility(group, lag_window)
+        n_logs = group["Change Pattern"].value_counts()
+        for cp, recall in recalls[best_param].items():
+            rows.append({"Log Source": source, "Noise Level": noise, "Change Pattern": cp,
+                         "Logs": int(n_logs[cp]), "Recall": recall})
+    return pd.DataFrame(rows)
+
+
+def evaluate_by_noise(df, run_name, lag_window, datasets_path, loglengths, loglengths_events):
+    """One row per (log source, noise level) with the same measures as evaluation_measures.csv.
+    Robustness is an area over all noise levels, so it has no per-level value; 
+    the per-level harmonic mean of F1, latency and versatility (what calc_robustnesses computes) is given instead."""
+    df_n = df[df["Log Source"].isin(["Ceravolo", "Ostovar"])]
+    groups = sorted(df_n.groupby(["Log Source", "Noise Level"]), key=lambda g: (g[0][0], int(g[0][1])))
+    rows = []
+    for (source, noise), sub in groups:
+        f1, f1_per_param, precision, recall = calculate_accuracy(sub, lag_window)
+        latency_score, latency_per_param = calculate_latency(sub, lag_window, min_support=MIN_SUPPORT)
+        versatility, versatility_recalls, _ = calc_versatility(sub, lag_window)
+ 
+        log_keys = sub.apply(lambda x: Path(datasets_path, x["Log Source"], x["Log"] + ".xes.gz").as_posix(), axis=1)
+        total_seconds = sub["Duration (Seconds)"].sum()
+        sensitivities = [
+            harmonic_mean([f1_per_param[p], np.nanmean(list(versatility_recalls[p].values())), latency_per_param[p]])
+            for p in f1_per_param.keys()
+        ]
+        rows.append({
+            "Algorithm": run_name,
+            "Log Source": source,
+            "Noise Level": noise,
+            "F1-Score": f1,
+            "Precision": precision,
+            "Recall": recall,
+            "Latency": (1 - latency_score) * lag_window,
+            "Latency (Score)": latency_score,
+            "Versatility": versatility,
+            "Scalability": time.strftime("%H:%M:%S", time.gmtime(sub["Duration (Seconds)"].mean())),
+            "Milliseconds per Case": total_seconds / log_keys.map(loglengths).sum() * 1000,
+            "Milliseconds per Event": total_seconds / log_keys.map(loglengths_events).sum() * 1000,
+            "Parameter Sensitivity (IQR)": iqr(sensitivities, nan_policy="omit"),
+            "Harmonic Mean (F1, Latency, Versatility)": harmonic_mean([f1, latency_score, versatility]),
+        })
+    return pd.DataFrame(rows)
 
 
 def convert_harm_mean_to_auc(means, div_zero_default=0):
@@ -368,7 +420,7 @@ def plot_radar_chart(recalls, title, output_path):
     plt.close(fig)
 
 
-def evaluate(df, run_name, lag_window, datasets_path, out_dir):
+def evaluate(df, run_name, lag_window, datasets_path, out_dir, evaluate_noisy=False):
     df = df.copy()
     # Every row of a run shares one parameter setting. Grouping by "Pen" would split a run with
     # per-dataset penalties into one "setting" per dataset, so a constant column is used instead.
@@ -430,7 +482,16 @@ def evaluate(df, run_name, lag_window, datasets_path, out_dir):
     versatility_csv_path = f"{out_dir}/versatility_per_change_pattern.csv"
     pd.DataFrame([{"Change Pattern": cp, "Recall": r} for cp, r in recalls_per_cp.items()]).to_csv(
         versatility_csv_path, index=False)
-
+    
+    versatility_by_noise_csv_path = None
+    evaluation_by_noise_csv_path = None
+    if evaluate_noisy:
+        versatility_by_noise_csv_path = f"{out_dir}/versatility_per_change_pattern_by_noise.csv"
+        calc_versatility_by_noise(df, lag_window).to_csv(versatility_by_noise_csv_path, index=False)
+        evaluation_by_noise_csv_path = f"{out_dir}/evaluation_measures_by_noise.csv"
+        evaluate_by_noise(df, run_name, lag_window, datasets_path, loglengths, loglengths_events).to_csv(
+            evaluation_by_noise_csv_path, index=False)
+ 
     return {
         "Algorithm": run_name,
         "F1-Score": f1,
@@ -447,6 +508,8 @@ def evaluate(df, run_name, lag_window, datasets_path, out_dir):
         "Versatility per Change Pattern": recalls_per_cp,
         "Radar Chart": radar_path,
         "Versatility CSV": versatility_csv_path,
+        "Versatility by Noise CSV": versatility_by_noise_csv_path,
+        "Evaluation by Noise CSV": evaluation_by_noise_csv_path,
     }
 
 
@@ -458,7 +521,7 @@ def _check_dataset_dict(name, value):
 
 
 def run(run_name, measures=None, pen=DEFAULT_PEN, n_windows=DEFAULT_N_WINDOWS, lag_window=200,
-        datasets_path="datasets/cdrift", out_root="runs"):
+        datasets_path="datasets/cdrift", out_root="runs", evaluate_noisy=False):
     """Runs the approach with the given parameters and evaluates it.
 
     Args:
@@ -467,6 +530,9 @@ def run(run_name, measures=None, pen=DEFAULT_PEN, n_windows=DEFAULT_N_WINDOWS, l
         pen: KernelCPD penalty per dataset, e.g. {"Bose": 2.0, "Ceravolo": 2.0, "Ostovar": 2.0}.
         n_windows: number of windows per log, per dataset, e.g. {"Bose": 75, "Ceravolo": 100, "Ostovar": 75}.
         lag_window: lag window (in traces) of the evaluation framework.
+        evaluate_noisy: if True, also saves versatility_per_change_pattern_by_noise.csv (recall per
+        change pattern) and evaluation_measures_by_noise.csv (the evaluation measures), both for
+        every log source and noise level, noise 0 included.
 
     Returns:
         dict with the evaluation results (F1-Score, Precision, Recall, Latency, Versatility,
@@ -487,15 +553,15 @@ def run(run_name, measures=None, pen=DEFAULT_PEN, n_windows=DEFAULT_N_WINDOWS, l
     out_dir = f"{out_root}/{run_name}"
     os.makedirs(out_dir, exist_ok=True)
     config = {"run_name": run_name, "measures": list(measures), "pen": pen, "n_windows": n_windows,
-              "lag_window": lag_window}
+              "lag_window": lag_window, "evaluate_noisy": evaluate_noisy}
     with open(f"{out_dir}/config.json", "w") as f:
         json.dump(config, f, indent=2)
 
     detections = detect(run_name, measures, pen, n_windows, datasets_path)
     detections.to_csv(f"{out_dir}/detections.csv", index=False)
 
-    results = evaluate(detections, run_name, lag_window, datasets_path, out_dir)
-    table_columns = [k for k in results if k not in ("Versatility per Change Pattern", "Radar Chart", "Versatility CSV")]
+    results = evaluate(detections, run_name, lag_window, datasets_path, out_dir, evaluate_noisy)
+    table_columns = [k for k in results if k not in ("Versatility per Change Pattern", "Radar Chart", "Versatility CSV", "Versatility by Noise CSV", "Evaluation by Noise CSV")]
     pd.DataFrame([{k: results[k] for k in table_columns}]).to_csv(f"{out_dir}/evaluation_measures.csv", index=False)
     results["Output Folder"] = out_dir
     return results
@@ -523,6 +589,8 @@ if __name__ == "__main__":
     parser.add_argument("--n-windows", type=lambda s: _parse_dataset_dict(s, int), default=DEFAULT_N_WINDOWS,
                         help=f"number of windows per dataset (default: {_format_dataset_dict(DEFAULT_N_WINDOWS)})")
     parser.add_argument("--lag-window", type=int, default=200)
+    parser.add_argument("--evaluate-noisy", action="store_true",
+                        help="also save the recall per change pattern for every noise level")
     parser.add_argument("--datasets-path", default="datasets/cdrift")
     parser.add_argument("--list-measures", action="store_true", help="print the valid measure names and exit")
     args = parser.parse_args()
@@ -534,7 +602,7 @@ if __name__ == "__main__":
         parser.error("--run-name is required")
 
     results = run(args.run_name, measures=args.measures, pen=args.pen, n_windows=args.n_windows,
-                  lag_window=args.lag_window, datasets_path=args.datasets_path)
+                  lag_window=args.lag_window, datasets_path=args.datasets_path, evaluate_noisy=args.evaluate_noisy)
     print()
     for key, value in results.items():
         print(f"{key}: {value}")

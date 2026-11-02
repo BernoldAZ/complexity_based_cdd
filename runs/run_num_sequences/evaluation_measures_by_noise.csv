@@ -1,0 +1,9 @@
+Algorithm,Log Source,Noise Level,F1-Score,Precision,Recall,Latency,Latency (Score),Versatility,Scalability,Milliseconds per Case,Milliseconds per Event,Parameter Sensitivity (IQR),"Harmonic Mean (F1, Latency, Versatility)"
+run_num_sequences,Ceravolo,0,0,,0.0,,,0.0,00:00:00,0.015898942947387695,0.0014348708482895649,0.0,0
+run_num_sequences,Ceravolo,5,0,,0.0,,,0.0,00:00:00,0.014846420288085938,0.0013736764455380315,0.0,0
+run_num_sequences,Ceravolo,10,0,,0.0,,,0.0,00:00:00,0.01684603691101074,0.0016033155906548724,0.0,0
+run_num_sequences,Ceravolo,15,0,,0.0,,,0.0,00:00:00,0.016040825843811037,0.0015661504211801208,0.0,0
+run_num_sequences,Ceravolo,20,0,,0.0,,,0.0,00:00:00,0.015862345695495605,0.0015920295571375412,0.0,0
+run_num_sequences,Ostovar,0,0,,0.0,,,0.0,00:00:00,0.004670954289982929,0.00014198340459816813,0.0,0
+run_num_sequences,Ostovar,2,0,,0.0,,,0.0,00:00:00,0.004748386666123283,0.00014157070029445766,0.0,0
+run_num_sequences,Ostovar,5,0,,0.0,,,0.0,00:00:00,0.004552096632214494,0.0001330504915757759,0.0,0

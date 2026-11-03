@@ -9,12 +9,20 @@ numpy==1.26.4
 scipy==1.15.3
 pandas==2.2.3
 matplotlib==3.10.1
+seaborn==0.13.2
 
 # Change point detection (KernelCPD)
 ruptures==1.1.10
 
 # Process mining
 pm4py==2.7.20.1
+
+# Version clustering baseline (run_cluster_experiments.py); 0.8.40 fails with scikit-learn >= 1.8
+hdbscan==0.8.44
+
+# EMD baseline (run_emd_experiments.py); same wasserstein version as baselines/version-clustering-cdd-main
+wasserstein==1.0.1
+strsimpy==0.3.0
 
 # cdrift evaluation dependencies
 networkx==3.4.2

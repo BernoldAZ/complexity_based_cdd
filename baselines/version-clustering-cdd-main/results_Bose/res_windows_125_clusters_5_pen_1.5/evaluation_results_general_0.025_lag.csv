@@ -1,0 +1,2 @@
+,Detected Changepoints,Actual Changepoints,Predicted Drift Types,Actual Drift Types,F1-Score,Precision,Recall,Average Lag,y_pred_sorted,y_true_sorted,n_traces
+bose_log.xes,"[(4818, 4818), (5760, 5760), (286, 286), (4639, 4639)]","[(1199, 1199), (2399, 2399), (3599, 3599), (4799, 4799)]","['sudden', 'sudden', 'sudden', 'sudden']","['sudden', 'sudden', 'sudden', 'sudden']",0.25,0.25,0.25,38.0,"['sudden', nan, nan, nan, 'sudden', 'sudden', 'sudden']","['sudden', 'sudden', 'sudden', 'sudden', nan, nan, nan]",5986

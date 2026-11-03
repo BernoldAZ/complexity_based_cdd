@@ -1,0 +1,2 @@
+Algorithm,F1-Score,Precision,Recall,Latency,Latency (Score),Versatility,Scalability,Milliseconds per Case,Milliseconds per Event,Parameter Sensitivity (IQR),Robustness
+cluster_combined_1_weighted,0.8,0.9333333333333333,0.7,85.85714285714286,0.5707142857142857,0.6979166666666666,00:00:02,1.4137097094090931,0.054224606558971836,0.0,0.9884470029360823

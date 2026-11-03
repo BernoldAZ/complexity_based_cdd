@@ -1,0 +1,7 @@
+lag,0.01,0.01,0.01,0.025,0.025,0.025,0.05,0.05,0.05
+,Precision,Recall,F1_score,Precision,Recall,F1_score,Precision,Recall,F1_score
+no_drift,,,,,,,,,
+sudden,,,,,,,,,
+gradual,,,,,,,,,
+incremental,,,,,,,,,
+recurring,,,,,,,,,

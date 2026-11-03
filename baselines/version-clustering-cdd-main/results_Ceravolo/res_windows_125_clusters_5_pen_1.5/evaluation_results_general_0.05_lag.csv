@@ -1,0 +1,151 @@
+,Detected Changepoints,Actual Changepoints,Predicted Drift Types,Actual Drift Types,F1-Score,Precision,Recall,Average Lag,y_pred_sorted,y_true_sorted,n_traces
+sudden_trace_noise0_1000_cf.xes,"[(184, 184), (216, 216), (448, 448), (464, 464), (512, 512), (672, 672)]","[(499, 499)]","['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']",['sudden'],0.2857142857142857,0.16666666666666666,1.0,26.0,"['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']","['sudden', nan, nan, nan, nan, nan]",1000
+sudden_trace_noise0_1000_IRO.xes,"[(496, 496)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,6.0,['sudden'],['sudden'],1000
+sudden_trace_noise0_1000_OIR.xes,"[(496, 496)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,6.0,['sudden'],['sudden'],1000
+sudden_trace_noise0_1000_re.xes,"[(504, 504)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,10.0,['sudden'],['sudden'],1000
+sudden_trace_noise0_1000_pm.xes,"[(496, 496)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,6.0,['sudden'],['sudden'],1000
+sudden_trace_noise0_1000_cb.xes,"[(504, 504)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,10.0,['sudden'],['sudden'],1000
+sudden_trace_noise0_1000_cd.xes,[],"[(499, 499)]",[],['sudden'],,,,,[nan],['sudden'],1000
+sudden_trace_noise0_1000_pl.xes,"[(192, 192)]","[(499, 499)]",['sudden'],['sudden'],,,,,"[nan, 'sudden']","['sudden', nan]",1000
+sudden_trace_noise0_1000_ROI.xes,"[(496, 496)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,6.0,['sudden'],['sudden'],1000
+sudden_trace_noise0_1000_lp.xes,"[(496, 496)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,6.0,['sudden'],['sudden'],1000
+sudden_trace_noise0_1000_IOR.xes,"[(496, 496)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,6.0,['sudden'],['sudden'],1000
+sudden_trace_noise0_1000_cp.xes,"[(496, 496)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,6.0,['sudden'],['sudden'],1000
+sudden_trace_noise0_1000_rp.xes,"[(352, 352), (368, 368), (424, 424), (904, 904), (920, 920)]","[(499, 499)]","['sudden', 'sudden', 'sudden', 'sudden', 'sudden']",['sudden'],,,,,"[nan, 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']","['sudden', nan, nan, nan, nan, nan]",1000
+sudden_trace_noise0_1000_RIO.xes,"[(184, 184), (224, 224), (720, 720), (736, 736), (760, 760), (856, 856)]","[(499, 499)]","['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']",['sudden'],,,,,"[nan, 'sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']","['sudden', nan, nan, nan, nan, nan, nan]",1000
+sudden_trace_noise0_1000_sw.xes,"[(496, 496), (616, 616), (832, 832), (944, 944)]","[(499, 499)]","['sudden', 'sudden', 'sudden', 'sudden']",['sudden'],0.4,0.25,1.0,6.0,"['sudden', 'sudden', 'sudden', 'sudden']","['sudden', nan, nan, nan]",1000
+sudden_trace_noise0_500_cf.xes,"[(248, 248)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise0_500_lp.xes,"[(240, 240), (252, 252)]",[],"['sudden', 'sudden']",[],,,,,"['sudden', 'sudden']","[nan, nan]",500
+sudden_trace_noise0_500_cb.xes,"[(252, 252)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise0_500_cd.xes,"[(248, 248)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise0_500_OIR.xes,"[(248, 248)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise0_500_IRO.xes,"[(248, 248)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise0_500_cp.xes,"[(140, 140), (168, 168)]",[],"['sudden', 'sudden']",[],,,,,"['sudden', 'sudden']","[nan, nan]",500
+sudden_trace_noise0_500_pl.xes,"[(272, 272), (288, 288)]",[],"['sudden', 'sudden']",[],,,,,"['sudden', 'sudden']","[nan, nan]",500
+sudden_trace_noise0_500_pm.xes,"[(252, 252)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise0_500_ROI.xes,"[(248, 248), (316, 316)]",[],"['sudden', 'sudden']",[],,,,,"['sudden', 'sudden']","[nan, nan]",500
+sudden_trace_noise0_500_rp.xes,"[(148, 148), (168, 168), (320, 320), (336, 336), (460, 460), (468, 468)]",[],"['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']","[nan, nan, nan, nan, nan, nan]",500
+sudden_trace_noise0_500_IOR.xes,"[(248, 248)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise0_500_sw.xes,"[(240, 240), (296, 296)]",[],"['sudden', 'sudden']",[],,,,,"['sudden', 'sudden']","[nan, nan]",500
+sudden_trace_noise0_500_re.xes,"[(224, 224), (232, 232), (248, 248)]",[],"['sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden']","[nan, nan, nan]",500
+sudden_trace_noise0_500_RIO.xes,"[(212, 212), (264, 264), (284, 284), (312, 312), (372, 372), (408, 408), (452, 452), (468, 468), (476, 476)]",[],"['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']","[nan, nan, nan, nan, nan, nan, nan, nan, nan]",500
+sudden_trace_noise10_1000_IRO.xes,"[(497, 497)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,4.0,['sudden'],['sudden'],1000
+sudden_trace_noise10_1000_cb.xes,"[(496, 496)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,6.0,['sudden'],['sudden'],1000
+sudden_trace_noise10_1000_cf.xes,"[(488, 488)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,22.0,['sudden'],['sudden'],1000
+sudden_trace_noise10_1000_lp.xes,"[(312, 312), (344, 344), (496, 496), (632, 632), (665, 665)]","[(499, 499)]","['sudden', 'sudden', 'sudden', 'sudden', 'sudden']",['sudden'],0.33333333333333337,0.2,1.0,6.0,"['sudden', 'sudden', 'sudden', 'sudden', 'sudden']","['sudden', nan, nan, nan, nan]",1000
+sudden_trace_noise10_1000_cd.xes,"[(280, 280), (345, 345), (600, 600), (632, 632), (673, 673), (848, 848)]","[(499, 499)]","['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']",['sudden'],,,,,"[nan, 'sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']","['sudden', nan, nan, nan, nan, nan, nan]",1000
+sudden_trace_noise10_1000_IOR.xes,"[(496, 496)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,6.0,['sudden'],['sudden'],1000
+sudden_trace_noise10_1000_OIR.xes,"[(496, 496)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,6.0,['sudden'],['sudden'],1000
+sudden_trace_noise10_1000_cp.xes,"[(496, 496)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,6.0,['sudden'],['sudden'],1000
+sudden_trace_noise10_1000_pl.xes,"[(235, 235), (344, 344), (408, 408), (425, 425)]","[(499, 499)]","['sudden', 'sudden', 'sudden', 'sudden']",['sudden'],,,,,"[nan, 'sudden', 'sudden', 'sudden', 'sudden']","['sudden', nan, nan, nan, nan]",1000
+sudden_trace_noise10_1000_pm.xes,"[(498, 498)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,2.0,['sudden'],['sudden'],1000
+sudden_trace_noise10_1000_rp.xes,"[(496, 496), (704, 704), (721, 721), (961, 961), (977, 977)]","[(499, 499)]","['sudden', 'sudden', 'sudden', 'sudden', 'sudden']",['sudden'],0.33333333333333337,0.2,1.0,6.0,"['sudden', 'sudden', 'sudden', 'sudden', 'sudden']","['sudden', nan, nan, nan, nan]",1000
+sudden_trace_noise10_1000_re.xes,"[(496, 496)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,6.0,['sudden'],['sudden'],1000
+sudden_trace_noise10_1000_ROI.xes,"[(400, 400), (496, 496)]","[(499, 499)]","['sudden', 'sudden']",['sudden'],0.6666666666666666,0.5,1.0,6.0,"['sudden', 'sudden']","['sudden', nan]",1000
+sudden_trace_noise10_1000_RIO.xes,"[(144, 144), (280, 280), (352, 352), (496, 496), (576, 576), (601, 601), (682, 682)]","[(499, 499)]","['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']",['sudden'],0.25,0.14285714285714285,1.0,6.0,"['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']","['sudden', nan, nan, nan, nan, nan, nan]",1000
+sudden_trace_noise10_1000_sw.xes,"[(504, 504), (537, 537), (592, 592)]","[(499, 499)]","['sudden', 'sudden', 'sudden']",['sudden'],0.5,0.3333333333333333,1.0,10.0,"['sudden', 'sudden', 'sudden']","['sudden', nan, nan]",1000
+sudden_trace_noise10_500_cb.xes,"[(248, 248)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise10_500_lp.xes,"[(241, 241), (252, 252)]",[],"['sudden', 'sudden']",[],,,,,"['sudden', 'sudden']","[nan, nan]",500
+sudden_trace_noise10_500_cf.xes,"[(248, 248)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise10_500_cd.xes,"[(248, 248)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise10_500_cp.xes,"[(108, 108), (168, 168), (236, 236), (273, 273), (333, 333), (480, 480)]",[],"['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']","[nan, nan, nan, nan, nan, nan]",500
+sudden_trace_noise10_500_OIR.xes,"[(249, 249)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise10_500_IRO.xes,"[(252, 252)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise10_500_IOR.xes,"[(249, 249)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise10_500_pl.xes,"[(100, 100), (312, 312), (326, 326), (440, 440), (453, 453)]",[],"['sudden', 'sudden', 'sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden', 'sudden', 'sudden']","[nan, nan, nan, nan, nan]",500
+sudden_trace_noise10_500_RIO.xes,"[(440, 440), (468, 468)]",[],"['sudden', 'sudden']",[],,,,,"['sudden', 'sudden']","[nan, nan]",500
+sudden_trace_noise10_500_re.xes,"[(252, 252)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise10_500_pm.xes,"[(116, 116), (154, 154), (252, 252)]",[],"['sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden']","[nan, nan, nan]",500
+sudden_trace_noise10_500_ROI.xes,"[(46, 46), (68, 68), (96, 96), (104, 104), (248, 248), (408, 408)]",[],"['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']","[nan, nan, nan, nan, nan, nan]",500
+sudden_trace_noise10_500_rp.xes,"[(72, 72), (196, 196), (276, 276), (296, 296), (461, 461), (476, 476)]",[],"['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']","[nan, nan, nan, nan, nan, nan]",500
+sudden_trace_noise15_1000_cp.xes,"[(489, 489)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,20.0,['sudden'],['sudden'],1000
+sudden_trace_noise15_1000_cf.xes,"[(585, 585)]","[(499, 499)]",['sudden'],['sudden'],,,,,"[nan, 'sudden']","['sudden', nan]",1000
+sudden_trace_noise15_1000_cb.xes,"[(506, 506)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,14.0,['sudden'],['sudden'],1000
+sudden_trace_noise15_1000_OIR.xes,"[(496, 496), (673, 673)]","[(499, 499)]","['sudden', 'sudden']",['sudden'],0.6666666666666666,0.5,1.0,6.0,"['sudden', 'sudden']","['sudden', nan]",1000
+sudden_trace_noise15_1000_IRO.xes,"[(497, 497)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,4.0,['sudden'],['sudden'],1000
+sudden_trace_noise15_1000_cd.xes,"[(344, 344), (576, 576), (626, 626)]","[(499, 499)]","['sudden', 'sudden', 'sudden']",['sudden'],,,,,"[nan, 'sudden', 'sudden', 'sudden']","['sudden', nan, nan, nan]",1000
+sudden_trace_noise10_500_sw.xes,"[(248, 248), (256, 256)]",[],"['sudden', 'sudden']",[],,,,,"['sudden', 'sudden']","[nan, nan]",500
+sudden_trace_noise15_1000_pl.xes,[],"[(499, 499)]",[],['sudden'],,,,,[nan],['sudden'],1000
+sudden_trace_noise15_1000_pm.xes,"[(504, 504), (890, 890), (968, 968)]","[(499, 499)]","['sudden', 'sudden', 'sudden']",['sudden'],0.5,0.3333333333333333,1.0,10.0,"['sudden', 'sudden', 'sudden']","['sudden', nan, nan]",1000
+sudden_trace_noise15_1000_lp.xes,"[(200, 200), (496, 496), (713, 713), (754, 754), (824, 824)]","[(499, 499)]","['sudden', 'sudden', 'sudden', 'sudden', 'sudden']",['sudden'],0.33333333333333337,0.2,1.0,6.0,"['sudden', 'sudden', 'sudden', 'sudden', 'sudden']","['sudden', nan, nan, nan, nan]",1000
+sudden_trace_noise15_1000_IOR.xes,"[(496, 496)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,6.0,['sudden'],['sudden'],1000
+sudden_trace_noise15_1000_re.xes,"[(497, 497)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,4.0,['sudden'],['sudden'],1000
+sudden_trace_noise15_1000_RIO.xes,"[(169, 169), (289, 289)]","[(499, 499)]","['sudden', 'sudden']",['sudden'],,,,,"[nan, 'sudden', 'sudden']","['sudden', nan, nan]",1000
+sudden_trace_noise15_500_cd.xes,"[(249, 249)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise15_500_IOR.xes,"[(252, 252)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise15_500_IRO.xes,"[(248, 248)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise15_500_cf.xes,"[(45, 45), (92, 92), (253, 253)]",[],"['sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden']","[nan, nan, nan]",500
+sudden_trace_noise15_500_cb.xes,"[(252, 252)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise15_500_lp.xes,"[(249, 249)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise15_500_cp.xes,"[(81, 81), (140, 140), (170, 170), (180, 180)]",[],"['sudden', 'sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden', 'sudden']","[nan, nan, nan, nan]",500
+sudden_trace_noise15_1000_sw.xes,"[(504, 504)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,10.0,['sudden'],['sudden'],1000
+sudden_trace_noise15_1000_ROI.xes,"[(497, 497)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,4.0,['sudden'],['sudden'],1000
+sudden_trace_noise15_1000_rp.xes,"[(81, 81), (104, 104), (120, 120), (449, 449), (480, 480)]","[(499, 499)]","['sudden', 'sudden', 'sudden', 'sudden', 'sudden']",['sudden'],0.33333333333333337,0.2,1.0,38.0,"['sudden', 'sudden', 'sudden', 'sudden', 'sudden']","['sudden', nan, nan, nan, nan]",1000
+sudden_trace_noise15_500_pm.xes,"[(252, 252)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise15_500_pl.xes,"[(440, 440), (452, 452)]",[],"['sudden', 'sudden']",[],,,,,"['sudden', 'sudden']","[nan, nan]",500
+sudden_trace_noise15_500_OIR.xes,"[(248, 248)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise15_500_RIO.xes,"[(45, 45), (53, 53), (132, 132), (140, 140), (417, 417), (445, 445), (477, 477)]",[],"['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']","[nan, nan, nan, nan, nan, nan, nan]",500
+sudden_trace_noise15_500_re.xes,"[(201, 201), (213, 213), (404, 404)]",[],"['sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden']","[nan, nan, nan]",500
+sudden_trace_noise15_500_ROI.xes,"[(249, 249)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise15_500_rp.xes,"[(93, 93), (100, 100), (352, 352), (460, 460)]",[],"['sudden', 'sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden', 'sudden']","[nan, nan, nan, nan]",500
+sudden_trace_noise15_500_sw.xes,"[(260, 260), (286, 286), (300, 300), (329, 329), (348, 348)]",[],"['sudden', 'sudden', 'sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden', 'sudden', 'sudden']","[nan, nan, nan, nan, nan]",500
+sudden_trace_noise20_1000_cf.xes,"[(186, 186), (218, 218), (512, 512), (681, 681), (737, 737)]","[(499, 499)]","['sudden', 'sudden', 'sudden', 'sudden', 'sudden']",['sudden'],0.33333333333333337,0.2,1.0,26.0,"['sudden', 'sudden', 'sudden', 'sudden', 'sudden']","['sudden', nan, nan, nan, nan]",1000
+sudden_trace_noise20_1000_cb.xes,"[(504, 504)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,10.0,['sudden'],['sudden'],1000
+sudden_trace_noise20_1000_cp.xes,"[(496, 496)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,6.0,['sudden'],['sudden'],1000
+sudden_trace_noise20_1000_cd.xes,[],"[(499, 499)]",[],['sudden'],,,,,[nan],['sudden'],1000
+sudden_trace_noise20_1000_IRO.xes,"[(496, 496)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,6.0,['sudden'],['sudden'],1000
+sudden_trace_noise20_1000_re.xes,"[(504, 504)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,10.0,['sudden'],['sudden'],1000
+sudden_trace_noise20_1000_pm.xes,"[(513, 513)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,28.0,['sudden'],['sudden'],1000
+sudden_trace_noise20_1000_pl.xes,[],"[(499, 499)]",[],['sudden'],,,,,[nan],['sudden'],1000
+sudden_trace_noise20_1000_lp.xes,"[(257, 257), (282, 282), (472, 472)]","[(499, 499)]","['sudden', 'sudden', 'sudden']",['sudden'],0.5,0.3333333333333333,1.0,54.0,"['sudden', 'sudden', 'sudden']","['sudden', nan, nan]",1000
+sudden_trace_noise20_1000_OIR.xes,"[(496, 496)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,6.0,['sudden'],['sudden'],1000
+sudden_trace_noise20_1000_IOR.xes,"[(504, 504)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,10.0,['sudden'],['sudden'],1000
+sudden_trace_noise20_500_cd.xes,"[(254, 254)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise20_1000_rp.xes,"[(56, 56), (344, 344), (537, 537), (944, 944)]","[(499, 499)]","['sudden', 'sudden', 'sudden', 'sudden']",['sudden'],0.4,0.25,1.0,76.0,"['sudden', 'sudden', 'sudden', 'sudden']","['sudden', nan, nan, nan]",1000
+sudden_trace_noise20_1000_ROI.xes,"[(177, 177), (497, 497)]","[(499, 499)]","['sudden', 'sudden']",['sudden'],0.6666666666666666,0.5,1.0,4.0,"['sudden', 'sudden']","['sudden', nan]",1000
+sudden_trace_noise20_500_cf.xes,"[(248, 248)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise20_1000_RIO.xes,"[(192, 192), (281, 281), (337, 337), (457, 457), (481, 481), (584, 584)]","[(499, 499)]","['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']",['sudden'],0.2857142857142857,0.16666666666666666,1.0,36.0,"['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']","['sudden', nan, nan, nan, nan, nan]",1000
+sudden_trace_noise20_500_cb.xes,"[(254, 254)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise20_500_pl.xes,"[(440, 440), (448, 448)]",[],"['sudden', 'sudden']",[],,,,,"['sudden', 'sudden']","[nan, nan]",500
+sudden_trace_noise20_1000_sw.xes,"[(49, 49), (490, 490), (601, 601), (656, 656), (816, 816), (904, 904)]","[(499, 499)]","['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']",['sudden'],0.2857142857142857,0.16666666666666666,1.0,18.0,"['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']","['sudden', nan, nan, nan, nan, nan]",1000
+sudden_trace_noise20_500_OIR.xes,"[(248, 248)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise20_500_pm.xes,"[(248, 248)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise20_500_cp.xes,"[(144, 144), (168, 168), (216, 216), (221, 221)]",[],"['sudden', 'sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden', 'sudden']","[nan, nan, nan, nan]",500
+sudden_trace_noise20_500_lp.xes,"[(249, 249)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise20_500_IRO.xes,"[(248, 248)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise20_500_IOR.xes,"[(252, 252)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise20_500_re.xes,"[(253, 253), (268, 268)]",[],"['sudden', 'sudden']",[],,,,,"['sudden', 'sudden']","[nan, nan]",500
+sudden_trace_noise20_500_rp.xes,"[(445, 445)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise20_500_sw.xes,"[(90, 90), (114, 114), (404, 404), (420, 420)]",[],"['sudden', 'sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden', 'sudden']","[nan, nan, nan, nan]",500
+sudden_trace_noise20_500_RIO.xes,"[(45, 45), (60, 60), (126, 126), (140, 140), (425, 425), (465, 465)]",[],"['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']","[nan, nan, nan, nan, nan, nan]",500
+sudden_trace_noise20_500_ROI.xes,"[(249, 249), (398, 398), (418, 418)]",[],"['sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden']","[nan, nan, nan]",500
+sudden_trace_noise5_1000_cb.xes,"[(504, 504)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,10.0,['sudden'],['sudden'],1000
+sudden_trace_noise5_1000_IOR.xes,"[(496, 496)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,6.0,['sudden'],['sudden'],1000
+sudden_trace_noise5_1000_lp.xes,"[(496, 496)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,6.0,['sudden'],['sudden'],1000
+sudden_trace_noise5_1000_cf.xes,"[(409, 409), (424, 424)]","[(499, 499)]","['sudden', 'sudden']",['sudden'],,,,,"[nan, 'sudden', 'sudden']","['sudden', nan, nan]",1000
+sudden_trace_noise5_1000_cd.xes,[],"[(499, 499)]",[],['sudden'],,,,,[nan],['sudden'],1000
+sudden_trace_noise5_1000_IRO.xes,"[(496, 496)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,6.0,['sudden'],['sudden'],1000
+sudden_trace_noise5_1000_RIO.xes,"[(136, 136), (289, 289), (368, 368), (616, 616), (673, 673)]","[(499, 499)]","['sudden', 'sudden', 'sudden', 'sudden', 'sudden']",['sudden'],,,,,"[nan, 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']","['sudden', nan, nan, nan, nan, nan]",1000
+sudden_trace_noise5_1000_cp.xes,"[(496, 496)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,6.0,['sudden'],['sudden'],1000
+sudden_trace_noise5_1000_pm.xes,"[(449, 449), (466, 466)]","[(499, 499)]","['sudden', 'sudden']",['sudden'],0.6666666666666666,0.5,1.0,66.0,"['sudden', 'sudden']","['sudden', nan]",1000
+sudden_trace_noise5_1000_pl.xes,"[(576, 576), (608, 608), (712, 712), (761, 761)]","[(499, 499)]","['sudden', 'sudden', 'sudden', 'sudden']",['sudden'],,,,,"[nan, 'sudden', 'sudden', 'sudden', 'sudden']","['sudden', nan, nan, nan, nan]",1000
+sudden_trace_noise5_1000_OIR.xes,"[(504, 504)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,10.0,['sudden'],['sudden'],1000
+sudden_trace_noise5_1000_rp.xes,"[(472, 472)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,54.0,['sudden'],['sudden'],1000
+sudden_trace_noise5_1000_re.xes,"[(496, 496)]","[(499, 499)]",['sudden'],['sudden'],1.0,1.0,1.0,6.0,['sudden'],['sudden'],1000
+sudden_trace_noise5_500_cb.xes,"[(252, 252)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise5_500_IOR.xes,"[(248, 248), (256, 256), (312, 312)]",[],"['sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden']","[nan, nan, nan]",500
+sudden_trace_noise5_1000_ROI.xes,"[(496, 496), (976, 976)]","[(499, 499)]","['sudden', 'sudden']",['sudden'],0.6666666666666666,0.5,1.0,6.0,"['sudden', 'sudden']","['sudden', nan]",1000
+sudden_trace_noise5_500_cf.xes,"[(249, 249)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise5_500_IRO.xes,"[(249, 249)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise5_500_cp.xes,"[(88, 88), (96, 96), (108, 108), (292, 292), (318, 318)]",[],"['sudden', 'sudden', 'sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden', 'sudden', 'sudden']","[nan, nan, nan, nan, nan]",500
+sudden_trace_noise5_1000_sw.xes,"[(504, 504), (536, 536), (576, 576), (792, 792), (945, 945)]","[(499, 499)]","['sudden', 'sudden', 'sudden', 'sudden', 'sudden']",['sudden'],0.33333333333333337,0.2,1.0,10.0,"['sudden', 'sudden', 'sudden', 'sudden', 'sudden']","['sudden', nan, nan, nan, nan]",1000
+sudden_trace_noise5_500_cd.xes,"[(248, 248)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise5_500_lp.xes,"[(248, 248)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise5_500_pl.xes,"[(48, 48), (88, 88), (329, 329)]",[],"['sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden']","[nan, nan, nan]",500
+sudden_trace_noise5_500_re.xes,"[(224, 224), (236, 236), (252, 252), (404, 404), (428, 428), (461, 461)]",[],"['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden', 'sudden', 'sudden', 'sudden']","[nan, nan, nan, nan, nan, nan]",500
+sudden_trace_noise5_500_pm.xes,"[(248, 248)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise5_500_RIO.xes,"[(72, 72), (208, 208), (440, 440), (468, 468), (476, 476)]",[],"['sudden', 'sudden', 'sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden', 'sudden', 'sudden']","[nan, nan, nan, nan, nan]",500
+sudden_trace_noise5_500_rp.xes,"[(34, 34), (460, 460), (468, 468)]",[],"['sudden', 'sudden', 'sudden']",[],,,,,"['sudden', 'sudden', 'sudden']","[nan, nan, nan]",500
+sudden_trace_noise5_500_OIR.xes,"[(249, 249)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise5_500_ROI.xes,"[(252, 252)]",[],['sudden'],[],,,,,['sudden'],[nan],500
+sudden_trace_noise5_500_sw.xes,"[(244, 244), (296, 296)]",[],"['sudden', 'sudden']",[],,,,,"['sudden', 'sudden']","[nan, nan]",500

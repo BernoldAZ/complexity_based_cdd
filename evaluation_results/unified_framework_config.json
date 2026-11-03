@@ -1,0 +1,43 @@
+{
+    "shorter_names": {
+        "cluster_combined_1": "VC_combined_1",
+        "cluster_combined_1_weighted": "VC_combined_1W",
+        "cluster_combined_all": "VC_combined_All",
+        "cluster_combined_all_weighted": "VC_combined_AllW",
+        "cluster_complexity_1": "VC_complexity_1",
+        "cluster_complexity_all": "VC_complexity_All",
+        "cluster_similarity": "VC_similarity"
+    },
+    "used_parameters": {
+        "VC_combined_1": [
+            "Threshold"
+        ],
+        "VC_combined_1W": [
+            "Threshold"
+        ],
+        "VC_combined_All": [
+            "Threshold"
+        ],
+        "VC_combined_AllW": [
+            "Threshold"
+        ],
+        "VC_complexity_1": [
+            "Threshold"
+        ],
+        "VC_complexity_All": [
+            "Threshold"
+        ],
+        "VC_similarity": [
+            "Threshold"
+        ]
+    },
+    "colors": [
+        "#DB444B",
+        "#9A607F",
+        "#006BA2",
+        "#3EBCD2",
+        "#379A8B",
+        "#EBB434",
+        "#B4BA39"
+    ]
+}

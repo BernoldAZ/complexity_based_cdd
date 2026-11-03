@@ -114,15 +114,22 @@ def list_logs(datasets_path):
     return logs
 
 
-def all_measure_names(datasets_path):
-    with open(f"{datasets_path}/Bose/bose_log_measure_names.json") as f:
+def bose_vector_folder(datasets_path, n_windows):
+    """Folder holding the Bose log's complexity vectors for n_windows["Bose"]; computes them if missing."""
+    bose_log = list_logs(datasets_path)[0]
+    ensure_complexity_vectors([bose_log], n_windows, datasets_path)
+    return find_vector_folder(datasets_path, "Bose", "bose_log", n_windows["Bose"])
+
+
+def all_measure_names(datasets_path, n_windows):
+    with open(f"{bose_vector_folder(datasets_path, n_windows)}/bose_log_measure_names.json") as f:
         return json.load(f)
 
 
-def unique_measure_names(datasets_path):
+def unique_measure_names(datasets_path, n_windows):
     """The measures left after dropping exact duplicates (same rule as the final pipeline)."""
-    vectors = np.load(f"{datasets_path}/Bose/bose_log_complexity_vectors.npy")
-    names = all_measure_names(datasets_path)
+    vectors = np.load(f"{bose_vector_folder(datasets_path, n_windows)}/bose_log_complexity_vectors.npy")
+    names = all_measure_names(datasets_path, n_windows)
     duplicated = {
         names[j]
         for i in range(len(names)) for j in range(i + 1, len(names))
@@ -156,8 +163,12 @@ def ensure_complexity_vectors(logs, n_windows, datasets_path):
         for i, log in enumerate(missing, start=1):
             N = n_windows[log["dataset"]]
             print(f"  [{i}/{len(missing)}] {log['dataset']}/{log['log_filename']} (n_windows={N})")
-            process_single_log(log["dataset"], f"{log['log_filename']}.gz", i,
-                               n_windows=N, output_subfolder=f"nw{N}")
+            # Prefer the plain .xes (e.g. the preprocessed Bose log with unique case ids) over the
+            # .xes.gz, so the windows match the ones of the baseline
+            log_file = log["log_filename"]
+            if not os.path.exists(f"{log['dataset']}/{log_file}"):
+                log_file = f"{log_file}.gz"
+            process_single_log(log["dataset"], log_file, i, n_windows=N, output_subfolder=f"nw{N}")
 
 
 def load_standardized_matrix(folder, log_name, measures):
@@ -258,7 +269,9 @@ def map_row_to_noise(row):
 
 def load_log_lengths(logpath_str):
     from cdrift.utils.helpers import importLog
-    log = importLog(logpath_str, verbose=False)
+    # logpath_str (the .xes.gz path) stays the key; read the plain .xes instead if it exists, as in detection
+    plain_xes = logpath_str[:-len(".gz")]
+    log = importLog(plain_xes if os.path.exists(plain_xes) else logpath_str, verbose=False)
     return logpath_str, len(log), sum(len(case) for case in log)
 
 
@@ -544,8 +557,8 @@ def run(run_name, measures=None, pen=DEFAULT_PEN, n_windows=DEFAULT_N_WINDOWS, l
     _check_dataset_dict("pen", pen)
     _check_dataset_dict("n_windows", n_windows)
     if measures is None:
-        measures = unique_measure_names(datasets_path)
-    valid = all_measure_names(datasets_path)
+        measures = unique_measure_names(datasets_path, n_windows)
+    valid = all_measure_names(datasets_path, n_windows)
     unknown = [m for m in measures if m not in valid]
     if unknown or not measures:
         raise ValueError(f"Unknown or empty measures {unknown}. Valid measures:\n  " + "\n  ".join(valid))
@@ -596,7 +609,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.list_measures:
-        print("\n".join(all_measure_names(args.datasets_path)))
+        print("\n".join(all_measure_names(args.datasets_path, args.n_windows)))
         sys.exit(0)
     if not args.run_name:
         parser.error("--run-name is required")

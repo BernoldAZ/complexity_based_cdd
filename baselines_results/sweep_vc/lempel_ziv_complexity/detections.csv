@@ -1,0 +1,152 @@
+Algorithm,Log Source,Log,Detected Changepoints,Actual Changepoints for Log,Duration (Seconds),Duration,Window Size,Threshold
+lempel_ziv_complexity,Bose,bose_log,"[5648, 5538, 4986, 5618]","[1199, 2399, 3599, 4799]",2.900860071182251,00:00:02,75,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise10_1000_lp,[],[499],1.9270882606506348,00:00:01,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise10_1000_sw,[],[499],1.8718748092651367,00:00:01,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise10_1000_cd,[],[499],2.5736753940582275,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise15_1000_pm,[],[499],2.0864033699035645,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise5_1000_OIR,[],[499],2.008375644683838,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise5_1000_re,[],[499],2.126290798187256,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise15_1000_re,[],[499],2.2522928714752197,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise20_1000_sw,[],[499],2.1150310039520264,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise0_1000_cf,[],[499],1.6818935871124268,00:00:01,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise15_1000_lp,[],[499],2.1537692546844482,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise0_1000_pl,[],[499],2.1148927211761475,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise0_1000_IOR,[],[499],2.042433738708496,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise10_1000_cf,[],[499],1.8064453601837158,00:00:01,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise0_1000_rp,[],[499],1.819535493850708,00:00:01,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise5_1000_pm,[],[499],1.6583356857299805,00:00:01,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise20_1000_lp,[],[499],2.2883050441741943,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise0_1000_re,[],[499],2.2941935062408447,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise0_1000_IRO,[],[499],2.283442497253418,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise0_1000_OIR,[],[499],2.2529852390289307,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise5_1000_pl,[],[499],2.697953462600708,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise5_1000_IRO,[],[499],2.373291015625,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise20_1000_RIO,[],[499],2.5443027019500732,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise15_1000_sw,[],[499],1.8524203300476074,00:00:01,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise10_1000_pl,[],[499],2.710294008255005,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise15_1000_cp,[],[499],2.531552791595459,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise20_1000_cd,[],[499],2.0365710258483887,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise5_1000_ROI,[],[499],1.8040616512298584,00:00:01,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise15_1000_IOR,[],[499],2.062075138092041,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise20_1000_rp,[],[499],1.656480073928833,00:00:01,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise10_1000_ROI,[],[499],2.206827402114868,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise5_1000_cp,[],[499],1.9124987125396729,00:00:01,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise10_1000_rp,[],[499],2.4303643703460693,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise20_1000_IOR,[],[499],2.16789174079895,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise0_1000_sw,[],[499],2.100736618041992,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise0_1000_pm,[],[499],2.712066411972046,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise5_1000_cd,[],[499],2.261143684387207,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise10_1000_RIO,[],[499],1.582808017730713,00:00:01,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise20_1000_pl,[],[499],1.8007383346557617,00:00:01,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise20_1000_re,[],[499],2.560900926589966,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise15_1000_cb,[],[499],1.8561036586761475,00:00:01,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise20_1000_OIR,[],[499],1.9157609939575195,00:00:01,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise15_1000_OIR,[],[499],1.9390501976013184,00:00:01,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise5_1000_rp,[],[499],2.78745698928833,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise20_1000_cb,[],[499],2.6571316719055176,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise0_1000_lp,[],[499],2.1305744647979736,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise10_1000_cp,[],[499],2.2270290851593018,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise10_1000_re,[],[499],1.8363850116729736,00:00:01,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise5_1000_sw,[],[499],2.1277341842651367,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise10_1000_pm,[],[499],1.831697940826416,00:00:01,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise20_1000_ROI,[],[499],2.5365617275238037,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise0_1000_RIO,[],[499],2.33808970451355,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise0_1000_cd,[],[499],2.180745840072632,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise10_1000_OIR,[],[499],1.9406771659851074,00:00:01,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise5_1000_IOR,[],[499],2.0133132934570312,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise10_1000_IRO,[],[499],1.9770731925964355,00:00:01,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise20_1000_pm,[],[499],2.039332389831543,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise15_1000_IRO,[],[499],2.2535288333892822,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise15_1000_ROI,[],[499],2.4376673698425293,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise15_1000_cf,[],[499],2.4522604942321777,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise5_1000_cf,[],[499],2.3055782318115234,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise10_1000_cb,[],[499],2.547142267227173,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise15_1000_rp,[],[499],2.5561656951904297,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise20_1000_cf,[],[499],2.4455270767211914,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise10_1000_IOR,[],[499],2.552929162979126,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise20_1000_IRO,[],[499],2.2836320400238037,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise15_1000_pl,[],[499],2.352445602416992,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise5_1000_cb,[],[499],2.426703929901123,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise20_1000_cp,[],[499],2.651073694229126,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise15_1000_RIO,[],[499],2.385128974914551,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise5_1000_RIO,[],[499],1.9856681823730469,00:00:01,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise15_1000_cd,[],[499],2.3744115829467773,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise0_1000_cp,[],[499],2.241748094558716,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise0_1000_ROI,[],[499],2.312483310699463,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise0_1000_cb,[],[499],2.3190741539001465,00:00:02,125,0.3
+lempel_ziv_complexity,Ceravolo,sudden_trace_noise5_1000_lp,[],[499],2.3929686546325684,00:00:02,125,0.3
+lempel_ziv_complexity,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval_5,[],"[999, 1999]",2.960839033126831,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_Swap_output_Swap,[],"[999, 1999]",2.7622010707855225,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_Frequency_output_Frequency_2,[],"[999, 1999]",3.2682712078094482,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval,"[898, 1952]","[999, 1999]",3.3232879638671875,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_Skip_output_Skip_2,[],"[999, 1999]",3.628218412399292,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Composite_ROI_output_ROI_2,[],"[999, 1999]",3.566676616668701,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Nested_ORI_output_ORI_5,"[899, 1951]","[999, 1999]",4.044687509536743,00:00:04,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_SerialMove_output_SerialMove_5,[],"[999, 1999]",3.665281057357788,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence_2,"[898, 1912]","[999, 1999]",3.3450851440429688,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_Substitute_output_Substitute_5,"[859, 1912]","[999, 1999]",3.4487369060516357,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Nested_ROI_output_ROI,[],"[999, 1999]",2.3234171867370605,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Composite_IRO_output_IRO,"[898, 1911]","[999, 1999]",3.087498426437378,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_SerialRemoval_output_SerialRemoval_2,[],"[999, 1999]",2.859464645385742,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence_5,[935],"[999, 1999]",3.229553461074829,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Composite_OIR_output_OIR_5,"[820, 1912]","[999, 1999]",3.640657424926758,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Nested_RIO_output_RIO_5,[],"[999, 1999]",3.0023999214172363,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Composite_ORI_output_ORI_2,[],"[999, 1999]",3.1671695709228516,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_Loop_output_Loop_5,"[898, 1912]","[999, 1999]",3.9918882846832275,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Composite_OIR_output_OIR_2,"[858, 1912]","[999, 1999]",2.990453004837036,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence_2,"[1014, 1874]","[999, 1999]",2.9434964656829834,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Nested_IRO_output_IRO_5,"[898, 1873]","[999, 1999]",3.6392593383789062,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Composite_RIO_output_RIO_5,"[859, 1950]","[999, 1999]",3.9482409954071045,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Nested_IOR_output_IOR_5,"[859, 1912]","[999, 1999]",3.7509329319000244,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval_5,"[858, 1912]","[999, 1999]",3.407052993774414,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_Skip_output_Skip_5,[],"[999, 1999]",3.4652469158172607,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Composite_IRO_output_IRO_2,"[898, 1911]","[999, 1999]",3.440237045288086,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_ConditionalMove_output_ConditionalMove,"[897, 1873]","[999, 1999]",3.7113959789276123,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_ConditionalMove_output_ConditionalMove_5,"[897, 1873]","[999, 1999]",3.354640007019043,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_Frequency_output_Frequency_5,[],"[999, 1999]",3.000499725341797,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Nested_IOR_output_IOR_2,[],"[999, 1999]",3.013723611831665,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Nested_ROI_output_ROI_2,[],"[999, 1999]",2.8098320960998535,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence,"[934, 1912]","[999, 1999]",3.4168190956115723,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Composite_IOR_output_IOR,[],"[999, 1999]",2.8188130855560303,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Nested_IRO_output_IRO,"[936, 1834]","[999, 1999]",3.0735137462615967,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_SerialRemoval_output_SerialRemoval_5,[],"[999, 1999]",3.1661479473114014,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_SerialMove_output_SerialMove,[],"[999, 1999]",3.1860318183898926,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Nested_ROI_output_ROI_5,[],"[999, 1999]",3.330461263656616,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_Swap_output_Swap_2,[],"[999, 1999]",3.3213348388671875,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_Substitute_output_Substitute_2,"[859, 1912]","[999, 1999]",3.467113971710205,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Nested_OIR_output_OIR_2,"[159, 937, 1794]","[999, 1999]",3.6074135303497314,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_Frequency_output_Frequency,[],"[999, 1999]",2.5176806449890137,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Nested_ORI_output_ORI,"[899, 1872]","[999, 1999]",2.8842885494232178,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Composite_ROI_output_ROI,[],"[999, 1999]",2.7887730598449707,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_ParallelMove_output_ParallelMove,[],"[999, 1999]",2.552173614501953,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Nested_RIO_output_RIO,[],"[999, 1999]",3.119539976119995,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_Swap_output_Swap_5,[],"[999, 1999]",3.0460751056671143,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_Substitute_output_Substitute,"[859, 1912]","[999, 1999]",2.8388500213623047,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Composite_ORI_output_ORI_5,"[1093, 1951]","[999, 1999]",3.4143319129943848,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_ConditionalMove_output_ConditionalMove_2,"[897, 1794]","[999, 1999]",3.049070119857788,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Composite_RIO_output_RIO,"[895, 1873]","[999, 1999]",2.5535833835601807,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval_2,"[820, 1912]","[999, 1999]",2.851266860961914,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Composite_IOR_output_IOR_5,[],"[999, 1999]",3.041870355606079,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_Loop_output_Loop_2,"[742, 898, 1912]","[999, 1999]",2.669069290161133,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval,[],"[999, 1999]",3.1397857666015625,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_SerialMove_output_SerialMove_2,[],"[999, 1999]",2.703972578048706,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_Loop_output_Loop,"[898, 1912]","[999, 1999]",2.785790205001831,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Nested_OIR_output_OIR_5,[743],"[999, 1999]",2.767515182495117,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_Skip_output_Skip,[],"[999, 1999]",2.817084550857544,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_SerialRemoval_output_SerialRemoval,[],"[999, 1999]",2.7719011306762695,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Composite_OIR_output_OIR,"[899, 1912]","[999, 1999]",2.7142984867095947,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Nested_OIR_output_OIR,[1874],"[999, 1999]",3.0177459716796875,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Composite_ORI_output_ORI,"[1093, 1873]","[999, 1999]",2.5486786365509033,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval_2,"[858, 1951]","[999, 1999]",2.3250792026519775,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_ParallelMove_output_ParallelMove_5,[],"[999, 1999]",3.336876153945923,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence_5,"[898, 1912]","[999, 1999]",3.190553665161133,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence,"[898, 1874]","[999, 1999]",2.812556266784668,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Nested_RIO_output_RIO_2,[1133],"[999, 1999]",3.1399128437042236,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Nested_ORI_output_ORI_2,"[858, 1913]","[999, 1999]",3.1759581565856934,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Nested_IRO_output_IRO_2,"[936, 1834]","[999, 1999]",3.51301646232605,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Composite_ROI_output_ROI_5,[],"[999, 1999]",2.9911746978759766,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Composite_IOR_output_IOR_2,[],"[999, 1999]",3.020029067993164,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Composite_IRO_output_IRO_5,"[898, 1911]","[999, 1999]",2.4309632778167725,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Atomic_ParallelMove_output_ParallelMove_2,[],"[999, 1999]",3.1282637119293213,00:00:03,75,0.3
+lempel_ziv_complexity,Ostovar,Composite_RIO_output_RIO_2,"[859, 1950]","[999, 1999]",2.699453830718994,00:00:02,75,0.3
+lempel_ziv_complexity,Ostovar,Nested_IOR_output_IOR,"[1055, 1912]","[999, 1999]",2.451449155807495,00:00:02,75,0.3

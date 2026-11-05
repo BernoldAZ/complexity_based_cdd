@@ -1,0 +1,91 @@
+Algorithm,Log Source,Log,Detected Changepoints,Actual Changepoints for Log,Duration (Seconds),Duration,Window Size,SW Step Size,Complexity Duration (Seconds)
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Bose,bose_log,"[1144, 2430, 2794, 3418, 3720, 4174, 4864, 5098, 5482]","[1199, 2399, 3599, 4799]",0.03545832633972168,00:00:00,300,2,0.0018846988677978516
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise10_1000_lp,[466],[499],0.0078122615814208984,00:00:00,300,2,0.0010826587677001953
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise10_1000_sw,[],[499],0.010999202728271484,00:00:00,300,2,0.0011644363403320312
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise10_1000_cd,[],[499],0.008647680282592773,00:00:00,300,2,0.0012040138244628906
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise15_1000_pm,[],[499],0.00495600700378418,00:00:00,300,2,0.0008790493011474609
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise5_1000_re,[],[499],0.008584737777709961,00:00:00,300,2,0.0012216567993164062
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise15_1000_re,[],[499],0.009206533432006836,00:00:00,300,2,0.0011255741119384766
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise20_1000_sw,[],[499],0.00573420524597168,00:00:00,300,2,0.0009248256683349609
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise0_1000_cf,[588],[499],0.0058748722076416016,00:00:00,300,2,0.0006866455078125
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise15_1000_lp,[578],[499],0.006480693817138672,00:00:00,300,2,0.0009000301361083984
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise0_1000_pl,[],[499],0.0058286190032958984,00:00:00,300,2,0.0008778572082519531
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise10_1000_cf,[542],[499],0.005461692810058594,00:00:00,300,2,0.0007722377777099609
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise0_1000_rp,[],[499],0.005566835403442383,00:00:00,300,2,0.0008044242858886719
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise5_1000_pm,[],[499],0.005506992340087891,00:00:00,300,2,0.0006663799285888672
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise20_1000_lp,[],[499],0.005647420883178711,00:00:00,300,2,0.0008730888366699219
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise0_1000_re,[604],[499],0.007626771926879883,00:00:00,300,2,0.0008721351623535156
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise5_1000_pl,[384],[499],0.005730152130126953,00:00:00,300,2,0.0008535385131835938
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise15_1000_sw,[416],[499],0.007410526275634766,00:00:00,300,2,0.0011334419250488281
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise10_1000_pl,[],[499],0.007241487503051758,00:00:00,300,2,0.0011372566223144531
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise15_1000_cp,[612],[499],0.007755279541015625,00:00:00,300,2,0.0009932518005371094
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise20_1000_cd,[420],[499],0.008268356323242188,00:00:00,300,2,0.0010273456573486328
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise20_1000_rp,[],[499],0.008318662643432617,00:00:00,300,2,0.0010538101196289062
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise5_1000_cp,[596],[499],0.01048898696899414,00:00:00,300,2,0.00144195556640625
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise10_1000_rp,[],[499],0.007944345474243164,00:00:00,300,2,0.001211404800415039
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise0_1000_sw,[],[499],0.009091377258300781,00:00:00,300,2,0.001218557357788086
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise0_1000_pm,[],[499],0.005753993988037109,00:00:00,300,2,0.0008852481842041016
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise5_1000_cd,[],[499],0.0061490535736083984,00:00:00,300,2,0.0009121894836425781
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise20_1000_pl,[],[499],0.011251449584960938,00:00:00,300,2,0.0011653900146484375
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise20_1000_re,[],[499],0.008213281631469727,00:00:00,300,2,0.0012657642364501953
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise15_1000_cb,[],[499],0.011404752731323242,00:00:00,300,2,0.0014300346374511719
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise5_1000_rp,[],[499],0.007969856262207031,00:00:00,300,2,0.001247406005859375
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise20_1000_cb,[],[499],0.008496284484863281,00:00:00,300,2,0.0012655258178710938
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise0_1000_lp,[532],[499],0.006761312484741211,00:00:00,300,2,0.0008056163787841797
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise10_1000_cp,[550],[499],0.008484601974487305,00:00:00,300,2,0.0007283687591552734
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise10_1000_re,[560],[499],0.006504058837890625,00:00:00,300,2,0.0010058879852294922
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise5_1000_sw,[],[499],0.0055179595947265625,00:00:00,300,2,0.0007061958312988281
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise10_1000_pm,[],[499],0.008332967758178711,00:00:00,300,2,0.0011782646179199219
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise0_1000_cd,[],[499],0.005562543869018555,00:00:00,300,2,0.000751495361328125
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise20_1000_pm,[],[499],0.010019302368164062,00:00:00,300,2,0.0013315677642822266
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise15_1000_cf,[],[499],0.009855985641479492,00:00:00,300,2,0.0014925003051757812
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise5_1000_cf,[588],[499],0.010720252990722656,00:00:00,300,2,0.0013298988342285156
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise10_1000_cb,[],[499],0.008252620697021484,00:00:00,300,2,0.0010035037994384766
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise15_1000_rp,[],[499],0.008795976638793945,00:00:00,300,2,0.0009884834289550781
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise20_1000_cf,[608],[499],0.007163047790527344,00:00:00,300,2,0.0011069774627685547
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise15_1000_pl,[],[499],0.010843515396118164,00:00:00,300,2,0.0012636184692382812
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise5_1000_cb,[],[499],0.008174419403076172,00:00:00,300,2,0.0009517669677734375
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise20_1000_cp,[550],[499],0.006189584732055664,00:00:00,300,2,0.0012209415435791016
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise15_1000_cd,[],[499],0.009715557098388672,00:00:00,300,2,0.001260995864868164
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise0_1000_cp,[596],[499],0.0073451995849609375,00:00:00,300,2,0.001146078109741211
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise0_1000_cb,[368],[499],0.008682489395141602,00:00:00,300,2,0.0012273788452148438
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ceravolo,sudden_trace_noise5_1000_lp,[546],[499],0.009233951568603516,00:00:00,300,2,0.0015904903411865234
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval_5,"[832, 1946]","[999, 1999]",0.037006378173828125,00:00:00,300,2,0.0016651153564453125
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_Swap_output_Swap,"[378, 678, 1276]","[999, 1999]",0.029326200485229492,00:00:00,300,2,0.0015289783477783203
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_Frequency_output_Frequency_2,"[1242, 1896, 2074, 2374]","[999, 1999]",0.026289939880371094,00:00:00,300,2,0.0015568733215332031
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval,"[622, 1946]","[999, 1999]",0.03652191162109375,00:00:00,300,2,0.0017254352569580078
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_Skip_output_Skip_2,"[452, 934, 1966]","[999, 1999]",0.028528213500976562,00:00:00,300,2,0.0013730525970458984
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_SerialMove_output_SerialMove_5,"[1020, 1416, 1734]","[999, 1999]",0.031494855880737305,00:00:00,300,2,0.0012922286987304688
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence_2,"[958, 1950, 2554]","[999, 1999]",0.030664920806884766,00:00:00,300,2,0.0015897750854492188
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_Substitute_output_Substitute_5,"[908, 1946]","[999, 1999]",0.028564453125,00:00:00,300,2,0.0013625621795654297
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_SerialRemoval_output_SerialRemoval_2,"[958, 1896]","[999, 1999]",0.03249382972717285,00:00:00,300,2,0.0015289783477783203
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence_5,"[794, 1112, 2508]","[999, 1999]",0.03085637092590332,00:00:00,300,2,0.001392364501953125
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_Loop_output_Loop_5,"[932, 1954, 2560]","[999, 1999]",0.0333554744720459,00:00:00,300,2,0.001314401626586914
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence_2,"[696, 1770]","[999, 1999]",0.08434581756591797,00:00:00,300,2,0.0012769699096679688
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval_5,"[930, 1972]","[999, 1999]",0.03516674041748047,00:00:00,300,2,0.0018467903137207031
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_Skip_output_Skip_5,"[452, 978, 1964]","[999, 1999]",0.027655839920043945,00:00:00,300,2,0.0012717247009277344
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_ConditionalMove_output_ConditionalMove,"[938, 2000, 2312]","[999, 1999]",0.038797616958618164,00:00:00,300,2,0.001585245132446289
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_ConditionalMove_output_ConditionalMove_5,"[938, 1820]","[999, 1999]",0.029984712600708008,00:00:00,300,2,0.0015544891357421875
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_Frequency_output_Frequency_5,"[516, 960, 1260, 1530, 1820, 2118, 2430]","[999, 1999]",0.03790473937988281,00:00:00,300,2,0.0021822452545166016
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence,"[958, 1950, 2560]","[999, 1999]",0.03284931182861328,00:00:00,300,2,0.0017168521881103516
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_SerialRemoval_output_SerialRemoval_5,"[1100, 1380, 1826]","[999, 1999]",0.026253461837768555,00:00:00,300,2,0.0012598037719726562
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_SerialMove_output_SerialMove,"[1416, 1734, 1916, 2206]","[999, 1999]",0.02947711944580078,00:00:00,300,2,0.0014193058013916016
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_Swap_output_Swap_2,[914],"[999, 1999]",0.027532339096069336,00:00:00,300,2,0.001451730728149414
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_Substitute_output_Substitute_2,"[908, 1946]","[999, 1999]",0.026603221893310547,00:00:00,300,2,0.0012423992156982422
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_Frequency_output_Frequency,[],"[999, 1999]",0.024812936782836914,00:00:00,300,2,0.001506805419921875
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_ParallelMove_output_ParallelMove,"[1056, 1980, 2280]","[999, 1999]",0.02783656120300293,00:00:00,300,2,0.0010790824890136719
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_Swap_output_Swap_5,"[378, 656, 976, 2128]","[999, 1999]",0.029542922973632812,00:00:00,300,2,0.0013349056243896484
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_Substitute_output_Substitute,"[908, 1926]","[999, 1999]",0.025162220001220703,00:00:00,300,2,0.0012671947479248047
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_ConditionalMove_output_ConditionalMove_2,"[938, 1930]","[999, 1999]",0.027637004852294922,00:00:00,300,2,0.0013339519500732422
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval_2,"[832, 1946]","[999, 1999]",0.03171372413635254,00:00:00,300,2,0.0014562606811523438
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_Loop_output_Loop_2,"[932, 1954]","[999, 1999]",0.043587446212768555,00:00:00,300,2,0.002187967300415039
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval,"[688, 988, 2210, 2438]","[999, 1999]",0.024541139602661133,00:00:00,300,2,0.0013523101806640625
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_SerialMove_output_SerialMove_2,"[430, 1414, 1734]","[999, 1999]",0.026641845703125,00:00:00,300,2,0.001325845718383789
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_Loop_output_Loop,"[576, 914, 1934]","[999, 1999]",0.02990889549255371,00:00:00,300,2,0.0012712478637695312
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_Skip_output_Skip,"[452, 574, 1966, 2616]","[999, 1999]",0.029335498809814453,00:00:00,300,2,0.0016047954559326172
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_SerialRemoval_output_SerialRemoval,"[958, 1100, 1814]","[999, 1999]",0.026488065719604492,00:00:00,300,2,0.0013341903686523438
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval_2,"[964, 2046, 2338]","[999, 1999]",0.024905920028686523,00:00:00,300,2,0.0012202262878417969
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_ParallelMove_output_ParallelMove_5,"[818, 1060, 1980, 2280]","[999, 1999]",0.03154253959655762,00:00:00,300,2,0.0013735294342041016
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence_5,"[890, 1948, 2554]","[999, 1999]",0.028163671493530273,00:00:00,300,2,0.0012247562408447266
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence,"[952, 1960]","[999, 1999]",0.029968738555908203,00:00:00,300,2,0.0018274784088134766
+estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2,Ostovar,Atomic_ParallelMove_output_ParallelMove_2,"[1130, 1450, 1778, 2054]","[999, 1999]",0.027372360229492188,00:00:00,300,2,0.0012323856353759766

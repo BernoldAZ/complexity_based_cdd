@@ -1,0 +1,2 @@
+Algorithm,F1-Score,Precision,Recall,Latency,Latency (Score),Versatility,Scalability,Milliseconds per Case,Milliseconds per Event,Parameter Sensitivity (IQR),Robustness
+simpson_diversity_abundance_n_gram_species_n3,0.6333333333333334,0.95,0.475,94.73684210526316,0.5263157894736842,0.47916666666666663,00:00:02,1.35428819864425,0.05194542008885124,0.0,0.48530648526518133

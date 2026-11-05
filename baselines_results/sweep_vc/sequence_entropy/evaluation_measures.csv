@@ -1,0 +1,2 @@
+Algorithm,F1-Score,Precision,Recall,Latency,Latency (Score),Versatility,Scalability,Milliseconds per Case,Milliseconds per Event,Parameter Sensitivity (IQR),Robustness
+sequence_entropy,0.5263157894736842,0.8823529411764706,0.375,100.66666666666669,0.4966666666666666,0.3645833333333333,00:00:02,1.3669314857004757,0.05243036919945934,0.0,0.856551657995066

@@ -1,0 +1,28 @@
+{
+  "run_name": "coverage_alternative_n_gram_species_n2",
+  "approach": "Bernold_complexity",
+  "feature_mode": "complexity",
+  "fusion": null,
+  "alpha": null,
+  "measures": [
+    "coverage_alternative_n_gram_species_n2"
+  ],
+  "pen": {
+    "Bose": 3.0,
+    "Ceravolo": 3.0,
+    "Ostovar": 3.0
+  },
+  "n_windows": {
+    "Bose": 75,
+    "Ceravolo": 125,
+    "Ostovar": 75
+  },
+  "min_cluster_size": {
+    "Bose": 5,
+    "Ceravolo": 5,
+    "Ostovar": 7
+  },
+  "threshold": 0.3,
+  "lag_window": 200,
+  "evaluate_noisy": false
+}

@@ -1,0 +1,14 @@
+{
+  "run_name": "trace_length_min",
+  "approach": "EMD_complexity",
+  "feature_mode": "complexity",
+  "fusion": null,
+  "alpha": null,
+  "measures": [
+    "trace_length_min"
+  ],
+  "window_size": 300,
+  "step_size": 2,
+  "lag_window": 200,
+  "evaluate_noisy": false
+}

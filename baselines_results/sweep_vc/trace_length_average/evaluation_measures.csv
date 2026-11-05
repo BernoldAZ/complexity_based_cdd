@@ -1,0 +1,2 @@
+Algorithm,F1-Score,Precision,Recall,Latency,Latency (Score),Versatility,Scalability,Milliseconds per Case,Milliseconds per Event,Parameter Sensitivity (IQR),Robustness
+trace_length_average,0.5,0.75,0.375,89.00000000000001,0.5549999999999999,0.35416666666666663,00:00:02,1.3460144686217932,0.051628070811091525,0.0,0.45837436715882957

@@ -1,0 +1,14 @@
+{
+  "run_name": "average_distinct_events_per_trace",
+  "approach": "EMD_complexity",
+  "feature_mode": "complexity",
+  "fusion": null,
+  "alpha": null,
+  "measures": [
+    "average_distinct_events_per_trace"
+  ],
+  "window_size": 300,
+  "step_size": 2,
+  "lag_window": 200,
+  "evaluate_noisy": false
+}

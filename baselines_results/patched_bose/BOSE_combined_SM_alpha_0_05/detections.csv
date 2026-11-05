@@ -1,0 +1,91 @@
+Algorithm,Log Source,Log,Detected Changepoints,Actual Changepoints for Log,Duration (Seconds),Duration
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise0_1000_sw,[576],[499],55.48133982499712,00:00:55
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise10_1000_cf,[448],[499],51.604203484996106,00:00:51
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise0_1000_pm,[444],[499],26.901040443000966,00:00:26
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise0_1000_cd,[],[499],28.480535082999268,00:00:28
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise10_1000_cb,[456],[499],36.135911716999544,00:00:36
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise0_1000_cb,"[456, 718]",[499],62.353214282997214,00:01:02
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise10_1000_cd,[],[499],36.69890795500032,00:00:36
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise0_1000_re,[448],[499],28.227514914000494,00:00:28
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise0_1000_rp,[],[499],40.87040288199569,00:00:40
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise0_1000_cp,[444],[499],35.529625184000906,00:00:35
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise0_1000_cf,[448],[499],26.926473683997756,00:00:26
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise0_1000_pl,[],[499],60.74299526200048,00:01:00
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise10_1000_pl,[],[499],30.376692975001788,00:00:30
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise10_1000_lp,[482],[499],30.66407325399996,00:00:30
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise0_1000_lp,[480],[499],56.53336707700146,00:00:56
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise10_1000_cp,[444],[499],30.80220393899799,00:00:30
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise10_1000_re,[448],[499],50.619423853000626,00:00:50
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise15_1000_cb,"[456, 786]",[499],57.78770890299711,00:00:57
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise10_1000_sw,[570],[499],114.30933804699816,00:01:54
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise10_1000_rp,[530],[499],62.809205695000855,00:01:02
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise15_1000_cp,[450],[499],72.42468304100112,00:01:12
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise10_1000_pm,[426],[499],31.384853456998826,00:00:31
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise15_1000_cf,"[450, 590]",[499],128.34632424399751,00:02:08
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise15_1000_cd,[],[499],107.73269576800521,00:01:47
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise15_1000_lp,[446],[499],45.182577625000704,00:00:45
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise15_1000_re,[448],[499],45.715532166999765,00:00:45
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise15_1000_rp,[486],[499],186.06273454099937,00:03:06
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise20_1000_cb,[456],[499],93.17627722499674,00:01:33
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise15_1000_pl,[],[499],44.55562662900047,00:00:44
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise15_1000_pm,[414],[499],44.518684227005,00:00:44
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise15_1000_sw,"[376, 576]",[499],160.68521595100174,00:02:40
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise20_1000_cd,[],[499],95.9450106180011,00:01:35
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise20_1000_cp,[452],[499],51.991836792003596,00:00:51
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise20_1000_cf,[444],[499],96.00779187400258,00:01:36
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise20_1000_pl,[],[499],52.00702777299739,00:00:52
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise5_1000_cb,[448],[499],59.58677960600107,00:00:59
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise20_1000_sw,[516],[499],60.65770733300087,00:01:00
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise20_1000_re,[448],[499],102.44895372999963,00:01:42
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise20_1000_rp,[486],[499],210.0157652689959,00:03:30
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise5_1000_cf,"[448, 596]",[499],60.06061314999897,00:01:00
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise20_1000_pm,[454],[499],52.82872392799982,00:00:52
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise5_1000_cp,[444],[499],105.63349560300048,00:01:45
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise20_1000_lp,[478],[499],53.36822206299985,00:00:53
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise5_1000_cd,[],[499],60.526688878999266,00:01:00
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise5_1000_rp,[594],[499],65.40250460400057,00:01:05
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise5_1000_re,[446],[499],65.87590554900089,00:01:05
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise5_1000_pm,[444],[499],99.9402825319994,00:01:39
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise5_1000_pl,[],[499],146.70887045100244,00:02:26
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise5_1000_lp,[480],[499],101.13388147099977,00:01:41
+BOSE_combined_SM_alpha_0_05,Ceravolo,sudden_trace_noise5_1000_sw,[576],[499],58.4638000949999,00:00:58
+BOSE_combined_SM_alpha_0_05,Bose,bose_log,"[1200, 2410, 3590, 4786]","[1199, 2399, 3599, 4799]",811.6163221409988,00:13:31
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_Frequency_output_Frequency,"[952, 1404, 1900]","[999, 1999]",1568.8753262330029,00:26:08
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval,"[948, 1362, 1574, 1938]","[999, 1999]",3959.232102225,01:05:59
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_Frequency_output_Frequency_2,"[952, 1404, 1900]","[999, 1999]",1755.3567722449989,00:29:15
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence,"[958, 1492, 1954]","[999, 1999]",3679.7877148599982,01:01:19
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_ConditionalMove_output_ConditionalMove_2,"[950, 1938]","[999, 1999]",4767.324459188003,01:19:27
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_ConditionalMove_output_ConditionalMove,"[948, 1940]","[999, 1999]",4409.680573956,01:13:29
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval_5,"[566, 950, 1358, 1572, 1938]","[999, 1999]",3020.896565384999,00:50:20
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_Frequency_output_Frequency_5,"[952, 1494, 1900]","[999, 1999]",2277.0134646410006,00:37:57
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence_2,"[384, 934, 1954]","[999, 1999]",4337.315542307999,01:12:17
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_Loop_output_Loop,"[948, 1954]","[999, 1999]",3961.6659589639967,01:06:01
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_ConditionalMove_output_ConditionalMove_5,"[946, 1470, 1938]","[999, 1999]",3839.2213964229995,01:03:59
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence_5,"[914, 1492, 1950]","[999, 1999]",2513.162490355,00:41:53
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval_2,"[600, 836, 1340, 1938]","[999, 1999]",3307.1252751350003,00:55:07
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval_2,"[470, 628, 870, 1958, 2608]","[999, 1999]",1280.5980302819262,00:21:20
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_ParallelMove_output_ParallelMove,"[1072, 1946, 2246]","[999, 1999]",2709.820937998,00:45:09
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_ParallelMove_output_ParallelMove_2,"[1144, 1796]","[999, 1999]",3076.180973784005,00:51:16
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval,"[668, 944, 1942]","[999, 1999]",1915.8108106670006,00:31:55
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_Loop_output_Loop_2,"[372, 956, 1966, 2294, 2572]","[999, 1999]",5536.447610342002,01:32:16
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_ParallelMove_output_ParallelMove_5,"[824, 1056, 1980, 2246]","[999, 1999]",1505.5099944668036,00:25:05
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_SerialMove_output_SerialMove_2,"[514, 858, 1034, 1458, 1680, 2244]","[999, 1999]",1448.591990906054,00:24:08
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval_5,"[486, 870, 1974]","[999, 1999]",1283.5893334369066,00:21:23
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_Loop_output_Loop_5,"[948, 1954]","[999, 1999]",5157.104965977,01:25:57
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence,[992],"[999, 1999]",1092.8632637417031,00:18:12
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence_2,[1060],"[999, 1999]",1357.308752499208,00:22:37
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_SerialMove_output_SerialMove_5,"[860, 1458, 1804]","[999, 1999]",1467.675260661883,00:24:27
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence_5,"[854, 1058, 1902]","[999, 1999]",1366.290048725492,00:22:46
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_SerialRemoval_output_SerialRemoval,"[956, 1936]","[999, 1999]",1008.3202067157654,00:16:48
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_SerialRemoval_output_SerialRemoval_2,"[710, 1010, 1226, 1928]","[999, 1999]",1267.1605654955274,00:21:07
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_SerialMove_output_SerialMove,[1458],"[999, 1999]",1181.0755292248868,00:19:41
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_SerialRemoval_output_SerialRemoval_5,"[956, 1928]","[999, 1999]",1283.4998190790975,00:21:23
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_Skip_output_Skip_5,"[946, 1954]","[999, 1999]",1291.694150320236,00:21:31
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_Skip_output_Skip,"[968, 1952]","[999, 1999]",1017.6435875610259,00:16:57
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_Skip_output_Skip_2,"[948, 1952]","[999, 1999]",1286.5293769827585,00:21:26
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_Substitute_output_Substitute_5,"[892, 2004, 2536]","[999, 1999]",4505.427787683999,01:15:05
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_Swap_output_Swap,"[420, 1168]","[999, 1999]",2771.2313980219988,00:46:11
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_Substitute_output_Substitute,"[892, 1932, 2480]","[999, 1999]",1166.3412151316224,00:19:26
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_Substitute_output_Substitute_2,"[892, 1950]","[999, 1999]",1455.874374213352,00:24:15
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_Swap_output_Swap_2,"[424, 1194]","[999, 1999]",2910.433404403,00:48:30
+BOSE_combined_SM_alpha_0_05,Ostovar,Atomic_Swap_output_Swap_5,"[968, 2358]","[999, 1999]",2452.1029081939996,00:40:52

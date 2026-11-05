@@ -338,6 +338,44 @@ def calc_versatility(df, lag_window):
     versatility = np.nanmean(list(recalls_per_param[best_param].values()))
     return versatility, recalls_per_param, best_param
 
+def calc_metrics_per_change_pattern(df, lag_window):
+    """
+    Calculates precision, recall and F1-score per change pattern.
+    """
+    results = {}
+
+    for change_pattern, cp_group in df.groupby("Change Pattern"):
+        tps = fps = positives = 0
+
+        for _, row in cp_group.iterrows():
+            tp, fp = evaluation.getTP_FP(
+                row["Detected Changepoints"],
+                row["Actual Changepoints for Log"],
+                lag_window,
+                count_duplicate_detections=COUNT_DUPLICATE_DETECTIONS
+            )
+
+            tps += tp
+            fps += fp
+            positives += len(row["Actual Changepoints for Log"])
+
+        precision = tps / (tps + fps) if (tps + fps) else np.nan
+        recall = tps / positives if positives else np.nan
+
+        f1 = (
+            harmonic_mean([precision, recall])
+            if not np.isnan(precision) and not np.isnan(recall)
+            else np.nan
+        )
+
+        results[change_pattern] = {
+            "Precision": precision,
+            "Recall": recall,
+            "F1-Score": f1,
+        }
+
+    return results
+
 def calc_robustnesses(df, lag_window):
     """{noise_level: robustness} -- harmonic mean of accuracy, latency and versatility per noise level."""
     means = dict()
@@ -415,11 +453,11 @@ def convert_harm_mean_to_auc(means, div_zero_default=0):
     return auc / ideal_auc if ideal_auc != 0 else div_zero_default
 
 
-def plot_radar_chart(recalls, title, output_path):
-    categories = list(recalls.keys())
+def plot_radar_chart(values, title, output_path):
+    categories = list(values.keys())
     angles = np.linspace(0, 2 * np.pi, len(categories), endpoint=False).tolist()
     angles += angles[:1]  # close the circle
-    values = [0 if np.isnan(recalls[cp]) else recalls[cp] for cp in categories]
+    values = [0 if np.isnan(values[cp]) else values[cp] for cp in categories]
     values += values[:1]  # close the shape
 
     fig, ax = plt.subplots(subplot_kw=dict(polar=True), figsize=(6, 6))
@@ -490,12 +528,59 @@ def evaluate(df, run_name, lag_window, datasets_path, out_dir, evaluate_noisy=Fa
     robustness_ostovar = convert_harm_mean_to_auc(calc_robustnesses(df_robust[df_robust["Log Source"] == "Ostovar"], lag_window))
     robustness = (robustness_ceravolo + robustness_ostovar) / 2
 
-    radar_path = f"{out_dir}/radar_chart_versatility.png"
-    plot_radar_chart(recalls_per_cp, run_name, radar_path)
+    # Calculate precision, recall and F1-score per change pattern
+    metrics_per_cp = calc_metrics_per_change_pattern(df_v, lag_window)
+
+    # Extract metrics
+    precision_per_cp = {
+        cp: values["Precision"]
+        for cp, values in metrics_per_cp.items()
+    }
+
+    recall_per_cp = {
+        cp: values["Recall"]
+        for cp, values in metrics_per_cp.items()
+    }
+
+    f1_per_cp = {
+        cp: values["F1-Score"]
+        for cp, values in metrics_per_cp.items()
+    }
+
+    # Generate radar charts
+    radar_path = f"{out_dir}/radar_chart_recall.png"
+    plot_radar_chart(
+        recall_per_cp,
+        f"{run_name} - Recall",
+        radar_path
+    )
+
+    precision_radar_path = f"{out_dir}/radar_chart_precision.png"
+    plot_radar_chart(
+        precision_per_cp,
+        f"{run_name} - Precision",
+        precision_radar_path
+    )
+
+    f1_radar_path = f"{out_dir}/radar_chart_f1.png"
+    plot_radar_chart(
+        f1_per_cp,
+        f"{run_name} - F1-Score",
+        f1_radar_path
+    )
+
+    # Save all metrics in one CSV
     versatility_csv_path = f"{out_dir}/versatility_per_change_pattern.csv"
-    pd.DataFrame([{"Change Pattern": cp, "Recall": r} for cp, r in recalls_per_cp.items()]).to_csv(
-        versatility_csv_path, index=False)
-    
+
+    pd.DataFrame([
+        {
+            "Change Pattern": cp,
+            "Precision": precision_per_cp[cp],
+            "Recall": recall_per_cp[cp],
+            "F1-Score": f1_per_cp[cp],
+        }
+        for cp in metrics_per_cp
+    ]).to_csv(versatility_csv_path, index=False)
     versatility_by_noise_csv_path = None
     evaluation_by_noise_csv_path = None
     if evaluate_noisy:

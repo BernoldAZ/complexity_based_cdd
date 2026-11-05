@@ -35,7 +35,7 @@ from constants import ALL_MEASURES
 APPROACHES = ["vc", "emd"]      # keys of RUNNERS
 MEASURES_TO_RUN = ALL_MEASURES  # or e.g. ["num_event_types", "num_events"] for a test
 EVALUATE_NOISY = False
-F1_THRESHOLD = 0.75
+F1_THRESHOLD = 0.80
 ANALYZE_ONLY = True            # True: skip all runs and only redo the summaries from the existing results
 OUT_ROOT = "baselines_results"
 

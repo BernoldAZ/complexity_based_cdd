@@ -1,0 +1,91 @@
+Algorithm,Log Source,Log,Detected Changepoints,Actual Changepoints for Log,Duration (Seconds)
+trace_length_max,Bose,bose_log,"[3555, 4740]","[1199, 2399, 3599, 4799]",0.026211412623524666
+trace_length_max,Ceravolo,sudden_trace_noise10_1000_cd,[260],[499],0.03261031676083803
+trace_length_max,Ceravolo,sudden_trace_noise10_1000_sw,[],[499],0.033008904196321964
+trace_length_max,Ceravolo,sudden_trace_noise0_1000_cf,[500],[499],0.03170481789857149
+trace_length_max,Ceravolo,sudden_trace_noise5_1000_re,[],[499],0.032813696190714836
+trace_length_max,Ostovar,Atomic_Swap_output_Swap,[],"[999, 1999]",0.019697478972375393
+trace_length_max,Ceravolo,sudden_trace_noise10_1000_cf,[500],[499],0.033198943361639977
+trace_length_max,Ceravolo,sudden_trace_noise5_1000_cf,[500],[499],0.024772671051323414
+trace_length_max,Ceravolo,sudden_trace_noise15_1000_sw,[100],[499],0.031244421377778053
+trace_length_max,Ceravolo,sudden_trace_noise20_1000_cd,[],[499],0.031320477835834026
+trace_length_max,Ceravolo,sudden_trace_noise15_1000_re,[760],[499],0.03382060490548611
+trace_length_max,Ceravolo,sudden_trace_noise15_1000_lp,"[540, 820]",[499],0.03405157197266817
+trace_length_max,Ceravolo,sudden_trace_noise20_1000_lp,[500],[499],0.0330141419544816
+trace_length_max,Ceravolo,sudden_trace_noise15_1000_pm,[],[499],0.036974660120904446
+trace_length_max,Ceravolo,sudden_trace_noise0_1000_pl,[],[499],0.03500274661928415
+trace_length_max,Ceravolo,sudden_trace_noise5_1000_rp,[],[499],0.03251463454216719
+trace_length_max,Ceravolo,sudden_trace_noise0_1000_re,[],[499],0.03447097260504961
+trace_length_max,Ceravolo,sudden_trace_noise0_1000_rp,[],[499],0.03508048038929701
+trace_length_max,Ceravolo,sudden_trace_noise10_1000_lp,[490],[499],0.03989167232066393
+trace_length_max,Ceravolo,sudden_trace_noise0_1000_lp,[510],[499],0.03182578459382057
+trace_length_max,Ceravolo,sudden_trace_noise20_1000_pl,[],[499],0.03373337350785732
+trace_length_max,Ceravolo,sudden_trace_noise0_1000_pm,[],[499],0.03373456001281738
+trace_length_max,Ceravolo,sudden_trace_noise10_1000_cp,[],[499],0.03145108185708523
+trace_length_max,Ceravolo,sudden_trace_noise20_1000_sw,[],[499],0.036089555360376835
+trace_length_max,Ceravolo,sudden_trace_noise0_1000_sw,[],[499],0.03394338674843311
+trace_length_max,Ceravolo,sudden_trace_noise20_1000_cb,[],[499],0.03258936479687691
+trace_length_max,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval_5,[],"[999, 1999]",0.021281839348375797
+trace_length_max,Ostovar,Atomic_Frequency_output_Frequency_2,[],"[999, 1999]",0.024668817408382893
+trace_length_max,Ceravolo,sudden_trace_noise5_1000_pm,[],[499],0.03789238166064024
+trace_length_max,Ceravolo,sudden_trace_noise20_1000_rp,[],[499],0.03636857308447361
+trace_length_max,Ceravolo,sudden_trace_noise15_1000_cb,[],[499],0.0346923703327775
+trace_length_max,Ceravolo,sudden_trace_noise10_1000_pl,[],[499],0.037232305854558945
+trace_length_max,Ceravolo,sudden_trace_noise15_1000_cf,[150],[499],0.030979789793491364
+trace_length_max,Ceravolo,sudden_trace_noise10_1000_re,[],[499],0.03225461207330227
+trace_length_max,Ceravolo,sudden_trace_noise5_1000_cd,[260],[499],0.03573434054851532
+trace_length_max,Ceravolo,sudden_trace_noise0_1000_cd,[260],[499],0.03266807645559311
+trace_length_max,Ceravolo,sudden_trace_noise5_1000_pl,[110],[499],0.0381489098072052
+trace_length_max,Ceravolo,sudden_trace_noise5_1000_cp,[],[499],0.03628301713615656
+trace_length_max,Ceravolo,sudden_trace_noise10_1000_pm,[],[499],0.03356086369603872
+trace_length_max,Ceravolo,sudden_trace_noise15_1000_cp,[],[499],0.03910371754318476
+trace_length_max,Ceravolo,sudden_trace_noise20_1000_re,[],[499],0.038244454190135
+trace_length_max,Ceravolo,sudden_trace_noise15_1000_pl,[],[499],0.030356661416590214
+trace_length_max,Ceravolo,sudden_trace_noise10_1000_rp,[],[499],0.038281398825347424
+trace_length_max,Ostovar,Atomic_SerialMove_output_SerialMove_5,[],"[999, 1999]",0.025874007493257523
+trace_length_max,Ceravolo,sudden_trace_noise15_1000_cd,"[130, 350]",[499],0.02943621762096882
+trace_length_max,Ceravolo,sudden_trace_noise10_1000_cb,[160],[499],0.033681828528642654
+trace_length_max,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence_5,[],"[999, 1999]",0.02365429513156414
+trace_length_max,Ceravolo,sudden_trace_noise20_1000_pm,[],[499],0.03499855659902096
+trace_length_max,Ceravolo,sudden_trace_noise5_1000_sw,[],[499],0.03382346872240305
+trace_length_max,Ceravolo,sudden_trace_noise20_1000_cf,[],[499],0.033342259004712105
+trace_length_max,Ceravolo,sudden_trace_noise0_1000_cb,[],[499],0.03358845133334398
+trace_length_max,Ostovar,Atomic_Skip_output_Skip_2,[468],"[999, 1999]",0.027945375069975853
+trace_length_max,Ostovar,Atomic_Loop_output_Loop_5,"[936, 1989]","[999, 1999]",0.024313392117619514
+trace_length_max,Ceravolo,sudden_trace_noise5_1000_cb,[],[499],0.03443996235728264
+trace_length_max,Ceravolo,sudden_trace_noise0_1000_cp,[],[499],0.03282968979328871
+trace_length_max,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence_2,[],"[999, 1999]",0.025282936170697212
+trace_length_max,Ceravolo,sudden_trace_noise5_1000_lp,[490],[499],0.03268846869468689
+trace_length_max,Ostovar,Atomic_ConditionalMove_output_ConditionalMove_5,[],"[999, 1999]",0.023086272180080414
+trace_length_max,Ostovar,Atomic_ParallelMove_output_ParallelMove,[],"[999, 1999]",0.022393721155822277
+trace_length_max,Ostovar,Atomic_Frequency_output_Frequency,[],"[999, 1999]",0.01843948755413294
+trace_length_max,Ostovar,Atomic_Swap_output_Swap_2,[],"[999, 1999]",0.02086439449340105
+trace_length_max,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval_5,[741],"[999, 1999]",0.025992807932198048
+trace_length_max,Ostovar,Atomic_Skip_output_Skip_5,[],"[999, 1999]",0.024315347895026207
+trace_length_max,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence_2,[780],"[999, 1999]",0.029936145059764385
+trace_length_max,Ostovar,Atomic_SerialRemoval_output_SerialRemoval_2,[],"[999, 1999]",0.027110345661640167
+trace_length_max,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence,[],"[999, 1999]",0.01489250361919403
+trace_length_max,Ostovar,Atomic_Substitute_output_Substitute_5,[],"[999, 1999]",0.02999872248619795
+trace_length_max,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence,[780],"[999, 1999]",0.02351139858365059
+trace_length_max,Ceravolo,sudden_trace_noise20_1000_cp,[],[499],0.03525250218808651
+trace_length_max,Ceravolo,sudden_trace_noise15_1000_rp,[],[499],0.038091360591351986
+trace_length_max,Ostovar,Atomic_Frequency_output_Frequency_5,[],"[999, 1999]",0.024287201464176178
+trace_length_max,Ostovar,Atomic_ConditionalMove_output_ConditionalMove,[],"[999, 1999]",0.026605739258229733
+trace_length_max,Ostovar,Atomic_SerialRemoval_output_SerialRemoval_5,[],"[999, 1999]",0.0239240238443017
+trace_length_max,Ostovar,Atomic_SerialMove_output_SerialMove,[],"[999, 1999]",0.025913815945386887
+trace_length_max,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval,[],"[999, 1999]",0.02936497889459133
+trace_length_max,Ostovar,Atomic_ParallelMove_output_ParallelMove_2,[],"[999, 1999]",0.015851501375436783
+trace_length_max,Ostovar,Atomic_Substitute_output_Substitute,"[585, 1599]","[999, 1999]",0.02320095244795084
+trace_length_max,Ostovar,Atomic_Swap_output_Swap_5,[],"[999, 1999]",0.024319118820130825
+trace_length_max,Ostovar,Atomic_ConditionalMove_output_ConditionalMove_2,[],"[999, 1999]",0.024129080586135387
+trace_length_max,Ostovar,Atomic_Substitute_output_Substitute_2,[624],"[999, 1999]",0.02764212153851986
+trace_length_max,Ostovar,Atomic_ParallelMove_output_ParallelMove_5,[],"[999, 1999]",0.018373627215623856
+trace_length_max,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval,[],"[999, 1999]",0.021266614086925983
+trace_length_max,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence_5,[],"[999, 1999]",0.021824579685926437
+trace_length_max,Ostovar,Atomic_Skip_output_Skip,[468],"[999, 1999]",0.02306895051151514
+trace_length_max,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval_2,[],"[999, 1999]",0.025764006190001965
+trace_length_max,Ostovar,Atomic_SerialMove_output_SerialMove_2,[],"[999, 1999]",0.02318020910024643
+trace_length_max,Ostovar,Atomic_SerialRemoval_output_SerialRemoval,[],"[999, 1999]",0.02237772662192583
+trace_length_max,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval_2,[],"[999, 1999]",0.021870885975658894
+trace_length_max,Ostovar,Atomic_Loop_output_Loop,"[936, 1989]","[999, 1999]",0.025439591147005558
+trace_length_max,Ostovar,Atomic_Loop_output_Loop_2,"[936, 2028]","[999, 1999]",0.026165385730564594

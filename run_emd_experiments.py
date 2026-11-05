@@ -53,11 +53,29 @@ import emd_complexity_approach as eca
 # ─── Inputs of the run ────────────────────────────────────────────────────────
 # Note: RUN_NAME is used as the output folder name, so it can only contain letters, digits, '_' and '-'.
 
-RUN_NAME = "emd_complexity_ALL_MEASURES"
-FEATURE_MODE = "complexity"       # "standard" | "combined" | "complexity"
+#MEASURES =  ALL_MEASURES # or ALL_MEASURES; not used for "standard"
+MEASURES = [
+    "avg_affinity",
+    "deviation_from_random",
+    "enriched_normalized_variant_entropy",
+    "estimate_asymptotic_simpson_diversity_abundance_n_gram_species_n2",
+    "estimate_asymptotic_simpson_diversity_abundance_n_gram_species_n3",
+    "exp_shannon_entropy_abundance_n_gram_species_n2",
+    "exp_shannon_entropy_abundance_n_gram_species_n3",
+    "lempel_ziv_complexity",
+    "normalized_variant_entropy",
+    "num_events",
+    "simpson_diversity_abundance_n_gram_species_n2",
+    "simpson_diversity_abundance_n_gram_species_n3",
+    "species_richness_abundance_n_gram_species_n3",
+    "trace_length_average",
+    "variant_entropy",
+]
+
+RUN_NAME = "emd_combined_CRE"
+FEATURE_MODE = "combined"       # "standard" | "combined" | "complexity"
 FUSION = "weighted_concat"      # "weighted_concat" | "concat" (only for "combined") 
 ALPHA = 0.5                     # weight of the complexity part in [0, 1] (only for "combined") A higher ALPHA gives the complexity part more weight and the EMD part less
-MEASURES =  ALL_MEASURES # ["species_richness_abundance_n_gram_species_n3"]  # or ALL_MEASURES; not used for "standard"
 WINDOW_SIZE = 300               # reference: 100 | 200 | 300 | 400 | 500 | 600
 STEP_SIZE = 2                   # reference: 2
 LAG_WINDOW = 200

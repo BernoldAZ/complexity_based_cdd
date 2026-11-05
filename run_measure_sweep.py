@@ -1,7 +1,8 @@
 # Small script to run the baselines in "complexity" feature mode, once per complexity measure, and to
 # summarize the results of each approach once its runs are done.
-# The settings of each baseline (PEN, N_WINDOWS, WINDOW_SIZE, ...) are imported from run_cluster_experiments.py
-# and run_emd_experiments.py, so edit them there. Then run from the repo root:  python run_measure_sweep.py
+# The settings of each baseline (PEN, N_WINDOWS, WINDOW_SIZE, ...) are imported from run_cluster_experiments.py,
+# run_emd_experiments.py, run_bose_experiments.py and run_adwinj_experiments.py, so edit them there (their MODE and
+# MEASURES are ignored here). Then run from the repo root:  python run_measure_sweep.py
 #
 # With Docker (from the repo root, in PowerShell):
 #   docker run --rm -v "${PWD}:/workspace" cbcdd-image python run_measure_sweep.py
@@ -27,12 +28,14 @@ import re
 
 import pandas as pd
 
+import run_adwinj_experiments as raj
+import run_bose_experiments as rbe
 import run_cluster_experiments as rce
 import run_emd_experiments as rem
 from analyze_results import collect_table, heatmap
 from constants import ALL_MEASURES
 
-APPROACHES = ["vc", "emd"]      # keys of RUNNERS
+APPROACHES = ["bose", "adwinj"]  # ["vc", "emd", "bose", "adwinj"]  keys of RUNNERS
 MEASURES_TO_RUN = ALL_MEASURES  # or e.g. ["num_event_types", "num_events"] for a test
 EVALUATE_NOISY = False
 F1_THRESHOLD = 0.80
@@ -52,7 +55,15 @@ def run_emd(name, measure, out_root):
             out_root=out_root, evaluate_noisy=EVALUATE_NOISY)
 
 
-RUNNERS = {"vc": run_vc, "emd": run_emd}
+def run_bose(name, measure, out_root):
+    rbe.run(name, "complexity", [measure], out_root, evaluate_noisy=EVALUATE_NOISY)
+
+
+def run_adwinj(name, measure, out_root):
+    raj.run(name, "complexity", [measure], out_root, evaluate_noisy=EVALUATE_NOISY)
+
+
+RUNNERS = {"vc": run_vc, "emd": run_emd, "bose": run_bose, "adwinj": run_adwinj}
 
 
 def run_name_for(measure):

@@ -1,0 +1,2 @@
+Algorithm,F1-Score,Precision,Recall,Latency,Latency (Score),Versatility,Scalability,Milliseconds per Case,Milliseconds per Event,Parameter Sensitivity (IQR),Robustness
+coverage_alternative_n_gram_species_n3,0.48695652173913045,0.37333333333333335,0.7,61.142857142857146,0.6942857142857143,0.6458333333333333,00:00:00,0.025759203197406422,0.0009880265017319604,0.0,1.1893702398096866

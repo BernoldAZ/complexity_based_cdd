@@ -1,34 +1,34 @@
 {
     "shorter_names": {
-        "cluster_combined_1": "VC_combined_1",
-        "cluster_combined_1_weighted": "VC_combined_1W",
-        "cluster_combined_all": "VC_combined_All",
-        "cluster_combined_all_weighted": "VC_combined_AllW",
-        "cluster_complexity_1": "VC_complexity_1",
-        "cluster_complexity_all": "VC_complexity_All",
-        "cluster_similarity": "VC_similarity"
+        "VC_standard": "VC_standard",
+        "adwin_combined_SM": "ADWIN_combined_SM",
+        "adwin_standard": "ADWIN_standard",
+        "bose_combined_SM": "Bose_combined_SM",
+        "bose_standard": "Bose_standard",
+        "emd_combined_CRE": "EMD_combined_CRE",
+        "emd_standard": "EMD_standard"
     },
     "used_parameters": {
-        "VC_combined_1": [
+        "VC_standard": [
             "Threshold"
         ],
-        "VC_combined_1W": [
-            "Threshold"
+        "ADWIN_combined_SM": [
+            "Algorithm"
         ],
-        "VC_combined_All": [
-            "Threshold"
+        "ADWIN_standard": [
+            "Algorithm"
         ],
-        "VC_combined_AllW": [
-            "Threshold"
+        "Bose_combined_SM": [
+            "Algorithm"
         ],
-        "VC_complexity_1": [
-            "Threshold"
+        "Bose_standard": [
+            "Algorithm"
         ],
-        "VC_complexity_All": [
-            "Threshold"
+        "EMD_combined_CRE": [
+            "Window Size"
         ],
-        "VC_similarity": [
-            "Threshold"
+        "EMD_standard": [
+            "Window Size"
         ]
     },
     "colors": [

@@ -1,0 +1,2 @@
+Algorithm,F1-Score,Precision,Recall,Latency,Latency (Score),Versatility,Scalability,Milliseconds per Case,Milliseconds per Event,Parameter Sensitivity (IQR),Robustness
+lempel_ziv_complexity,0.5352112676056339,0.6129032258064516,0.475,80.0,0.6,0.41666666666666663,00:00:00,0.014658438483560724,0.000562242767556718,0.0,1.104118814217259

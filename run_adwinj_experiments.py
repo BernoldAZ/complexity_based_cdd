@@ -1,5 +1,6 @@
 # Runs ADWIN/J (Martjushev et al.), the complexity measures with the same ADWIN algorithm, or both combined
 # on the CDRIFT logs, evaluated with run_approach.py. Edit the settings below, then run:  python run_adwinj_experiments.py
+#   docker run --rm -v "${PWD}:/workspace" cbcdd-image python run_adwinj_experiments.py
 #
 # MODE: "adwin" (J series per activity pair, over traces), "complexity" (one series per measure, over windows,
 #       window sizes counted in windows) or "combined" (both detectors run separately, change points merged).
@@ -17,7 +18,6 @@
 
 import json
 import os
-import re
 import time
 from concurrent.futures import ProcessPoolExecutor, as_completed
 
@@ -32,7 +32,7 @@ from baselines.Adwin_J.martjushev import _extractAllJMeasures, detectChange_AvgS
 
 # ─── Settings ─────────────────────────────────────────────────────────────────
 
-MODE = "adwin"                  # "adwin" | "complexity" | "combined"
+MODE = "combined"                  # "adwin" | "complexity" | "combined"
 COMBINE = "union"               # "union" | "intersection" (only for "combined")
 TEST = "KS"                     # "KS" | "MU"
 
@@ -47,7 +47,11 @@ COMPLEXITY_THRESHOLD = 0.05     # one measure: about 0.01 to 0.05. Many measures
 COMPLEXITY_MIN_WINDOW = 5
 COMPLEXITY_MAX_WINDOW = 20
 COMPLEXITY_STEP = 1
-MEASURES = ["variant_entropy"]  # None = all unique measures
+
+MEASURES = [
+    "species_richness_abundance_n_gram_species_n3"
+] # None = all unique measures
+
 
 MERGE_DISTANCE = 200            # in traces, for "combined"
 N_WINDOWS = ra.DEFAULT_N_WINDOWS
@@ -60,15 +64,8 @@ CACHE_DIR = f"{OUT_ROOT}/_cache"
 
 TESTS = {"KS": stats.ks_2samp, "MU": stats.mannwhitneyu}
 
-tag = [MODE, TEST]
-if MODE != "complexity":
-    tag += [f"th{THRESHOLD}", f"w{MIN_WINDOW}-{MAX_WINDOW}", f"s{STEP}"]
-if MODE != "adwin":
-    tag += [f"cth{COMPLEXITY_THRESHOLD}", f"cw{COMPLEXITY_MIN_WINDOW}-{COMPLEXITY_MAX_WINDOW}",
-            MEASURES[0] if MEASURES and len(MEASURES) == 1 else f"{len(MEASURES) if MEASURES else 'all'}measures"]
-if MODE == "combined":
-    tag.append(COMBINE)
-RUN_NAME = re.sub(r"[^A-Za-z0-9_\-]", "_", "adwinj_" + "_".join(tag))
+MODE_NAME = {"adwin": "standard"}.get(MODE, MODE)
+RUN_NAME = f"adwin_{MODE_NAME}_SM"
 
 
 # Detection
@@ -86,7 +83,7 @@ def j_signals(event_log, label):
     return signals, seconds
 
 
-def detect_one(log, measures):
+def detect_one(log, measures, mode, run_name):
     dataset = log["dataset"]
     name = log["log_filename"].split(".")[0]
     try:
@@ -94,7 +91,7 @@ def detect_one(log, measures):
         if not actual:
             return None
         points_j, points_c, seconds = [], [], 0.0
-        if MODE != "complexity":
+        if mode != "complexity":
             path = f"{DATASETS_PATH}/{dataset}/{log['log_filename']}"
             if not os.path.exists(path):
                 path += ".gz"
@@ -107,12 +104,12 @@ def detect_one(log, measures):
             seconds += time.perf_counter() - start
 
         start = time.perf_counter()
-        if MODE != "adwin":
+        if mode != "adwin":
             folder = ra.find_vector_folder(DATASETS_PATH, dataset, name, N_WINDOWS[dataset])
             Z, windows_traces = ra.load_standardized_matrix(folder, name, measures)
             with open(f"{folder}/{name}_borders.json") as f:
                 borders = json.load(f)
-            if MODE == "combined" and windows_traces != n_traces:
+            if mode == "combined" and windows_traces != n_traces:
                 raise ValueError(f"log has {n_traces} traces, the complexity windows cover {windows_traces}")
             n_traces = windows_traces
             columns = np.flatnonzero(Z.std(axis=0) > 1e-10)
@@ -122,9 +119,9 @@ def detect_one(log, measures):
                                                      show_progress_bar=False)
                 points_c = [borders[min(max(int(w), 0), len(borders) - 1)][1] for w in found]
 
-        if MODE == "adwin":
+        if mode == "adwin":
             points = points_j
-        elif MODE == "complexity":
+        elif mode == "complexity":
             points = points_c
         elif COMBINE == "union":
             points = points_j + [c for c in points_c if all(abs(c - j) > MERGE_DISTANCE for j in points_j)]
@@ -136,12 +133,13 @@ def detect_one(log, measures):
         print(f"[ERROR] {dataset}/{name}: {e!r}", flush=True)
         return None
     return {
-        "Algorithm": RUN_NAME,
+        "Algorithm": run_name,
         "Log Source": dataset,
         "Log": name,
         "Detected Changepoints": detected,
         "Actual Changepoints for Log": actual,
         "Duration (Seconds)": duration,
+        "Duration": time.strftime("%H:%M:%S", time.gmtime(duration)),
     }
 
 
@@ -156,32 +154,34 @@ def is_atomic(log):
 
 # Run
 
-if __name__ == "__main__":
-    assert MODE in ("adwin", "complexity", "combined") and TEST in TESTS and COMBINE in ("union", "intersection")
+def run(run_name, mode, measures, out_root, evaluate_noisy=EVALUATE_NOISY):
+    """Runs one configuration (mode, measures; the other settings come from the variables above) and evaluates it."""
+    assert mode in ("adwin", "complexity", "combined") and TEST in TESTS and COMBINE in ("union", "intersection")
 
     logs = [log for log in ra.list_logs(DATASETS_PATH) if is_atomic(log)]
-    measures = None
-    if MODE != "adwin":
-        measures = MEASURES or ra.unique_measure_names(DATASETS_PATH, N_WINDOWS)
+    if mode == "adwin":
+        measures = None
+    else:
+        measures = measures or ra.unique_measure_names(DATASETS_PATH, N_WINDOWS)
         unknown = set(measures) - set(ra.all_measure_names(DATASETS_PATH, N_WINDOWS))
         if unknown:
             raise ValueError(f"Unknown measures: {sorted(unknown)}")
         ra.ensure_complexity_vectors(logs, N_WINDOWS, DATASETS_PATH)
 
-    out_dir = f"{OUT_ROOT}/{RUN_NAME}"
+    out_dir = f"{out_root}/{run_name}"
     os.makedirs(out_dir, exist_ok=True)
     with open(f"{out_dir}/config.json", "w") as f:
-        json.dump({"mode": MODE, "combine": COMBINE, "test": TEST, "threshold": THRESHOLD, "min_window": MIN_WINDOW,
+        json.dump({"mode": mode, "combine": COMBINE, "test": TEST, "threshold": THRESHOLD, "min_window": MIN_WINDOW,
                    "max_window": MAX_WINDOW, "step": STEP, "measure_window": MEASURE_WINDOW,
                    "complexity_threshold": COMPLEXITY_THRESHOLD, "complexity_min_window": COMPLEXITY_MIN_WINDOW,
                    "complexity_max_window": COMPLEXITY_MAX_WINDOW, "complexity_step": COMPLEXITY_STEP,
                    "measures": measures, "merge_distance": MERGE_DISTANCE, "n_windows": N_WINDOWS,
-                   "lag_window": LAG_WINDOW, "evaluate_noisy": EVALUATE_NOISY}, f, indent=2)
+                   "lag_window": LAG_WINDOW, "evaluate_noisy": evaluate_noisy}, f, indent=2)
 
-    print(f"{RUN_NAME}: {len(logs)} logs", flush=True)
+    print(f"{run_name}: {len(logs)} logs", flush=True)
     rows = []
     with ProcessPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        futures = [executor.submit(detect_one, log, measures) for log in logs]
+        futures = [executor.submit(detect_one, log, measures, mode, run_name) for log in logs]
         for i, future in enumerate(as_completed(futures), 1):
             row = future.result()
             if row is not None:
@@ -191,10 +191,14 @@ if __name__ == "__main__":
     detections = pd.DataFrame(rows)
     detections.to_csv(f"{out_dir}/detections.csv", index=False)
 
-    results = ra.evaluate(detections, RUN_NAME, LAG_WINDOW, DATASETS_PATH, out_dir, EVALUATE_NOISY)
+    results = ra.evaluate(detections, run_name, LAG_WINDOW, DATASETS_PATH, out_dir, evaluate_noisy)
     excluded = ("Versatility per Change Pattern", "Radar Chart", "Versatility CSV", "Versatility by Noise CSV",
                 "Evaluation by Noise CSV")
     pd.DataFrame([{k: v for k, v in results.items() if k not in excluded}]).to_csv(
         f"{out_dir}/evaluation_measures.csv", index=False)
-    for key, value in results.items():
+    return results
+
+
+if __name__ == "__main__":
+    for key, value in run(RUN_NAME, MODE, MEASURES, OUT_ROOT).items():
         print(f"{key}: {value}")

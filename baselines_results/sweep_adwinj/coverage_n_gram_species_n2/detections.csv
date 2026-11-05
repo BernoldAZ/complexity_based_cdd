@@ -1,0 +1,91 @@
+Algorithm,Log Source,Log,Detected Changepoints,Actual Changepoints for Log,Duration (Seconds)
+coverage_n_gram_species_n2,Bose,bose_log,[1185],"[1199, 2399, 3599, 4799]",0.02793559618294239
+coverage_n_gram_species_n2,Ostovar,Atomic_Frequency_output_Frequency_2,"[780, 1872]","[999, 1999]",0.017214602790772915
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise10_1000_cf,"[110, 530]",[499],0.03148823790252209
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise10_1000_sw,[],[499],0.032561007887125015
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise5_1000_re,[],[499],0.03274161834269762
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise5_1000_pm,[160],[499],0.03179651964455843
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise15_1000_lp,[],[499],0.0331197427585721
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise5_1000_pl,[],[499],0.03170740231871605
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise0_1000_cd,[],[499],0.028546642512083054
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise20_1000_cd,"[60, 280]",[499],0.03221424389630556
+coverage_n_gram_species_n2,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval_5,"[1170, 1833]","[999, 1999]",0.02034575119614601
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise10_1000_cd,[770],[499],0.03456106781959534
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise10_1000_pl,[],[499],0.033320117741823196
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise0_1000_rp,[],[499],0.03413950279355049
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise15_1000_cp,[],[499],0.03333827666938305
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise0_1000_cf,"[130, 630]",[499],0.03552118316292763
+coverage_n_gram_species_n2,Ostovar,Atomic_SerialMove_output_SerialMove_5,[468],"[999, 1999]",0.01963245589286089
+coverage_n_gram_species_n2,Ostovar,Atomic_Skip_output_Skip_2,[624],"[999, 1999]",0.02078638132661581
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise20_1000_rp,[],[499],0.033750553615391254
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise15_1000_pm,[],[499],0.035799991339445114
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise10_1000_rp,[],[499],0.03451518248766661
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise5_1000_rp,[530],[499],0.032480898313224316
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise10_1000_lp,[650],[499],0.037100305780768394
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise5_1000_cp,[],[499],0.03524963837116957
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise20_1000_pm,[],[499],0.03243808634579182
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise0_1000_lp,[],[499],0.033108427189290524
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise15_1000_re,[700],[499],0.037848799489438534
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise20_1000_cb,[590],[499],0.03137872740626335
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise20_1000_sw,[320],[499],0.036843148060142994
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise10_1000_cp,[],[499],0.033468532375991344
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise20_1000_pl,[],[499],0.03356924466788769
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise0_1000_sw,[],[499],0.03550162725150585
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise20_1000_re,[530],[499],0.03348194248974323
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise10_1000_re,[530],[499],0.03392383176833391
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise0_1000_re,[],[499],0.03653277177363634
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise20_1000_lp,[],[499],0.03745635878294706
+coverage_n_gram_species_n2,Ostovar,Atomic_Swap_output_Swap,[],"[999, 1999]",0.023115746676921844
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise10_1000_pm,[],[499],0.033162555657327175
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise0_1000_pm,[150],[499],0.03577917814254761
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise10_1000_cb,[],[499],0.03253537602722645
+coverage_n_gram_species_n2,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval,[780],"[999, 1999]",0.024282381869852543
+coverage_n_gram_species_n2,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence_2,[507],"[999, 1999]",0.02425710018724203
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise5_1000_sw,[],[499],0.03569613676518202
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise0_1000_pl,[],[499],0.039699397049844265
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise15_1000_rp,[],[499],0.03321018721908331
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise15_1000_cb,[],[499],0.03402852360159159
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise20_1000_cf,[170],[499],0.03243152145296335
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise15_1000_cf,[],[499],0.03421297576278448
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise15_1000_sw,[780],[499],0.03985821735113859
+coverage_n_gram_species_n2,Ostovar,Atomic_SerialRemoval_output_SerialRemoval_2,"[507, 1365]","[999, 1999]",0.0234797615557909
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise15_1000_cd,[130],[499],0.03135483991354704
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise5_1000_cd,[],[499],0.03829871956259012
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise5_1000_cb,[],[499],0.03282605856657028
+coverage_n_gram_species_n2,Ostovar,Atomic_Loop_output_Loop_5,"[351, 1092, 1755]","[999, 1999]",0.02106386423110962
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise0_1000_cb,[],[499],0.030751128681004047
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise15_1000_pl,[50],[499],0.03317959699779749
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise0_1000_cp,[],[499],0.031208102591335773
+coverage_n_gram_species_n2,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence_5,"[780, 1794]","[999, 1999]",0.02400196809321642
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise20_1000_cp,"[300, 540]",[499],0.0338958939537406
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise5_1000_lp,[],[499],0.03209362830966711
+coverage_n_gram_species_n2,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval_5,[],"[999, 1999]",0.02107112668454647
+coverage_n_gram_species_n2,Ceravolo,sudden_trace_noise5_1000_cf,[],[499],0.038543655537068844
+coverage_n_gram_species_n2,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence,[],"[999, 1999]",0.014499851502478123
+coverage_n_gram_species_n2,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence_2,"[858, 1794]","[999, 1999]",0.025744939222931862
+coverage_n_gram_species_n2,Ostovar,Atomic_Frequency_output_Frequency_5,"[780, 1872]","[999, 1999]",0.022453715093433857
+coverage_n_gram_species_n2,Ostovar,Atomic_ConditionalMove_output_ConditionalMove,[741],"[999, 1999]",0.02298074122518301
+coverage_n_gram_species_n2,Ostovar,Atomic_ParallelMove_output_ParallelMove_2,[1755],"[999, 1999]",0.016079184599220753
+coverage_n_gram_species_n2,Ostovar,Atomic_ParallelMove_output_ParallelMove_5,"[1014, 2028]","[999, 1999]",0.01875433512032032
+coverage_n_gram_species_n2,Ostovar,Atomic_Substitute_output_Substitute_5,"[1014, 2028]","[999, 1999]",0.030743933282792568
+coverage_n_gram_species_n2,Ostovar,Atomic_Skip_output_Skip_5,"[624, 1638]","[999, 1999]",0.024990228936076164
+coverage_n_gram_species_n2,Ostovar,Atomic_SerialRemoval_output_SerialRemoval_5,"[507, 1521]","[999, 1999]",0.024040590040385723
+coverage_n_gram_species_n2,Ostovar,Atomic_Swap_output_Swap_2,"[234, 1911]","[999, 1999]",0.02426967117935419
+coverage_n_gram_species_n2,Ostovar,Atomic_SerialMove_output_SerialMove,[],"[999, 1999]",0.02512886468321085
+coverage_n_gram_species_n2,Ostovar,Atomic_ConditionalMove_output_ConditionalMove_5,"[741, 1794]","[999, 1999]",0.02691856026649475
+coverage_n_gram_species_n2,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence,[2067],"[999, 1999]",0.02402536477893591
+coverage_n_gram_species_n2,Ostovar,Atomic_ParallelMove_output_ParallelMove,[1287],"[999, 1999]",0.024791110306978226
+coverage_n_gram_species_n2,Ostovar,Atomic_Loop_output_Loop_2,[1170],"[999, 1999]",0.022385758347809315
+coverage_n_gram_species_n2,Ostovar,Atomic_Frequency_output_Frequency,[],"[999, 1999]",0.021437376737594604
+coverage_n_gram_species_n2,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval_2,[],"[999, 1999]",0.024246414192020893
+coverage_n_gram_species_n2,Ostovar,Atomic_ConditionalMove_output_ConditionalMove_2,[2145],"[999, 1999]",0.023239783942699432
+coverage_n_gram_species_n2,Ostovar,Atomic_Loop_output_Loop,[2184],"[999, 1999]",0.02201804146170616
+coverage_n_gram_species_n2,Ostovar,Atomic_Substitute_output_Substitute,[],"[999, 1999]",0.02308906614780426
+coverage_n_gram_species_n2,Ostovar,Atomic_Swap_output_Swap_5,"[858, 1521]","[999, 1999]",0.02682315744459629
+coverage_n_gram_species_n2,Ostovar,Atomic_Skip_output_Skip,[],"[999, 1999]",0.0241484260186553
+coverage_n_gram_species_n2,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence_5,"[819, 1560]","[999, 1999]",0.02008614782243967
+coverage_n_gram_species_n2,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval_2,"[1209, 2028]","[999, 1999]",0.022945611737668514
+coverage_n_gram_species_n2,Ostovar,Atomic_SerialRemoval_output_SerialRemoval,[],"[999, 1999]",0.021045494824647903
+coverage_n_gram_species_n2,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval,[],"[999, 1999]",0.024819047190248966
+coverage_n_gram_species_n2,Ostovar,Atomic_SerialMove_output_SerialMove_2,[858],"[999, 1999]",0.023640954867005348
+coverage_n_gram_species_n2,Ostovar,Atomic_Substitute_output_Substitute_2,[780],"[999, 1999]",0.029592941515147686

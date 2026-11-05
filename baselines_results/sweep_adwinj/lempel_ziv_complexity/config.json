@@ -1,0 +1,25 @@
+{
+  "mode": "complexity",
+  "combine": "union",
+  "test": "KS",
+  "threshold": 0.4,
+  "min_window": 100,
+  "max_window": 400,
+  "step": 50,
+  "measure_window": null,
+  "complexity_threshold": 0.05,
+  "complexity_min_window": 5,
+  "complexity_max_window": 20,
+  "complexity_step": 1,
+  "measures": [
+    "lempel_ziv_complexity"
+  ],
+  "merge_distance": 200,
+  "n_windows": {
+    "Bose": 75,
+    "Ceravolo": 100,
+    "Ostovar": 75
+  },
+  "lag_window": 200,
+  "evaluate_noisy": false
+}

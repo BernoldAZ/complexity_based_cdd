@@ -2,6 +2,7 @@
 # on the CDRIFT logs, evaluated with the same framework as run_approach.py.
 # Edit the variables below, then run from the repo root:
 #   python run_bose_experiments.py
+#   docker run --rm -v "${PWD}:/workspace" cbcdd-image python run_bose_experiments.py
 #
 # Modes:
 #   "bose"       – original Bose approach (J-measure or window count)
@@ -43,8 +44,9 @@ from baselines.Bose_J.bose import (
 
 # Experiment settings
 
-MODE = "bose"                 # "bose" | "complexity" | "combined"
-RUN_NAME = "bose_" + MODE
+MODE = "combined"                 # "bose" | "complexity" | "combined"
+MODE_NAME = {"bose": "standard"}.get(MODE, MODE)
+RUN_NAME = f"bose_{MODE_NAME}_SM"
 
 TEST = "KS"                   # "KS" | "MU"
 BOSE_MEASURE = "J"             # "J" | "WC"
@@ -53,7 +55,7 @@ BOSE_STEP = 2
 MEASURE_WINDOW = None
 
 COMPLEXITY_WINDOW = 5
-MEASURES = ["variant_entropy"]  # None = all unique measures
+MEASURES = ["num_ties_in_transition_matrix", "species_richness_abundance_n_gram_species_n2"]  # None = all unique measures 	num_ties_in_transition_matrix; species_richness_abundance_n_gram_species_n2
 ALPHA = 0.5                   # complexity weight in combined mode
 
 N_WINDOWS = ra.DEFAULT_N_WINDOWS
@@ -103,7 +105,7 @@ def complexity_pvalues(Z, borders, n_traces):
     return np.interp(grid, starts, p)
  
  
-def detect_one(log, measures):
+def detect_one(log, measures, mode, run_name):
     dataset = log["dataset"]
     name = log["log_filename"].split(".")[0]
     try:
@@ -111,7 +113,7 @@ def detect_one(log, measures):
         if not actual:
             return None
         p_bose, bose_seconds = None, 0.0
-        if MODE != "complexity":
+        if mode != "complexity":
             path = f"{DATASETS_PATH}/{dataset}/{log['log_filename']}"
             if not os.path.exists(path):
                 path += ".gz"
@@ -120,19 +122,19 @@ def detect_one(log, measures):
             p_bose, bose_seconds = bose_pvalues(event_log, f"{dataset}__{name}")
  
         start = time.perf_counter()
-        if MODE != "bose":
+        if mode != "bose":
             folder = ra.find_vector_folder(DATASETS_PATH, dataset, name, N_WINDOWS[dataset])
             Z, windows_traces = ra.load_standardized_matrix(folder, name, measures)
             with open(f"{folder}/{name}_borders.json") as f:
                 borders = json.load(f)
-            if MODE == "combined" and windows_traces != n_traces:
+            if mode == "combined" and windows_traces != n_traces:
                 raise ValueError(f"log has {n_traces} traces, the complexity windows cover {windows_traces}")
             n_traces = windows_traces
             p_complexity = complexity_pvalues(Z, borders, n_traces)
  
-        if MODE == "bose":
+        if mode == "bose":
             p = p_bose
-        elif MODE == "complexity":
+        elif mode == "complexity":
             p = p_complexity
         else:
             p = (1 - ALPHA) * p_bose + ALPHA * p_complexity
@@ -143,12 +145,13 @@ def detect_one(log, measures):
         print(f"[ERROR] {dataset}/{name}: {e!r}", flush=True)
         return None
     return {
-        "Algorithm": RUN_NAME,
+        "Algorithm": run_name,
         "Log Source": dataset,
         "Log": name,
         "Detected Changepoints": detected,
         "Actual Changepoints for Log": actual,
         "Duration (Seconds)": duration,
+        "Duration": time.strftime("%H:%M:%S", time.gmtime(duration)),
     }
  
  
@@ -164,44 +167,50 @@ def is_atomic(log):
 # Run
  
 
-if __name__ == "__main__":
-    assert MODE in ("bose", "complexity", "combined") and TEST in TESTS and 0 <= ALPHA <= 1
- 
+def run(run_name, mode, measures, out_root, evaluate_noisy=EVALUATE_NOISY):
+    """Runs one configuration (mode, measures; the other settings come from the variables above) and evaluates it."""
+    assert mode in ("bose", "complexity", "combined") and TEST in TESTS and 0 <= ALPHA <= 1
+
     logs = [log for log in ra.list_logs(DATASETS_PATH) if is_atomic(log)]
-    measures = None
-    if MODE != "bose":
-        measures = MEASURES or ra.unique_measure_names(DATASETS_PATH, N_WINDOWS)
+    if mode == "bose":
+        measures = None
+    else:
+        measures = measures or ra.unique_measure_names(DATASETS_PATH, N_WINDOWS)
         unknown = set(measures) - set(ra.all_measure_names(DATASETS_PATH, N_WINDOWS))
         if unknown:
             raise ValueError(f"Unknown measures: {sorted(unknown)}")
         ra.ensure_complexity_vectors(logs, N_WINDOWS, DATASETS_PATH)
- 
-    out_dir = f"{OUT_ROOT}/{RUN_NAME}"
+
+    out_dir = f"{out_root}/{run_name}"
     os.makedirs(out_dir, exist_ok=True)
     with open(f"{out_dir}/config.json", "w") as f:
-        json.dump({"mode": MODE, "test": TEST, "bose_measure": BOSE_MEASURE, "bose_window": BOSE_WINDOW,
+        json.dump({"mode": mode, "test": TEST, "bose_measure": BOSE_MEASURE, "bose_window": BOSE_WINDOW,
                    "bose_step": BOSE_STEP, "measure_window": MEASURE_WINDOW, "complexity_window": COMPLEXITY_WINDOW,
                    "measures": measures, "alpha": ALPHA, "n_windows": N_WINDOWS,
-                   "lag_window": LAG_WINDOW, "evaluate_noisy": EVALUATE_NOISY}, f, indent=2)
- 
-    print(f"{RUN_NAME}: {len(logs)} logs", flush=True)
+                   "lag_window": LAG_WINDOW, "evaluate_noisy": evaluate_noisy}, f, indent=2)
+
+    print(f"{run_name}: {len(logs)} logs", flush=True)
     rows = []
     with ProcessPoolExecutor(max_workers=None) as executor:
-        futures = [executor.submit(detect_one, log, measures) for log in logs]
+        futures = [executor.submit(detect_one, log, measures, mode, run_name) for log in logs]
         for i, future in enumerate(as_completed(futures), 1):
             row = future.result()
             if row is not None:
                 rows.append(row)
                 print(f"[{i}/{len(logs)}] {row['Log Source']}/{row['Log']} {row['Duration (Seconds)']:.0f}s", flush=True)
- 
+
     detections = pd.DataFrame(rows)
     detections.to_csv(f"{out_dir}/detections.csv", index=False)
- 
-    results = ra.evaluate(detections, RUN_NAME, LAG_WINDOW, DATASETS_PATH, out_dir, EVALUATE_NOISY)
+
+    results = ra.evaluate(detections, run_name, LAG_WINDOW, DATASETS_PATH, out_dir, evaluate_noisy)
     excluded = ("Versatility per Change Pattern", "Radar Chart", "Versatility CSV", "Versatility by Noise CSV",
                 "Evaluation by Noise CSV")
     pd.DataFrame([{k: v for k, v in results.items() if k not in excluded}]).to_csv(
         f"{out_dir}/evaluation_measures.csv", index=False)
-    for key, value in results.items():
+    return results
+
+
+if __name__ == "__main__":
+    for key, value in run(RUN_NAME, MODE, MEASURES, OUT_ROOT).items():
         print(f"{key}: {value}")
  

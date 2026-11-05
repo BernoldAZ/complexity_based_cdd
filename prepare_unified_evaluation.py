@@ -18,9 +18,12 @@ CONFIG_OUT = Path("evaluation_results/unified_framework_config.json")
 # Runs that don't exist in baselines_results/ are simply not picked up.
 # Cluster runs: "Window Size" is left out because it differs per dataset within one run, so grouping by it
 # would split the logs of a run. EMD runs: one window size per run, and they have no "Threshold" column.
+# Bose and ADWIN runs: one setting per run and no parameter columns, so they are grouped by "Algorithm".
 APPROACHES = {
-    "cluster_": ("VC_", ["Threshold"]),
+    "VC_": ("VC_", ["Threshold"]),
     "emd_": ("EMD_", ["Window Size"]),
+    "bose_": ("Bose_", ["Algorithm"]),
+    "adwin_": ("ADWIN_", ["Algorithm"]),
 }
 
 COLORS = ["#DB444B", "#9A607F", "#006BA2", "#3EBCD2", "#379A8B", "#EBB434", "#B4BA39", "#D1B07C", "#8E44AD", "#FF7F50"]

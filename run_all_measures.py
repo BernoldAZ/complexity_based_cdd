@@ -24,9 +24,9 @@ import re
 from run_approach import run
 from run_experiments import ALL_MEASURES, PEN, N_WINDOWS, LAG_WINDOW, DATASETS_PATH, OUT_ROOT
 
-MEASURES_TO_RUN = ALL_MEASURES  # or e.g. ["num_event_types", "num_events"] for a test
+MEASURES_TO_RUN = ["num_event_types", "num_events"]  # or e.g. ["num_event_types", "num_events"] for a test
 PREFIX = "run"
-EVALUATE_NOISY = True
+EVALUATE_NOISY = False  # if True, run() also saves versatility_per_change_pattern_by_noise.csv
 
 
 def run_name_for(measure):
@@ -34,7 +34,7 @@ def run_name_for(measure):
 
 
 def is_done(name):
-    needed = ["versatility_per_change_pattern.csv"]
+    needed = ["versatility_per_change_pattern.csv", "evaluation_measures.csv", "radar_chart_precision.png", "radar_chart_recall.png", "radar_chart_f1.png"]
     if EVALUATE_NOISY:
         needed += ["versatility_per_change_pattern_by_noise.csv", "evaluation_measures_by_noise.csv"]
     return all(os.path.exists(f"{OUT_ROOT}/{name}/{f}") for f in needed)

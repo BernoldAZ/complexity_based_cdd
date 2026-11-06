@@ -2,6 +2,7 @@
 # Run patched EMD + complexity experiments for CRE, PRE and CF.
 # Falls back to lower F1 thresholds when a pattern has no measures.
 # Runs multiple alpha values and skips already completed experiments.
+#   docker run --rm -v "${PWD}:/workspace" cbcdd-image python run_emd_patched_experiments.py
 
 import os
 import re

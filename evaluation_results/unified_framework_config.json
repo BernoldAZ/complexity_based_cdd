@@ -1,17 +1,14 @@
 {
     "shorter_names": {
-        "VC_standard": "VC_standard",
         "adwin_combined_SM": "ADWIN_combined_SM",
         "adwin_standard": "ADWIN_standard",
         "bose_combined_SM": "Bose_combined_SM",
         "bose_standard": "Bose_standard",
         "emd_combined_CRE": "EMD_combined_CRE",
-        "emd_standard": "EMD_standard"
+        "emd_standard": "EMD_standard",
+        "vc_standard": "VC_standard"
     },
     "used_parameters": {
-        "VC_standard": [
-            "Threshold"
-        ],
         "ADWIN_combined_SM": [
             "Algorithm"
         ],
@@ -29,6 +26,9 @@
         ],
         "EMD_standard": [
             "Window Size"
+        ],
+        "VC_standard": [
+            "Threshold"
         ]
     },
     "colors": [

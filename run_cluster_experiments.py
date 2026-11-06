@@ -115,14 +115,16 @@ ALL_MEASURES = [
 # Note: RUN_NAME is used as the output folder name, so it can only contain letters, digits, '_' and '-'.
 # PEN, N_WINDOWS and MIN_CLUSTER_SIZE values are taken from the paper
 
-RUN_NAME = "cluster_combined_all_weighted"
-FEATURE_MODE = "combined"       # "similarity" | "combined" | "complexity"
+FEATURE_MODE = "similarity"       # "similarity" | "combined" | "complexity"
+MODE_NAME = {"similarity": "standard"}.get(FEATURE_MODE, FEATURE_MODE)
+RUN_NAME = f"vc_{MODE_NAME}"
+
 FUSION = "weighted_concat"      # "weighted_concat" | "concat" (only for "combined")
 ALPHA = 0.5                     # weight of the complexity features in [0, 1] (only for "combined")
 MEASURES = ALL_MEASURES # ["species_richness_abundance_n_gram_species_n3"]  # or ALL_MEASURES; not used for "similarity"
 PEN = {"Bose": 3.0, "Ceravolo": 3.0, "Ostovar": 3.0}
-N_WINDOWS = {"Bose": 75, "Ceravolo": 125, "Ostovar": 75}
-MIN_CLUSTER_SIZE = {"Bose": 5, "Ceravolo": 5, "Ostovar": 7}
+N_WINDOWS = {"Bose": 75, "Ceravolo": 75, "Ostovar": 75}
+MIN_CLUSTER_SIZE = {"Bose": 5, "Ceravolo": 5, "Ostovar": 5}
 THRESHOLD = 0.3
 LAG_WINDOW = 200
 EVALUATE_NOISY = False

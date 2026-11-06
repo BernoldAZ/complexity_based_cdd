@@ -43,7 +43,7 @@
 #      and F1 are computed once.
 #   8. Latency on the noiseless logs: mean distance (in traces) between each detected and
 #      matched actual change point.
-#   9. Versatility on the 23 noiseless Ceravolo/Ostovar logs: recall per change pattern, then the
+#   9. Versatility on the 23 noiseless Ceravolo/Ostovar logs: F1-score per change pattern, then the
 #      mean over patterns. Saved as versatility_per_change_pattern.csv and as a radar chart PNG.
 #  10. Scalability on the 90 atomic logs: mean duration, and milliseconds per case / per event
 #      (log lengths are read from the .xes.gz files).
@@ -326,13 +326,15 @@ def calc_versatility(df, lag_window):
     for params, params_group in df.groupby(by=PARAM_COLUMNS):
         recalls = dict()
         for change_pattern, cp_group in params_group.groupby(by="Change Pattern"):
-            TPS = POSITIVES = 0
+            TPS = FPS = POSITIVES = 0
             for _, row in cp_group.iterrows():
-                tp, _ = evaluation.getTP_FP(row["Detected Changepoints"], row["Actual Changepoints for Log"],
+                tp, fp = evaluation.getTP_FP(row["Detected Changepoints"], row["Actual Changepoints for Log"],
                                             lag_window, count_duplicate_detections=COUNT_DUPLICATE_DETECTIONS)
                 TPS += tp
+                FPS += fp
                 POSITIVES += len(row["Actual Changepoints for Log"])
-            recalls[change_pattern] = TPS / POSITIVES if POSITIVES != 0 else np.nan
+            # F1-score per change pattern: 2TP / (2TP+FP+FN) = 2TP / (TP+FP+POSITIVES)
+            recalls[change_pattern] = 2 * TPS / (TPS + FPS + POSITIVES) if POSITIVES != 0 else np.nan
         recalls_per_param[params] = recalls
     best_param = max(recalls_per_param, key=lambda x: np.nanmean(list(recalls_per_param[x].values())))
     versatility = np.nanmean(list(recalls_per_param[best_param].values()))

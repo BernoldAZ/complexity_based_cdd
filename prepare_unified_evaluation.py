@@ -20,7 +20,7 @@ CONFIG_OUT = Path("evaluation_results/unified_framework_config.json")
 # would split the logs of a run. EMD runs: one window size per run, and they have no "Threshold" column.
 # Bose and ADWIN runs: one setting per run and no parameter columns, so they are grouped by "Algorithm".
 APPROACHES = {
-    "VC_": ("VC_", ["Threshold"]),
+    "vc_": ("VC_", ["Threshold"]),
     "emd_": ("EMD_", ["Window Size"]),
     "bose_": ("Bose_", ["Algorithm"]),
     "adwin_": ("ADWIN_", ["Algorithm"]),

@@ -1,5 +1,5 @@
 {
-  "run_name": "VC_standard",
+  "run_name": "vc_standard",
   "approach": "Bernold_similarity",
   "feature_mode": "similarity",
   "fusion": null,
@@ -12,13 +12,13 @@
   },
   "n_windows": {
     "Bose": 75,
-    "Ceravolo": 125,
+    "Ceravolo": 75,
     "Ostovar": 75
   },
   "min_cluster_size": {
     "Bose": 5,
     "Ceravolo": 5,
-    "Ostovar": 7
+    "Ostovar": 5
   },
   "threshold": 0.3,
   "lag_window": 200,

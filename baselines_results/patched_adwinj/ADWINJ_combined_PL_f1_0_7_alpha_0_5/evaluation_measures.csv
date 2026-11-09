@@ -1,0 +1,2 @@
+Algorithm,F1-Score,Precision,Recall,Latency,Latency (Score),Versatility,Scalability,Milliseconds per Case,Milliseconds per Event,Parameter Sensitivity (IQR),Robustness
+ADWINJ_combined_PL_f1_0_7_alpha_0_5,0.782608695652174,0.9310344827586207,0.675,68.37037037037037,0.6581481481481481,0.6875,00:01:21,42.59666580218371,1.6338484686597181,0.0,0.8804653175379544

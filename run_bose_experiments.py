@@ -76,9 +76,6 @@ BOSE_FUNCTIONS = {
 TESTS = {"KS": KSTest_2Sample_SlidingWindow_Step,
         "MU": MannWhitney_U_SlidingWindow_Step}
 
-MODE_NAME = {"bose": "standard"}.get(MODE, MODE)
-RUN_NAME = f"bose_{MODE_NAME}_{BOSE_MEASURE}_SM"
-
 
 # Calculate bose and complexity p-values
 

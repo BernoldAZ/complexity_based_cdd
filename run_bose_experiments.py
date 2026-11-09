@@ -44,18 +44,18 @@ from baselines.Bose_J.bose import (
 
 # Experiment settings
 
-MODE = "combined"                 # "bose" | "complexity" | "combined"
+MODE = "bose"                 # "bose" | "complexity" | "combined"
 MODE_NAME = {"bose": "standard"}.get(MODE, MODE)
-RUN_NAME = f"bose_{MODE_NAME}_SM"
+RUN_NAME = f"bose_wc_{MODE_NAME}"
 
 TEST = "KS"                   # "KS" | "MU"
-BOSE_MEASURE = "J"             # "J" | "WC"
+BOSE_MEASURE = "WC"             # "J" | "WC"
 BOSE_WINDOW = 200
 BOSE_STEP = 2
 MEASURE_WINDOW = None
 
 COMPLEXITY_WINDOW = 5
-MEASURES = ["num_ties_in_transition_matrix", "species_richness_abundance_n_gram_species_n2"]  # None = all unique measures 	num_ties_in_transition_matrix; species_richness_abundance_n_gram_species_n2
+MEASURES = None  # None = all unique measures 	num_ties_in_transition_matrix; species_richness_abundance_n_gram_species_n2
 ALPHA = 0.5                   # complexity weight in combined mode
 
 N_WINDOWS = ra.DEFAULT_N_WINDOWS

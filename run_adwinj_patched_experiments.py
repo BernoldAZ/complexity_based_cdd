@@ -7,8 +7,8 @@ import run_adwinj_experiments as rad
 
 # Settings
 
-SOURCE_DIR = "baselines_results/sweep_adwinj_alpha"
-OUT_ROOT = "baselines_results/patched_adwinj_alpha"
+SOURCE_DIR = "baselines_results/sweep_adwinj"
+OUT_ROOT = "baselines_results/patched_adwinj"
 
 MAX_F1_THRESHOLD = 0.8
 

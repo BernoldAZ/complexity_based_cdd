@@ -163,7 +163,10 @@ def is_atomic(log):
  
  
 # Run
- 
+def _init_worker(alpha):
+    """Initialize worker process with the global ALPHA value."""
+    global ALPHA
+    ALPHA = alpha
 
 def run(run_name, mode, measures, out_root, evaluate_noisy=EVALUATE_NOISY):
     """Runs one configuration (mode, measures; the other settings come from the variables above) and evaluates it."""
@@ -189,7 +192,7 @@ def run(run_name, mode, measures, out_root, evaluate_noisy=EVALUATE_NOISY):
 
     print(f"{run_name}: {len(logs)} logs", flush=True)
     rows = []
-    with ProcessPoolExecutor(max_workers=None) as executor:
+    with ProcessPoolExecutor(max_workers=None, initializer=_init_worker, initargs=(ALPHA,)) as executor:
         futures = [executor.submit(detect_one, log, measures, mode, run_name) for log in logs]
         for i, future in enumerate(as_completed(futures), 1):
             row = future.result()

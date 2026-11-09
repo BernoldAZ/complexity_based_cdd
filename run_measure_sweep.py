@@ -35,7 +35,7 @@ import run_emd_experiments as rem
 from analyze_results import collect_table, heatmap
 from constants import ALL_MEASURES
 
-APPROACHES = ["adwinj"]  # ["vc", "emd", "bose", "adwinj"]  keys of RUNNERS
+APPROACHES = ["bose_wc"]  # ["vc", "emd", "bose", "adwinj"]  keys of RUNNERS
 MEASURES_TO_RUN = ALL_MEASURES  # or e.g. ["num_event_types", "num_events"] for a test
 EVALUATE_NOISY = False
 F1_THRESHOLD = 0.80
@@ -63,7 +63,7 @@ def run_adwinj(name, measure, out_root):
     raj.run(name, "complexity", [measure], out_root, evaluate_noisy=EVALUATE_NOISY)
 
 
-RUNNERS = {"vc": run_vc, "emd": run_emd, "bose": run_bose, "adwinj": run_adwinj}
+RUNNERS = {"vc": run_vc, "emd": run_emd, "bose": run_bose, "bose_wc": run_bose, "adwinj": run_adwinj}
 
 
 def run_name_for(measure):

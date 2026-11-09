@@ -1,4 +1,3 @@
-
 import os
 import re
 import glob
@@ -8,12 +7,12 @@ import run_adwinj_experiments as rad
 
 # Settings
 
-SOURCE_DIR = "baselines_results/sweep_adwinj"
-OUT_ROOT = "baselines_results/patched_adwinj"
+SOURCE_DIR = "baselines_results/sweep_adwinj_alpha"
+OUT_ROOT = "baselines_results/patched_adwinj_alpha"
 
 MAX_F1_THRESHOLD = 0.8
 
-COMPLEXITY_THRESHOLDS = [0.05, 0.1, 0.2, 0.3, 0.4, 0.45]
+ALPHAS = [0.5, 0.3, 0.1, 0.05]
 
 MODE = "combined"
 
@@ -133,8 +132,7 @@ def load_measure_groups(path, f1_threshold):
     return groups
 
 
-def run_experiment(pattern, measures, f1_threshold,
-                   complexity_threshold):
+def run_experiment(pattern, measures, f1_threshold, alpha):
 
     if not measures:
         print(
@@ -145,12 +143,12 @@ def run_experiment(pattern, measures, f1_threshold,
         return
 
     f1_label = str(f1_threshold).replace(".", "_")
-    ct_label = str(complexity_threshold).replace(".", "_")
+    alpha_label = str(alpha).replace(".", "_")
 
     name = (
         f"ADWINJ_combined_{pattern}"
         f"_f1_{f1_label}"
-        f"_ct_{ct_label}"
+        f"_alpha_{alpha_label}"
     )
 
     output_folder = os.path.join(OUT_ROOT, name)
@@ -170,13 +168,10 @@ def run_experiment(pattern, measures, f1_threshold,
     print(f"\n[START] {name}", flush=True)
     print(f"Number of measures: {len(measures)}", flush=True)
     print(f"F1 threshold: {f1_threshold}", flush=True)
-    print(
-        f"Complexity threshold: {complexity_threshold}",
-        flush=True
-    )
+    print(f"Alpha: {alpha}", flush=True)
     print(f"Measures: {measures}", flush=True)
 
-    rad.COMPLEXITY_THRESHOLD = complexity_threshold
+    rad.ALPHA = alpha
 
     rad.run(
         run_name=name,
@@ -191,7 +186,7 @@ def run_experiment(pattern, measures, f1_threshold,
 
 # Main
 
-if __name__ == "__main__":
+def main():
 
     os.makedirs(OUT_ROOT, exist_ok=True)
 
@@ -201,10 +196,8 @@ if __name__ == "__main__":
     for threshold, path in available_csvs:
         print(f"  {threshold}: {path}")
 
-    print("\nComplexity thresholds:")
-    print(COMPLEXITY_THRESHOLDS)
+    print(f"\nAlpha values: {ALPHAS}")
 
-    total_planned = 0
     failed = []
 
     for f1_threshold, csv_path in available_csvs:
@@ -223,43 +216,41 @@ if __name__ == "__main__":
         for pattern, measures in groups.items():
             print(f"{pattern}: {len(measures)} measures")
 
-        for complexity_threshold in COMPLEXITY_THRESHOLDS:
+        for alpha in ALPHAS:
 
             print("\n" + "-" * 60)
-            print(
-                f"COMPLEXITY THRESHOLD = {complexity_threshold}"
-            )
+            print(f"ALPHA = {alpha}")
             print("-" * 60)
 
             for pattern, measures in groups.items():
-
-                if measures:
-                    total_planned += 1
 
                 try:
                     run_experiment(
                         pattern,
                         measures,
                         f1_threshold,
-                        complexity_threshold
+                        alpha
                     )
 
                 except Exception as e:
                     print(
                         f"[FAILED] {pattern}, "
                         f"F1={f1_threshold}, "
-                        f"CT={complexity_threshold}: {e}",
+                        f"alpha={alpha}: {e}",
                         flush=True
                     )
 
                     failed.append(
-                        (pattern, f1_threshold, complexity_threshold)
+                        (pattern, f1_threshold, alpha)
                     )
 
     print("\nAll experiments processed.")
 
     if failed:
         print("\nFailed experiments:")
-        for pattern, f1, ct in failed:
-            print(f"  {pattern}, F1={f1}, CT={ct}")
+        for pattern, f1, alpha in failed:
+            print(f"  {pattern}, F1={f1}, alpha={alpha}")
 
+
+if __name__ == "__main__":
+    main()

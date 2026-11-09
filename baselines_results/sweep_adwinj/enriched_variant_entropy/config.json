@@ -1,25 +1,22 @@
 {
   "mode": "complexity",
-  "combine": "union",
+  "measures": [
+    "enriched_variant_entropy"
+  ],
+  "lag_window": 200,
+  "evaluate_noisy": false,
   "test": "KS",
   "threshold": 0.4,
   "min_window": 100,
   "max_window": 400,
   "step": 50,
   "measure_window": null,
-  "complexity_threshold": 0.05,
-  "complexity_min_window": 5,
-  "complexity_max_window": 20,
-  "complexity_step": 1,
-  "measures": [
-    "enriched_variant_entropy"
-  ],
-  "merge_distance": 200,
+  "alpha": 1.0,
   "n_windows": {
     "Bose": 75,
     "Ceravolo": 100,
     "Ostovar": 75
   },
-  "lag_window": 200,
-  "evaluate_noisy": false
+  "datasets_path": "datasets/cdrift",
+  "cache_dir": "baselines_results/_cache"
 }

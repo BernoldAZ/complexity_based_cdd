@@ -1,91 +1,91 @@
-Algorithm,Log Source,Log,Detected Changepoints,Actual Changepoints for Log,Duration (Seconds)
-avg_affinity,Bose,bose_log,"[2449, 4108]","[1199, 2399, 3599, 4799]",0.019596906378865242
-avg_affinity,Ceravolo,sudden_trace_noise0_1000_cf,[370],[499],0.02289818786084652
-avg_affinity,Ceravolo,sudden_trace_noise15_1000_pm,[560],[499],0.02245846390724182
-avg_affinity,Ceravolo,sudden_trace_noise10_1000_cd,[],[499],0.02639635279774666
-avg_affinity,Ceravolo,sudden_trace_noise5_1000_re,[400],[499],0.02672600746154785
-avg_affinity,Ceravolo,sudden_trace_noise0_1000_re,[500],[499],0.027157209813594818
-avg_affinity,Ceravolo,sudden_trace_noise0_1000_rp,[],[499],0.029565773904323578
-avg_affinity,Ceravolo,sudden_trace_noise20_1000_sw,[60],[499],0.031717389822006226
-avg_affinity,Ceravolo,sudden_trace_noise15_1000_re,[400],[499],0.03139611706137657
-avg_affinity,Ceravolo,sudden_trace_noise10_1000_cf,[700],[499],0.031102223321795464
-avg_affinity,Ceravolo,sudden_trace_noise15_1000_sw,[60],[499],0.030448853969573975
-avg_affinity,Ceravolo,sudden_trace_noise10_1000_re,[],[499],0.024861649610102177
-avg_affinity,Ceravolo,sudden_trace_noise5_1000_cp,[],[499],0.029761401005089283
-avg_affinity,Ceravolo,sudden_trace_noise10_1000_sw,[600],[499],0.033307827077805996
-avg_affinity,Ceravolo,sudden_trace_noise0_1000_pl,[],[499],0.03175740875303745
-avg_affinity,Ceravolo,sudden_trace_noise20_1000_lp,[],[499],0.03161968104541302
-avg_affinity,Ceravolo,sudden_trace_noise20_1000_cd,[560],[499],0.03163532540202141
-avg_affinity,Ceravolo,sudden_trace_noise15_1000_lp,[],[499],0.033727784641087055
-avg_affinity,Ceravolo,sudden_trace_noise10_1000_pl,[],[499],0.03159181401133537
-avg_affinity,Ceravolo,sudden_trace_noise10_1000_lp,[120],[499],0.035420751199126244
-avg_affinity,Ceravolo,sudden_trace_noise15_1000_cp,[],[499],0.033570850268006325
-avg_affinity,Ceravolo,sudden_trace_noise15_1000_cb,[],[499],0.02968625072389841
-avg_affinity,Ceravolo,sudden_trace_noise0_1000_pm,[720],[499],0.0324146905913949
-avg_affinity,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval,"[858, 1950]","[999, 1999]",0.02049961220473051
-avg_affinity,Ceravolo,sudden_trace_noise0_1000_lp,[360],[499],0.031369227916002274
-avg_affinity,Ceravolo,sudden_trace_noise20_1000_re,[],[499],0.03289659786969423
-avg_affinity,Ceravolo,sudden_trace_noise10_1000_rp,[170],[499],0.03564179968088865
-avg_affinity,Ceravolo,sudden_trace_noise5_1000_pm,[720],[499],0.037057213485240936
-avg_affinity,Ceravolo,sudden_trace_noise5_1000_sw,[],[499],0.03261834941804409
-avg_affinity,Ceravolo,sudden_trace_noise5_1000_pl,[],[499],0.03741550073027611
-avg_affinity,Ceravolo,sudden_trace_noise20_1000_pm,[310],[499],0.03117758221924305
-avg_affinity,Ceravolo,sudden_trace_noise10_1000_pm,[330],[499],0.03137069474905729
-avg_affinity,Ceravolo,sudden_trace_noise20_1000_rp,[730],[499],0.037057144567370415
-avg_affinity,Ceravolo,sudden_trace_noise5_1000_cd,[],[499],0.03553556930273771
-avg_affinity,Ceravolo,sudden_trace_noise20_1000_cb,[60],[499],0.0334907416254282
-avg_affinity,Ostovar,Atomic_Frequency_output_Frequency_2,"[351, 975, 1482]","[999, 1999]",0.02296663261950016
-avg_affinity,Ostovar,Atomic_Swap_output_Swap,[],"[999, 1999]",0.024441691115498543
-avg_affinity,Ostovar,Atomic_Swap_output_Swap_5,"[858, 1599, 2262]","[999, 1999]",0.017044956795871258
-avg_affinity,Ceravolo,sudden_trace_noise0_1000_cd,[600],[499],0.03346685692667961
-avg_affinity,Ceravolo,sudden_trace_noise15_1000_rp,[],[499],0.029693654738366604
-avg_affinity,Ostovar,Atomic_Skip_output_Skip_2,"[936, 1989]","[999, 1999]",0.023648149333894253
-avg_affinity,Ceravolo,sudden_trace_noise15_1000_cd,[],[499],0.02840234898030758
-avg_affinity,Ceravolo,sudden_trace_noise20_1000_pl,[],[499],0.038475560024380684
-avg_affinity,Ceravolo,sudden_trace_noise5_1000_rp,[],[499],0.03597082383930683
-avg_affinity,Ceravolo,sudden_trace_noise5_1000_cb,[],[499],0.02990164142102003
-avg_affinity,Ostovar,Atomic_Loop_output_Loop_2,[1794],"[999, 1999]",0.018997243605554104
-avg_affinity,Ostovar,Atomic_SerialMove_output_SerialMove_5,[429],"[999, 1999]",0.024233562871813774
-avg_affinity,Ceravolo,sudden_trace_noise20_1000_cp,[360],[499],0.029685622081160545
-avg_affinity,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence_5,"[936, 1911]","[999, 1999]",0.02227596752345562
-avg_affinity,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval_5,"[858, 1950]","[999, 1999]",0.022537874057888985
-avg_affinity,Ceravolo,sudden_trace_noise10_1000_cp,"[330, 580]",[499],0.036765134893357754
-avg_affinity,Ceravolo,sudden_trace_noise0_1000_cb,[600],[499],0.030350446701049805
-avg_affinity,Ceravolo,sudden_trace_noise5_1000_cf,[],[499],0.03528364934027195
-avg_affinity,Ceravolo,sudden_trace_noise15_1000_cf,"[500, 700]",[499],0.03764081094413996
-avg_affinity,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence_2,[546],"[999, 1999]",0.025211975909769535
-avg_affinity,Ceravolo,sudden_trace_noise20_1000_cf,[350],[499],0.03419809974730015
-avg_affinity,Ostovar,Atomic_SerialRemoval_output_SerialRemoval_2,"[975, 1872]","[999, 1999]",0.02451900579035282
-avg_affinity,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval_5,"[858, 1560]","[999, 1999]",0.029515836387872696
-avg_affinity,Ceravolo,sudden_trace_noise10_1000_cb,[310],[499],0.036040736362338066
-avg_affinity,Ceravolo,sudden_trace_noise0_1000_sw,[770],[499],0.04230142291635275
-avg_affinity,Ostovar,Atomic_Swap_output_Swap_2,"[195, 663, 1287, 2184]","[999, 1999]",0.02181787509471178
-avg_affinity,Ostovar,Atomic_ConditionalMove_output_ConditionalMove_5,[507],"[999, 1999]",0.023421582765877247
-avg_affinity,Ceravolo,sudden_trace_noise0_1000_cp,[],[499],0.032104313373565674
-avg_affinity,Ostovar,Atomic_Loop_output_Loop_5,[],"[999, 1999]",0.02723124250769615
-avg_affinity,Ostovar,Atomic_SerialMove_output_SerialMove,[507],"[999, 1999]",0.021903919987380505
-avg_affinity,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence_5,[741],"[999, 1999]",0.020038585178554058
-avg_affinity,Ostovar,Atomic_ConditionalMove_output_ConditionalMove_2,[1989],"[999, 1999]",0.021114918403327465
-avg_affinity,Ostovar,Atomic_Skip_output_Skip,"[546, 1989]","[999, 1999]",0.022620147094130516
-avg_affinity,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval_2,"[858, 1560]","[999, 1999]",0.017045026645064354
-avg_affinity,Ostovar,Atomic_Substitute_output_Substitute,"[858, 2067]","[999, 1999]",0.021348748356103897
-avg_affinity,Ostovar,Atomic_Frequency_output_Frequency_5,[1950],"[999, 1999]",0.026335869915783405
-avg_affinity,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence,[],"[999, 1999]",0.025793129578232765
-avg_affinity,Ostovar,Atomic_ParallelMove_output_ParallelMove,"[936, 1521]","[999, 1999]",0.022466636262834072
-avg_affinity,Ostovar,Atomic_Substitute_output_Substitute_5,"[585, 1989]","[999, 1999]",0.02794488612562418
-avg_affinity,Ostovar,Atomic_ConditionalMove_output_ConditionalMove,"[663, 1716]","[999, 1999]",0.026585974730551243
-avg_affinity,Ostovar,Atomic_Skip_output_Skip_5,"[858, 1950]","[999, 1999]",0.026550214737653732
-avg_affinity,Ostovar,Atomic_Frequency_output_Frequency,[],"[999, 1999]",0.023793000727891922
-avg_affinity,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence_2,"[936, 1872, 2496]","[999, 1999]",0.02856612764298916
-avg_affinity,Ceravolo,sudden_trace_noise5_1000_lp,[290],[499],0.034145090728998184
-avg_affinity,Ceravolo,sudden_trace_noise15_1000_pl,[760],[499],0.036995962262153625
-avg_affinity,Ostovar,Atomic_SerialRemoval_output_SerialRemoval_5,"[1053, 1794]","[999, 1999]",0.027360170148313046
-avg_affinity,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval,"[858, 1560]","[999, 1999]",0.02151692658662796
-avg_affinity,Ostovar,Atomic_Substitute_output_Substitute_2,"[858, 1911]","[999, 1999]",0.02603918220847845
-avg_affinity,Ostovar,Atomic_SerialMove_output_SerialMove_2,"[780, 1950]","[999, 1999]",0.023772677406668663
-avg_affinity,Ostovar,Atomic_ParallelMove_output_ParallelMove_2,"[936, 1599]","[999, 1999]",0.02121653687208891
-avg_affinity,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval_2,"[936, 1989]","[999, 1999]",0.024959078989923
-avg_affinity,Ostovar,Atomic_Loop_output_Loop,[],"[999, 1999]",0.02733831014484167
-avg_affinity,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence,"[936, 1755]","[999, 1999]",0.023378700017929077
-avg_affinity,Ostovar,Atomic_SerialRemoval_output_SerialRemoval,"[936, 1638]","[999, 1999]",0.02768423594534397
-avg_affinity,Ostovar,Atomic_ParallelMove_output_ParallelMove_5,"[936, 2028]","[999, 1999]",0.028916873037815094
+Algorithm,Log Source,Log,Detected Changepoints,Actual Changepoints for Log,Duration (Seconds),Duration
+avg_affinity,Ceravolo,sudden_trace_noise0_1000_cd,"[411, 650]",[499],0.05222865100950003,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise10_1000_cd,"[249, 600]",[499],0.06063375700614415,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise0_1000_cf,"[299, 500]",[499],0.05389288900187239,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise10_1000_cf,"[524, 800, 950]",[499],0.06169028498698026,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise0_1000_pm,[49],[499],0.05623852601274848,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise10_1000_cb,"[99, 300, 551]",[499],0.0644666000152938,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise0_1000_cb,"[99, 500]",[499],0.06494453601771966,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise0_1000_pl,"[261, 500, 924]",[499],0.06637547299033031,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise0_1000_sw,"[199, 550]",[499],0.07145191699964926,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise0_1000_lp,"[186, 350, 601, 802]",[499],0.06647834499017335,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise0_1000_rp,"[99, 400, 701]",[499],0.0645357400062494,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise0_1000_cp,"[224, 450, 788]",[499],0.06867455301107839,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise0_1000_re,"[486, 750]",[499],0.07172124600037932,00:00:00
+avg_affinity,Bose,bose_log,"[199, 650, 1151, 3652, 4153, 4704, 5255]","[1199, 2399, 3599, 4799]",0.09117824502754956,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise10_1000_pm,"[49, 300, 501]",[499],0.04921739498968236,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise10_1000_rp,"[99, 749]",[499],0.050411823991453275,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise10_1000_pl,"[149, 250, 551, 802]",[499],0.05418695000116713,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise10_1000_lp,[99],[499],0.05099277902627364,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise10_1000_re,"[99, 550]",[499],0.052724926004884765,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise15_1000_cf,"[299, 750]",[499],0.05342716199811548,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise10_1000_sw,"[99, 500, 751]",[499],0.05390313998213969,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise15_1000_cd,[699],[499],0.0567949740216136,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise10_1000_cp,"[599, 849]",[499],0.06003692600643262,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise15_1000_cp,[499],[499],0.05470792201231234,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise15_1000_cb,"[249, 650, 900]",[499],0.06267544900765643,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise15_1000_pl,"[224, 750]",[499],0.060331945976940915,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise15_1000_pm,"[99, 350, 626, 802]",[499],0.05518220298108645,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise15_1000_lp,"[224, 400, 551, 752]",[499],0.06685333300265484,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise15_1000_re,"[174, 750]",[499],0.0540871029952541,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise15_1000_sw,[299],[499],0.05623724200995639,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise15_1000_rp,"[611, 800]",[499],0.058728953008539975,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise20_1000_cb,[149],[499],0.05542376599623822,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise20_1000_cf,"[199, 450]",[499],0.0570921000035014,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise20_1000_pl,[99],[499],0.05799081199802458,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise20_1000_cd,"[186, 600, 751, 950]",[499],0.06263443001080304,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise20_1000_lp,"[99, 575]",[499],0.05958092998480424,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise20_1000_cp,[349],[499],0.058574572001816705,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise20_1000_pm,[336],[499],0.062174683989724144,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise20_1000_re,[199],[499],0.0521308220049832,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise20_1000_sw,"[49, 400, 676]",[499],0.05399347501224838,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise20_1000_rp,"[74, 750, 950]",[499],0.06516495000687428,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise5_1000_cb,"[149, 599]",[499],0.06919718600693159,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise5_1000_cd,"[99, 749]",[499],0.05995290298596956,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise5_1000_cp,[149],[499],0.05868418299360201,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise5_1000_cf,"[99, 450, 651]",[499],0.050507021020166576,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise5_1000_lp,"[149, 400, 601, 802]",[499],0.06244536698795855,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise5_1000_pm,"[49, 500]",[499],0.04843591299140826,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise5_1000_rp,"[99, 300, 626]",[499],0.058819065015995875,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise5_1000_re,[561],[499],0.06086851601139642,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise5_1000_pl,"[111, 450, 874]",[499],0.06401696600369178,00:00:00
+avg_affinity,Ceravolo,sudden_trace_noise5_1000_sw,"[149, 350, 601]",[499],0.06593224802054465,00:00:00
+avg_affinity,Ostovar,Atomic_ConditionalMove_output_ConditionalMove,"[399, 1000, 1726, 2202, 2603]","[999, 1999]",0.07684752802015282,00:00:00
+avg_affinity,Ostovar,Atomic_ConditionalMove_output_ConditionalMove_2,"[799, 1800, 2351]","[999, 1999]",0.08116702697589062,00:00:00
+avg_affinity,Ostovar,Atomic_ConditionalMove_output_ConditionalMove_5,"[199, 600, 951, 1877, 2700]","[999, 1999]",0.09198324001044966,00:00:00
+avg_affinity,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval,"[249, 950, 1951, 2352]","[999, 1999]",0.10009162800270133,00:00:00
+avg_affinity,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval_2,"[599, 950, 1501, 2027, 2653]","[999, 1999]",0.09657786099705845,00:00:00
+avg_affinity,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval_5,"[199, 925, 1251, 1552, 1903, 2704]","[999, 1999]",0.10740137501852587,00:00:00
+avg_affinity,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence,"[249, 800, 1451, 1952, 2503]","[999, 1999]",0.11142697400646284,00:00:00
+avg_affinity,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence_2,"[99, 725, 1301, 1752, 2153, 2504]","[999, 1999]",0.11355403097695671,00:00:00
+avg_affinity,Ostovar,Atomic_Frequency_output_Frequency,"[99, 350, 851, 1727]","[999, 1999]",0.12121253099758178,00:00:00
+avg_affinity,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence_5,"[399, 925, 1451, 1802, 2153, 2604]","[999, 1999]",0.12049902899889275,00:00:00
+avg_affinity,Ostovar,Atomic_Frequency_output_Frequency_5,"[199, 600, 951, 1302, 1703, 2304]","[999, 1999]",0.10788326500914991,00:00:00
+avg_affinity,Ostovar,Atomic_Loop_output_Loop_2,"[849, 1500, 2001, 2402, 2800]","[999, 1999]",0.10792616300750524,00:00:00
+avg_affinity,Ostovar,Atomic_Frequency_output_Frequency_2,"[299, 1050, 1401, 1752]","[999, 1999]",0.11188559301081114,00:00:00
+avg_affinity,Ostovar,Atomic_Loop_output_Loop,"[399, 1050, 1601, 2202]","[999, 1999]",0.11805354699026793,00:00:00
+avg_affinity,Ostovar,Atomic_Loop_output_Loop_5,"[299, 800, 1351, 1852]","[999, 1999]",0.0693136400077492,00:00:00
+avg_affinity,Ostovar,Atomic_ParallelMove_output_ParallelMove_2,"[924, 1700, 2051, 2402, 2800]","[999, 1999]",0.07522470099502243,00:00:00
+avg_affinity,Ostovar,Atomic_ParallelMove_output_ParallelMove,"[149, 900, 1626, 1952, 2203, 2454]","[999, 1999]",0.08174617198528722,00:00:00
+avg_affinity,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval,"[99, 350, 876, 1152, 1553, 1954, 2205, 2456, 2802]","[999, 1999]",0.08144341700244695,00:00:00
+avg_affinity,Ostovar,Atomic_ParallelMove_output_ParallelMove_5,"[149, 425, 1151, 1627, 2128]","[999, 1999]",0.09795494299032725,00:00:00
+avg_affinity,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval_2,"[99, 325, 801, 1602, 2053, 2404]","[999, 1999]",0.07103681899025105,00:00:00
+avg_affinity,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence,"[99, 975, 1701, 2102, 2503]","[999, 1999]",0.07268205098807812,00:00:00
+avg_affinity,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval_5,"[99, 800, 1601, 1952, 2203, 2429]","[999, 1999]",0.07945015901350416,00:00:00
+avg_affinity,Ostovar,Atomic_SerialMove_output_SerialMove_2,"[99, 450, 801, 1052, 1453, 1854, 2305, 2802]","[999, 1999]",0.06733304398949258,00:00:00
+avg_affinity,Ostovar,Atomic_SerialMove_output_SerialMove,"[99, 400, 801, 1602, 1953, 2304, 2751]","[999, 1999]",0.06795477401465178,00:00:00
+avg_affinity,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence_2,"[249, 950, 1451, 1952, 2553]","[999, 1999]",0.08002388098975644,00:00:00
+avg_affinity,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence_5,"[199, 925, 1301, 1752, 2303]","[999, 1999]",0.0827473739918787,00:00:00
+avg_affinity,Ostovar,Atomic_SerialRemoval_output_SerialRemoval_2,"[99, 325, 901, 1227, 1803, 2654]","[999, 1999]",0.07276784698478878,00:00:00
+avg_affinity,Ostovar,Atomic_SerialMove_output_SerialMove_5,"[399, 950, 1401, 1852, 2303, 2801]","[999, 1999]",0.08444031700491905,00:00:00
+avg_affinity,Ostovar,Atomic_SerialRemoval_output_SerialRemoval_5,"[524, 900, 1301, 1652, 2328, 2704]","[999, 1999]",0.0707746859989129,00:00:00
+avg_affinity,Ostovar,Atomic_SerialRemoval_output_SerialRemoval,"[774, 1200, 1651, 1952, 2503]","[999, 1999]",0.08461048800381832,00:00:00
+avg_affinity,Ostovar,Atomic_Skip_output_Skip,"[99, 550, 1501, 1902, 2203]","[999, 1999]",0.07301202599774115,00:00:00
+avg_affinity,Ostovar,Atomic_Skip_output_Skip_5,"[299, 750, 1051, 1502, 1953, 2304]","[999, 1999]",0.06638041001860984,00:00:00
+avg_affinity,Ostovar,Atomic_Skip_output_Skip_2,"[399, 950, 1751, 2652]","[999, 1999]",0.08330738102085888,00:00:00
+avg_affinity,Ostovar,Atomic_Substitute_output_Substitute,"[924, 1250, 1501, 1752, 2153, 2654]","[999, 1999]",0.06255492498166859,00:00:00
+avg_affinity,Ostovar,Atomic_Substitute_output_Substitute_2,"[924, 1250, 1501, 1802, 2303]","[999, 1999]",0.05282527700182982,00:00:00
+avg_affinity,Ostovar,Atomic_Swap_output_Swap_2,"[199, 650, 1051, 1402, 1753, 2154, 2701]","[999, 1999]",0.051333026989595965,00:00:00
+avg_affinity,Ostovar,Atomic_Swap_output_Swap,"[799, 1600, 2151]","[999, 1999]",0.05915077801910229,00:00:00
+avg_affinity,Ostovar,Atomic_Substitute_output_Substitute_5,"[349, 800, 1201, 1877, 2700]","[999, 1999]",0.06460422198870219,00:00:00
+avg_affinity,Ostovar,Atomic_Swap_output_Swap_5,"[774, 1275, 1601, 1952, 2303, 2654]","[999, 1999]",0.05030085300677456,00:00:00

@@ -1,20 +1,29 @@
-# Runs ADWIN/J (Martjushev et al.), the complexity measures with the same ADWIN algorithm, or both combined
-# on the CDRIFT logs, evaluated with run_approach.py. Edit the settings below, then run:  python run_adwinj_experiments.py
-#   docker run --rm -v "${PWD}:/workspace" cbcdd-image python run_adwinj_experiments.py
+# Small script to run the ADWIN/J baseline (Martjushev et al.), the complexity measures, or their combination
+# on the CDRIFT logs, evaluated with the same framework as run_approach.py.
+# Edit the variables below, then run from the repo root:  python run_adwinj_experiments.py
+# Other scripts (sweeps, patched runs) set the module variables, e.g. ALPHA, and call run().
 #
-# MODE: "adwin" (J series per activity pair, over traces), "complexity" (one series per measure, over windows,
-#       window sizes counted in windows) or "combined" (both detectors run separately, change points merged).
-# COMBINE: "union" (a complexity point is dropped if within MERGE_DISTANCE traces of a J point) or
-#          "intersection" (J points with a complexity point within MERGE_DISTANCE traces).
+# Modes:
+#   "adwin"       original ADWIN/J: J-measure of every activity pair, average p-value over the pairs
+#   "complexity"  the complexity measures only
+#   "combined"    p = (1 - ALPHA) * p_J + ALPHA * p_C, computed inside every ADWIN step
 #
-# Each detector has its own windows and threshold. ADWIN flags a change when the average p-value falls below the
-# threshold. Measures that do not react stay near 0.5, so with many measures use about 0.4 to 0.45, with one measure
-# 0.01 to 0.05. Retune it when MEASURES changes.
+# ADWIN decides inside its loop, so there is no common p-value series to mix afterwards. Instead the p-value
+# function that ADWIN calls on every pair of populations is replaced: ADWIN gets a one-row signal with the trace
+# indices and a testing function that looks up the data of the two populations. The ADWIN code is used unchanged
+# (adaptive windows, threshold, recursive bisection). ALPHA = 0 gives ADWIN/J and ALPHA = 1 the complexity measures only.
 #
-# A complexity change point is the last trace of the window where ADWIN locates the change, like ADWIN/J.
-# The J series are slow, so they are cached in <OUT_ROOT>/_cache/ with their computation time (added to the log's
-# duration). They need disk space, delete the folder to recompute.
-# Outputs go to baselines_results/<run_name>/ (config, detections, evaluation files).
+#   p_J = mean over all activity pairs of the test p-value of the two populations (as in the baseline)
+#   p_C = mean over the complexity measures of the test p-value of the windows (sublogs) that lie completely
+#         inside each population. With fewer than 2 windows in a population p_C = 1 (no evidence).
+#
+# In "combined" mode the J series are the slow part and do not depend on the ADWIN settings, so they are cached in
+# CACHE_DIR together with their computation time (added to the duration of the log).
+# Delete the folder to recompute. The "adwin" mode calls the baseline function directly
+# and does not use the cache.
+#
+# Outputs are written to <out_root>/<run_name>/: config.json, detections.csv, evaluation_measures.csv and the
+# evaluation plots / CSVs.
 
 import json
 import os
@@ -25,110 +34,118 @@ import numpy as np
 import pandas as pd
 import scipy.stats as stats
 
-import run_approach as ra  # imported first, so that "cdrift" resolves to this repo's package
+import run_approach as ra  
 from cdrift.utils.helpers import importLog
 
-from baselines.Adwin_J.martjushev import _extractAllJMeasures, detectChange_AvgSeries_ADWIN
+from baselines.Adwin_J.martjushev import (
+    _applyAvgPVal,
+    _extractAllJMeasures,
+    detectChange_AvgSeries_ADWIN,
+    detectChange_ADWIN_JMeasure_KS,
+    detectChange_ADWIN_JMeasure_MU,
+)
 
-# ─── Settings ─────────────────────────────────────────────────────────────────
+# Settings 
 
-MODE = "combined"                  # "adwin" | "complexity" | "combined"
-COMBINE = "union"               # "union" | "intersection" (only for "combined")
+MODE = "adwin"                  # "adwin" | "complexity" | "combined"
+MODE_NAME = {"adwin": "standard"}.get(MODE, MODE)
+RUN_NAME = f"adwin_{MODE_NAME}"
+
 TEST = "KS"                     # "KS" | "MU"
-
-THRESHOLD = 0.4
-MIN_WINDOW = 100
-MAX_WINDOW = 400
-STEP = 50
+THRESHOLD = 0.4                 # p-value threshold
+MIN_WINDOW = 100                # in traces
+MAX_WINDOW = 400                # in traces
+STEP = 50                       # in traces
 MEASURE_WINDOW = None           # window of the J measure itself, None = average trace length
 
-# Complexity measures, windows in windows (sublogs)
-COMPLEXITY_THRESHOLD = 0.05     # one measure: about 0.01 to 0.05. Many measures: about 0.4 to 0.45
-COMPLEXITY_MIN_WINDOW = 5
-COMPLEXITY_MAX_WINDOW = 20
-COMPLEXITY_STEP = 1
+MEASURES = None                 # None = all unique measures
+ALPHA = 0.5                     # complexity weight in combined mode
 
-MEASURES = [
-    "species_richness_abundance_n_gram_species_n3"
-] # None = all unique measures
-
-
-MERGE_DISTANCE = 200            # in traces, for "combined"
 N_WINDOWS = ra.DEFAULT_N_WINDOWS
 LAG_WINDOW = 200
 EVALUATE_NOISY = False
-MAX_WORKERS = None              
+MAX_WORKERS = None              # None = all cores, lower it if memory runs out
+
 DATASETS_PATH = "datasets/cdrift"
 OUT_ROOT = "baselines_results"
-CACHE_DIR = f"{OUT_ROOT}/_cache"
+CACHE_DIR = os.path.join(OUT_ROOT, "_cache")
 
 TESTS = {"KS": stats.ks_2samp, "MU": stats.mannwhitneyu}
-
-MODE_NAME = {"adwin": "standard"}.get(MODE, MODE)
-RUN_NAME = f"adwin_{MODE_NAME}_SM"
+ADWIN_J = {"KS": detectChange_ADWIN_JMeasure_KS, "MU": detectChange_ADWIN_JMeasure_MU}
 
 
-# Detection
+# Detection 
 
-def j_signals(event_log, label):
-    path = f"{CACHE_DIR}/{label}__J_signals_m{MEASURE_WINDOW}.npz"
+def j_signals(event_log, label, cfg):
+    path = f"{cfg['cache_dir']}/{label}__J_signals_m{cfg['measure_window']}.npz"
     if os.path.exists(path):
         with np.load(path) as data:
             return data["signals"], float(data["seconds"])
     start = time.perf_counter()
-    signals = _extractAllJMeasures(event_log, MEASURE_WINDOW, show_progress_bar=False)
+    signals = _extractAllJMeasures(event_log, cfg["measure_window"], show_progress_bar=False)
     seconds = time.perf_counter() - start
-    os.makedirs(CACHE_DIR, exist_ok=True)
+    os.makedirs(cfg["cache_dir"], exist_ok=True)
     np.savez(path, signals=signals, seconds=seconds)
     return signals, seconds
 
 
-def detect_one(log, measures, mode, run_name):
+def make_p_value(J, Z, starts, ends, alpha, test):
+    """p-value function for ADWIN. It gets the trace indices of two populations and returns (1 - alpha) * p_J + alpha * p_C."""
+    def p_value(idx1, idx2):
+        if len(idx1) == 0 or len(idx2) == 0:
+            return 1.0
+        s1, e1, s2, e2 = int(idx1[0]), int(idx1[-1]) + 1, int(idx2[0]), int(idx2[-1]) + 1
+        p_j = _applyAvgPVal(J[:, s1:e1], J[:, s2:e2], test) if alpha < 1 else 0.0
+        p_c = 0.0
+        if alpha > 0:
+            w1 = np.flatnonzero((starts >= s1) & (ends < e1))
+            w2 = np.flatnonzero((starts >= s2) & (ends < e2))
+            enough = min(len(w1), len(w2)) >= 2 and Z.shape[1] > 0
+            p_c = _applyAvgPVal(Z[w1].T, Z[w2].T, test) if enough else 1.0
+        return (1 - alpha) * p_j + alpha * p_c
+    return p_value
+
+
+def detect_one(log, measures, mode, run_name, cfg):
     dataset = log["dataset"]
     name = log["log_filename"].split(".")[0]
     try:
         actual = ra.load_ground_truth(log)
         if not actual:
             return None
-        points_j, points_c, seconds = [], [], 0.0
+        event_log = None
         if mode != "complexity":
-            path = f"{DATASETS_PATH}/{dataset}/{log['log_filename']}"
+            path = f"{cfg['datasets_path']}/{dataset}/{log['log_filename']}"
             if not os.path.exists(path):
                 path += ".gz"
             event_log = importLog(path, verbose=False)
             n_traces = len(event_log)
-            signals, seconds = j_signals(event_log, f"{dataset}__{name}")
-            start = time.perf_counter()
-            points_j = detectChange_AvgSeries_ADWIN(signals, MIN_WINDOW, MAX_WINDOW, THRESHOLD, STEP, TESTS[TEST],
-                                                    show_progress_bar=False)
-            seconds += time.perf_counter() - start
 
-        start = time.perf_counter()
-        if mode != "adwin":
-            folder = ra.find_vector_folder(DATASETS_PATH, dataset, name, N_WINDOWS[dataset])
+        test = TESTS[cfg["test"]]
+        j_seconds = 0.0
+        if mode == "adwin":
+            start = time.perf_counter()
+            points = ADWIN_J[cfg["test"]](event_log, cfg["min_window"], cfg["max_window"], cfg["threshold"], cfg["step"],
+                                          measure_window=cfg["measure_window"], show_progress_bar=False)
+        else:
+            J = None
+            if mode == "combined":
+                J, j_seconds = j_signals(event_log, f"{dataset}__{name}", cfg)
+            start = time.perf_counter()
+            folder = ra.find_vector_folder(cfg["datasets_path"], dataset, name, cfg["n_windows"][dataset])
             Z, windows_traces = ra.load_standardized_matrix(folder, name, measures)
             with open(f"{folder}/{name}_borders.json") as f:
                 borders = json.load(f)
             if mode == "combined" and windows_traces != n_traces:
                 raise ValueError(f"log has {n_traces} traces, the complexity windows cover {windows_traces}")
             n_traces = windows_traces
-            columns = np.flatnonzero(Z.std(axis=0) > 1e-10)
-            if len(columns) > 0:
-                found = detectChange_AvgSeries_ADWIN(Z[:, columns].T, COMPLEXITY_MIN_WINDOW, COMPLEXITY_MAX_WINDOW,
-                                                     COMPLEXITY_THRESHOLD, COMPLEXITY_STEP, TESTS[TEST],
-                                                     show_progress_bar=False)
-                points_c = [borders[min(max(int(w), 0), len(borders) - 1)][1] for w in found]
-
-        if mode == "adwin":
-            points = points_j
-        elif mode == "complexity":
-            points = points_c
-        elif COMBINE == "union":
-            points = points_j + [c for c in points_c if all(abs(c - j) > MERGE_DISTANCE for j in points_j)]
-        else:
-            points = [j for j in points_j if any(abs(j - c) <= MERGE_DISTANCE for c in points_c)]
+            Z = Z[:, Z.std(axis=0) > 1e-10]
+            alpha = 1.0 if mode == "complexity" else cfg["alpha"]
+            p_value = make_p_value(J, Z, np.array([b[0] for b in borders]), np.array([b[1] for b in borders]), alpha, test)
+            points = detectChange_AvgSeries_ADWIN(np.arange(n_traces)[None, :], cfg["min_window"], cfg["max_window"],
+                                                  cfg["threshold"], cfg["step"], p_value, show_progress_bar=False)
         detected = sorted({min(int(p), n_traces - 1) for p in points})
-        duration = seconds + time.perf_counter() - start
+        duration = j_seconds + time.perf_counter() - start
     except Exception as e:
         print(f"[ERROR] {dataset}/{name}: {e!r}", flush=True)
         return None
@@ -152,11 +169,11 @@ def is_atomic(log):
     return True
 
 
-# Run
+# Run 
 
 def run(run_name, mode, measures, out_root, evaluate_noisy=EVALUATE_NOISY):
-    """Runs one configuration (mode, measures; the other settings come from the variables above) and evaluates it."""
-    assert mode in ("adwin", "complexity", "combined") and TEST in TESTS and COMBINE in ("union", "intersection")
+    """Runs one configuration (mode, measures; the other settings are read from the variables above at call time)."""
+    assert mode in ("adwin", "complexity", "combined") and TEST in TESTS and 0 <= ALPHA <= 1
 
     logs = [log for log in ra.list_logs(DATASETS_PATH) if is_atomic(log)]
     if mode == "adwin":
@@ -168,20 +185,20 @@ def run(run_name, mode, measures, out_root, evaluate_noisy=EVALUATE_NOISY):
             raise ValueError(f"Unknown measures: {sorted(unknown)}")
         ra.ensure_complexity_vectors(logs, N_WINDOWS, DATASETS_PATH)
 
+    alpha = {"adwin": 0.0, "complexity": 1.0}.get(mode, ALPHA)  # ALPHA only matters in "combined" mode
+    cfg = {"test": TEST, "threshold": THRESHOLD, "min_window": MIN_WINDOW, "max_window": MAX_WINDOW, "step": STEP,
+           "measure_window": MEASURE_WINDOW, "alpha": alpha, "n_windows": N_WINDOWS,
+           "datasets_path": DATASETS_PATH, "cache_dir": CACHE_DIR}
     out_dir = f"{out_root}/{run_name}"
     os.makedirs(out_dir, exist_ok=True)
     with open(f"{out_dir}/config.json", "w") as f:
-        json.dump({"mode": mode, "combine": COMBINE, "test": TEST, "threshold": THRESHOLD, "min_window": MIN_WINDOW,
-                   "max_window": MAX_WINDOW, "step": STEP, "measure_window": MEASURE_WINDOW,
-                   "complexity_threshold": COMPLEXITY_THRESHOLD, "complexity_min_window": COMPLEXITY_MIN_WINDOW,
-                   "complexity_max_window": COMPLEXITY_MAX_WINDOW, "complexity_step": COMPLEXITY_STEP,
-                   "measures": measures, "merge_distance": MERGE_DISTANCE, "n_windows": N_WINDOWS,
-                   "lag_window": LAG_WINDOW, "evaluate_noisy": evaluate_noisy}, f, indent=2)
+        json.dump({"mode": mode, "measures": measures, "lag_window": LAG_WINDOW, "evaluate_noisy": evaluate_noisy,
+                   **cfg}, f, indent=2)
 
     print(f"{run_name}: {len(logs)} logs", flush=True)
     rows = []
     with ProcessPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        futures = [executor.submit(detect_one, log, measures, mode, run_name) for log in logs]
+        futures = [executor.submit(detect_one, log, measures, mode, run_name, cfg) for log in logs]
         for i, future in enumerate(as_completed(futures), 1):
             row = future.result()
             if row is not None:

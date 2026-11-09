@@ -1,2 +1,2 @@
 Algorithm,F1-Score,Precision,Recall,Latency,Latency (Score),Versatility,Scalability,Milliseconds per Case,Milliseconds per Event,Parameter Sensitivity (IQR),Robustness
-estimate_asymptotic_species_richness_abundance_n_gram_species_n3,0.5555555555555556,0.625,0.5,66.55,0.66725,0.47916666666666663,00:00:00,0.01542921888579757,0.0005918070152777927,0.0,0.7577913474484705
+estimate_asymptotic_species_richness_abundance_n_gram_species_n3,0.45801526717557256,0.32967032967032966,0.75,94.39999999999999,0.528,0.48893849206349205,00:00:00,0.05609389109932976,0.0021515514500458056,0.0,0.951392139471775

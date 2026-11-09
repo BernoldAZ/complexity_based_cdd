@@ -44,14 +44,10 @@ from baselines.Bose_J.bose import (
 
 # Experiment settings
 
-<<<<<<< HEAD
 MODE = "bose"                 # "bose" | "complexity" | "combined"
 MODE_NAME = {"bose": "standard"}.get(MODE, MODE)
 RUN_NAME = f"bose_wc_{MODE_NAME}"
 
-=======
-MODE = "combined"                 # "bose" | "complexity" | "combined"
->>>>>>> ca0b717 (Some scripts for the results)
 TEST = "KS"                   # "KS" | "MU"
 BOSE_MEASURE = "WC"             # "J" | "WC"
 BOSE_WINDOW = 200

@@ -5,14 +5,14 @@ import glob
 import pandas as pd
 import run_bose_experiments as rb
 
-SOURCE_DIR = "baselines_results/sweep_bose"
-OUT_ROOT = "baselines_results/patched_bose"
+SOURCE_DIR = "baselines_results/sweep_bose_wc" #"sweep_bose_wc" for bose using Windows Count,  "sweep_bose_J" for bose using J Measure
+OUT_ROOT = "baselines_results/patched_bose_wc" #"patched_bose_wc" for bose using Windows Count,  "patched_bose" for bose using J Measure
 
 MAX_F1_THRESHOLD = 0.8
 
 MODE = "combined"
 ALPHAS = [0.5, 0.3, 0.1, 0.05]
-CHANGE_PATTERNS = ["CD", "PL", "SM"]
+CHANGE_PATTERNS = ["CD", "PL", "SM", "PM"] #  ["CD", "PL", "SM", "PM"] for bose using Windows Count,  ["CD", "PL", "SM"] for bose using J Measure
 
 
 def parse_measures(value):
@@ -113,17 +113,11 @@ def load_measure_groups():
             )
 
     # Calculate intersection and union using the selected groups.
-    groups["INTERSECTION"] = sorted(
-        set(groups["CD"])
-        & set(groups["PL"])
-        & set(groups["SM"])
-    )
+    groups["INTERSECTION"] = sorted(set.intersection(*(set(groups[p]) for p in CHANGE_PATTERNS)))
 
-    groups["UNION"] = sorted(
-        set(groups["CD"])
-        | set(groups["PL"])
-        | set(groups["SM"])
-    )
+
+    groups["UNION"] = sorted(set.union(*(set(groups[p]) for p in CHANGE_PATTERNS)))
+    
 
     selected_thresholds["INTERSECTION"] = "combined groups"
     selected_thresholds["UNION"] = "combined groups"
@@ -149,7 +143,8 @@ def run_experiment(pattern, measures, alpha):
         return
 
     alpha_label = str(alpha).replace(".", "_")
-    name = f"BOSE_combined_{pattern}_alpha_{alpha_label}"
+    name = f"BOSE_WC_combined_{pattern}_alpha_{alpha_label}"
+
 
     output_folder = os.path.join(OUT_ROOT, name)
     done_file = os.path.join(output_folder, "evaluation_measures.csv")
@@ -165,7 +160,7 @@ def run_experiment(pattern, measures, alpha):
     print(f"Measures: {measures}", flush=True)
 
     rb.ALPHA = alpha
-
+    
     rb.run(
         run_name=name,
         mode=MODE,
@@ -178,6 +173,7 @@ def run_experiment(pattern, measures, alpha):
 
 
 if __name__ == "__main__":
+    assert rb.BOSE_MEASURE == "WC", "set BOSE_MEASURE = 'WC' in run_bose_experiments.py"
     os.makedirs(OUT_ROOT, exist_ok=True)
 
     groups, selected_thresholds = load_measure_groups()

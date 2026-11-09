@@ -1,0 +1,2 @@
+Algorithm,F1-Score,Precision,Recall,Latency,Latency (Score),Versatility,Scalability,Milliseconds per Case,Milliseconds per Event,Parameter Sensitivity (IQR),Robustness
+avg_affinity,0.4576271186440678,0.34615384615384615,0.675,68.48148148148148,0.6575925925925926,0.3981240981240981,00:00:00,0.0773898314744142,0.0029683839160440395,0.0,0.520973126913943

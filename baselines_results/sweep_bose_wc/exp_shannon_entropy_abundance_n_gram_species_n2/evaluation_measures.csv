@@ -1,0 +1,2 @@
+Algorithm,F1-Score,Precision,Recall,Latency,Latency (Score),Versatility,Scalability,Milliseconds per Case,Milliseconds per Event,Parameter Sensitivity (IQR),Robustness
+exp_shannon_entropy_abundance_n_gram_species_n2,0.4672897196261682,0.373134328358209,0.625,61.08,0.6946,0.4298611111111111,00:00:00,0.06425195049348738,0.0024644640359810202,0.0,0.5154484839219721

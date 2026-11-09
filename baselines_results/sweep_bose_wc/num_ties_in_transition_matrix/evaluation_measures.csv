@@ -1,0 +1,2 @@
+Algorithm,F1-Score,Precision,Recall,Latency,Latency (Score),Versatility,Scalability,Milliseconds per Case,Milliseconds per Event,Parameter Sensitivity (IQR),Robustness
+num_ties_in_transition_matrix,0.575,0.575,0.575,57.52173913043479,0.712391304347826,0.5651785714285714,00:00:00,0.07839515848128703,0.0030069444925527582,0.0,0.4274598309252194

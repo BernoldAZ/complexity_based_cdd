@@ -1,0 +1,17 @@
+Change Pattern,Count,Measures
+cb,0,
+cd,0,
+cf,1,estimate_asymptotic_species_richness_abundance_n_gram_species_n3
+cm,6,coverage_alternative_n_gram_species_n2; coverage_alternative_n_gram_species_n3; normalized_sequence_entropy; num_ties_in_transition_matrix; species_richness_abundance_n_gram_species_n2; trace_length_min
+cp,2,estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n2; estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n3
+cre,2,num_event_types; trace_length_max
+fr,0,
+lp,4,enriched_variant_entropy; enriched_normalized_variant_entropy; num_events; trace_length_average
+pl,0,
+pm,0,
+pre,2,num_event_types; trace_length_min
+re,2,average_distinct_events_per_trace; normalized_sequence_entropy
+rp,0,
+sm,2,num_ties_in_transition_matrix; species_richness_abundance_n_gram_species_n2
+sre,5,num_event_types; num_ties_in_transition_matrix; sequence_entropy; trace_length_min; variant_entropy
+sw,0,

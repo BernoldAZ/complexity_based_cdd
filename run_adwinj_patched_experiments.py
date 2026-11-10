@@ -13,7 +13,7 @@ BASELINE_FILE = (
 )
 
 SOURCE_DIR = "baselines_results/sweep_adwinj"
-OUT_ROOT = "baselines_results/patched_adwinj"
+OUT_ROOT = "baselines_results/patched_adwinj_new"
 
 MODE = "combined"
 ALPHAS = [0.5, 0.3, 0.1, 0.05]

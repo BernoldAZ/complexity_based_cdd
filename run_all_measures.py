@@ -24,7 +24,7 @@ import re
 from run_approach import run
 from run_experiments import ALL_MEASURES, PEN, N_WINDOWS, LAG_WINDOW, DATASETS_PATH, OUT_ROOT
 
-MEASURES_TO_RUN = ["num_event_types", "num_events"]  # or e.g. ["num_event_types", "num_events"] for a test
+MEASURES_TO_RUN = ALL_MEASURES  # or e.g. ["num_event_types", "num_events"] for a test
 PREFIX = "run"
 EVALUATE_NOISY = False  # if True, run() also saves versatility_per_change_pattern_by_noise.csv
 

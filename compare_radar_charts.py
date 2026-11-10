@@ -90,13 +90,15 @@ def plot_radar(algorithm, standard, best_label, best, path):
     for label, series, color in [("standard", standard, "#7F7F7F"), (best_label, best, "#DB444B")]:
         values = [0 if np.isnan(series.get(p, np.nan)) else series[p] for p in patterns]
         values += values[:1]
-        ax.plot(angles, values, color=color, linewidth=2, label=label)
-        ax.fill(angles, values, color=color, alpha=0.2)
+        is_standard = label == "standard"
+        ax.plot(angles, values, color=color, linewidth=2, linestyle=":" if is_standard else "-",
+            label=label, zorder=3 if is_standard else 2)
+        ax.fill(angles, values, color=color, alpha=0.2, zorder=1)
     ax.set_xticks(angles[:-1])
     ax.set_xticklabels(patterns, fontsize=12)
     ax.set_ylim(0, 1)
     ax.set_title(f"{algorithm}: standard vs best patched run", va="bottom", fontsize=14)
-    ax.legend(loc="upper right", bbox_to_anchor=(1.35, 1.1))
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.08), ncol=2)
     fig.savefig(path, dpi=150, bbox_inches="tight")
     plt.close(fig)
 

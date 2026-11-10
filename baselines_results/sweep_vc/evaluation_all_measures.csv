@@ -28,6 +28,7 @@ normalized_sequence_entropy,normalized_sequence_entropy,0.1363636363636363,0.75,
 trace_length_max,trace_length_max,0.0476190476190476,0.5,0.025,9.000000000000007,0.955,0.0208333333333333,00:00:02,1.3280417315113369,0.0509387039685806,0.0,0.25
 num_event_types,num_event_types,0.0,,0.0,,,0.0,00:00:02,1.367553204463964,0.0524542160013282,0.0,0.0
 num_ties_in_transition_matrix,num_ties_in_transition_matrix,0.0,,0.0,,,0.0,00:00:02,1.3364904565000617,0.0512627653974506,0.0,0.0
+num_unique_sequences,num_unique_sequences,0.0,,0.0,,,0.0,00:00:06,3.2287126906832238,0.1238413191753742,0.0,0.0
 pct_unique_sequences,pct_unique_sequences,0.0,,0.0,,,0.0,00:00:02,1.3526939123391095,0.0518842692407929,0.0,0.0
 coverage_n_gram_species_n3,coverage_n_gram_species_n3,0.0,,0.0,,,0.0,00:00:02,1.381325808728137,0.0529824814879035,0.0,0.0
 coverage_n_gram_species_n2,coverage_n_gram_species_n2,0.0,,0.0,,,0.0,00:00:02,1.3628310382252793,0.0522730914007865,0.0,0.0

@@ -1,0 +1,20 @@
+{
+  "mode": "complexity",
+  "test": "KS",
+  "bose_measure": "J",
+  "bose_window": 200,
+  "bose_step": 2,
+  "measure_window": null,
+  "complexity_window": 5,
+  "measures": [
+    "num_unique_sequences"
+  ],
+  "alpha": 0.5,
+  "n_windows": {
+    "Bose": 75,
+    "Ceravolo": 100,
+    "Ostovar": 75
+  },
+  "lag_window": 200,
+  "evaluate_noisy": false
+}

@@ -324,6 +324,7 @@ def run_experiment(pattern, measures, alpha):
         run_name=run_name,
         mode=MODE,
         measures=measures,
+        out_root=OUT_ROOT,
         evaluate_noisy=EVALUATE_NOISY
     )
 

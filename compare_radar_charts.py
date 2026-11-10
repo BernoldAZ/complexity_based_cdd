@@ -52,6 +52,7 @@ def label_of(folder):
 
 
 def collect(standard_dir, patched_root):
+    """Collects the standard run and all patched runs that have radar_chart_f1.png."""
     runs = [("standard", standard_dir)]
     for folder in sorted(glob.glob(os.path.join(patched_root, "*"))):
         if os.path.exists(os.path.join(folder, "radar_chart_f1.png")):
@@ -60,16 +61,19 @@ def collect(standard_dir, patched_root):
 
 
 def f1_per_pattern(folder):
+    """Reads the F1 per change pattern from versatility_per_change_pattern.csv and returns a Series indexed by change pattern."""
     df = pd.read_csv(os.path.join(folder, "versatility_per_change_pattern.csv"))
     return df.set_index("Change Pattern")["F1-Score"]
 
 
 def overall_metrics(folder):
+    """Reads the overall metrics from evaluation_measures.csv and returns a dict with only the OVERALL keys."""
     row = pd.read_csv(os.path.join(folder, "evaluation_measures.csv")).iloc[0]
     return {k: row[k] for k in OVERALL if k in row.index}
 
 
 def plot_grid(algorithm, runs, path):
+    """Plots the radar charts of all runs in a grid, the standard first."""
     nrows = math.ceil(len(runs) / GRID_COLUMNS)
     fig, axes = plt.subplots(nrows, GRID_COLUMNS, figsize=(4.5 * GRID_COLUMNS, 4.5 * nrows), squeeze=False)
     for ax in axes.ravel():
@@ -83,6 +87,7 @@ def plot_grid(algorithm, runs, path):
 
 
 def plot_radar(algorithm, standard, best_label, best, path):
+    """Plots a radar chart of the standard run and the best patched run."""
     patterns = list(standard.index)
     angles = np.linspace(0, 2 * np.pi, len(patterns), endpoint=False).tolist()
     angles += angles[:1]
@@ -104,6 +109,7 @@ def plot_radar(algorithm, standard, best_label, best, path):
 
 
 def plot_delta(algorithm, labels, deltas, path):
+    """Plots a heatmap of F1 of every patched run minus the standard F1, per change pattern."""
     data = pd.DataFrame(deltas, index=labels)
     data["mean"] = data.mean(axis=1)
     limit = max(0.05, float(np.nanmax(np.abs(data.values))))

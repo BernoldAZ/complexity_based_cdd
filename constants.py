@@ -18,7 +18,7 @@ ALL_MEASURES = [
     "num_event_types",
     "num_events",
     "num_sequences",
-    "num_unique_sequences"
+    "num_unique_sequences",
     "num_ties_in_transition_matrix",
     "pct_unique_sequences",
     "sequence_entropy",

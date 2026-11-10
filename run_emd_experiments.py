@@ -54,23 +54,7 @@ import emd_complexity_approach as eca
 # Note: RUN_NAME is used as the output folder name, so it can only contain letters, digits, '_' and '-'.
 
 #MEASURES =  ALL_MEASURES # or ALL_MEASURES; not used for "standard"
-MEASURES = [
-    "avg_affinity",
-    "deviation_from_random",
-    "enriched_normalized_variant_entropy",
-    "estimate_asymptotic_simpson_diversity_abundance_n_gram_species_n2",
-    "estimate_asymptotic_simpson_diversity_abundance_n_gram_species_n3",
-    "exp_shannon_entropy_abundance_n_gram_species_n2",
-    "exp_shannon_entropy_abundance_n_gram_species_n3",
-    "lempel_ziv_complexity",
-    "normalized_variant_entropy",
-    "num_events",
-    "simpson_diversity_abundance_n_gram_species_n2",
-    "simpson_diversity_abundance_n_gram_species_n3",
-    "species_richness_abundance_n_gram_species_n3",
-    "trace_length_average",
-    "variant_entropy",
-]
+MEASURES = ALL_MEASURES  # not used for "standard"
 
 RUN_NAME = "emd_combined_CRE"
 FEATURE_MODE = "combined"       # "standard" | "combined" | "complexity"

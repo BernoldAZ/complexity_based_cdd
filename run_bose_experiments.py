@@ -27,7 +27,7 @@ from functools import partial
 
 import numpy as np
 import pandas as pd
-
+from constants import ALL_MEASURES
 import run_approach as ra
 from cdrift.utils.helpers import importLog
 from baselines.Bose_J.bose import (
@@ -55,7 +55,7 @@ BOSE_STEP = 2
 MEASURE_WINDOW = None
 
 COMPLEXITY_WINDOW = 5
-MEASURES = None  # None = all unique measures 	num_ties_in_transition_matrix; species_richness_abundance_n_gram_species_n2
+MEASURES = ALL_MEASURES  
 ALPHA = 0.5                   # complexity weight in combined mode
 
 N_WINDOWS = ra.DEFAULT_N_WINDOWS

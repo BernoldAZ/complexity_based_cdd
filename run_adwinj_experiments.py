@@ -36,7 +36,7 @@ import scipy.stats as stats
 
 import run_approach as ra  
 from cdrift.utils.helpers import importLog
-
+from constants import ALL_MEASURES
 from baselines.Adwin_J.martjushev import (
     _applyAvgPVal,
     _extractAllJMeasures,
@@ -58,7 +58,7 @@ MAX_WINDOW = 400                # in traces
 STEP = 50                       # in traces
 MEASURE_WINDOW = None           # window of the J measure itself, None = average trace length
 
-MEASURES = None                 # None = all unique measures
+MEASURES = ALL_MEASURES        
 ALPHA = 0.5                     # complexity weight in combined mode
 
 N_WINDOWS = ra.DEFAULT_N_WINDOWS

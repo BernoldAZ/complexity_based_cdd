@@ -18,6 +18,7 @@ ALL_MEASURES = [
     "num_event_types",
     "num_events",
     "num_sequences",
+    "num_unique_sequences",
     "num_ties_in_transition_matrix",
     "pct_unique_sequences",
     "sequence_entropy",
@@ -45,7 +46,6 @@ ALL_MEASURES = [
     "species_richness_abundance_n_gram_species_n3",
     # Duplicates: dropped by the duplicate check on the Bose log (as done by Selin), HOWEVER can differ on other logs
     # because their values there are identical to a measure above.
-    #"num_unique_sequences",  # same as num_sequences
     #"coverage (n=(2,))",  # same as coverage_n_gram_species_n2
     #"coverage (n=(3,))",  # same as coverage_n_gram_species_n3
     #"coverage_alternative (n=(2,))",  # same as coverage_alternative_n_gram_species_n2

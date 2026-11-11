@@ -4,7 +4,7 @@ import json
 import pandas as pd
 
 import run_cluster_experiments as rvc
-
+import numpy as np
 
 
 BASELINE_FILE = (

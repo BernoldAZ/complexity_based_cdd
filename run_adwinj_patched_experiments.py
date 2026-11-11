@@ -1,3 +1,27 @@
+# Patched ADWIN/J experiments: complexity measures selected per change pattern.
+#   docker run --rm -v "${PWD}:/workspace" cbcdd-image python run_adwinj_patched_experiments.py
+#
+# How the measures are selected:
+#   1. Load the F1 per change pattern of the standard run (BASELINE_FILE).
+#   2. Load the F1 per change pattern of every single complexity measure from the sweep
+#      (SOURCE_DIR/<measure>/versatility_per_change_pattern.csv, one sweep run per measure).
+#   3. For every change pattern, select all measures whose F1 is higher than the baseline F1 for that pattern.
+#      The patterns are taken from the baseline file, none are hardcoded. A pattern without an improving
+#      measure gets no group, and a pattern whose baseline F1 is NaN is ignored.
+#   4. Build the groups: one per change pattern, INTERSECTION (measures selected for every pattern that has a
+#      group) and UNION (measures selected for at least one of them).
+#
+# Experiments: every group is run in "combined" mode with every alpha in ALPHAS, where alpha is the weight of the
+# complexity measures (see run_adwinj_experiments.py). Finished experiments (detections.csv and evaluation_measures.csv exist)
+# are skipped, so the script can be restarted, and a failing experiment is reported at the end.
+#
+# Outputs in OUT_ROOT:
+#   measure_comparison.csv    baseline F1 and measure F1 for every pattern and measure
+#   selected_measures.json    the groups that were run
+#   ADWINJ_combined_<group>_alpha_<alpha>/    one folder per experiment
+#
+# Selecting measures by their F1 on the same logs that are then evaluated is optimistic, so report the
+# patched results as the best of a sweep and not as an independent estimate.
 import os
 import re
 import json
@@ -314,7 +338,6 @@ def run_experiment(pattern, measures, alpha):
     for measure in measures:
         print(f"  - {measure}")
 
-    print("-" * 75)
 
     # ADWIN/J experiment settings.
     rad.ALPHA = alpha

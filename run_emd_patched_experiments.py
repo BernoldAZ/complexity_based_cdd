@@ -40,7 +40,7 @@ BASELINE_FILE = (
 )
 
 SOURCE_DIR = "baselines_results/sweep_emd"
-OUT_ROOT = "baselines_results/patched_emd_new"
+OUT_ROOT = "baselines_results/patched_emd"
 
 FUSION = "weighted_concat"
 EVALUATE_NOISY = rem.EVALUATE_NOISY

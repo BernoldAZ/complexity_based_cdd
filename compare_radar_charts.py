@@ -11,7 +11,7 @@
 #   <algorithm>_f1_delta.png     F1 of every patched run minus the standard F1, per change pattern (blue = better)
 #   summary.csv                  overall metrics, mean F1 per pattern and the differences to the standard
 #
-# The best run is the one with the highest mean F1 per change pattern (BEST_BY). Note that choosing the best run
+# The best run is the one with the highest mean delta (BEST_BY). Note that choosing the best run
 # among many on the same logs is optimistic, report it as the best of the sweep.
 
 import glob
@@ -32,11 +32,10 @@ OUT_DIR = f"{ROOT}/comparison"
 ALGORITHMS = {"Bose J": (f"{ROOT}/bose_standard", f"{ROOT}/patched_bose"),
     "Bose WC": (f"{ROOT}/bose_wc_standard", f"{ROOT}/patched_bose_wc"),
     "ADWIN J": (f"{ROOT}/adwin_standard", f"{ROOT}/patched_adwinj"),
-    "ADWIN J New": (f"{ROOT}/adwin_standard", f"{ROOT}/patched_adwinj_new"),
     "EMD": (f"{ROOT}/emd_standard", f"{ROOT}/patched_emd"),
     "VCDD": (f"{ROOT}/vc_standard", f"{ROOT}/patched_vc")
 }
-BEST_BY = "Mean pattern F1"     # or "F1-Score" (overall F1 of evaluation_measures.csv)
+BEST_BY = "Delta mean pattern F1"     # or "F1-Score" (overall F1 of evaluation_measures.csv)
 GRID_COLUMNS = 4
 OVERALL = ["F1-Score", "Precision", "Recall", "Latency", "Versatility"]
 
@@ -102,6 +101,7 @@ def plot_radar(algorithm, standard, best_label, best, path):
         ax.fill(angles, values, color=color, alpha=0.2, zorder=1)
     ax.set_xticks(angles[:-1])
     ax.set_xticklabels(patterns, fontsize=12)
+    ax.set_yticklabels([])
     ax.set_ylim(0, 1)
     ax.set_title(f"{algorithm}: standard vs best patched run", va="bottom", fontsize=14)
     ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.08), ncol=2)
@@ -112,7 +112,7 @@ def plot_radar(algorithm, standard, best_label, best, path):
 def plot_delta(algorithm, labels, deltas, path):
     """Plots a heatmap of F1 of every patched run minus the standard F1, per change pattern."""
     data = pd.DataFrame(deltas, index=labels)
-    data["mean"] = data.mean(axis=1)
+    data["mean"] = data.mean(axis=1, skipna=True)
     limit = max(0.05, float(np.nanmax(np.abs(data.values))))
     cmap = plt.get_cmap("RdBu").copy()
     cmap.set_bad("lightgray")
@@ -153,26 +153,47 @@ def main():
 
         f1 = {label: f1_per_pattern(folder) for label, folder in runs}
         standard = f1["standard"]
+        mean_deltas = {}
+
         for label, folder in runs:
             delta = f1[label] - standard
+
+            # Same calculation used for the heatmap's mean column.
+            mean_delta = np.nanmean([
+                f1[label].get(pattern, np.nan) - standard.get(pattern, np.nan)
+                for pattern in standard.index
+            ])
+
+            mean_deltas[label] = mean_delta
+
             rows.append({
-                "Algorithm": algorithm, "Run": label, "Folder": os.path.basename(folder),
+                "Algorithm": algorithm,
+                "Run": label,
+                "Folder": os.path.basename(folder),
                 **overall_metrics(folder),
                 "Mean pattern F1": f1[label].mean(),
-                "Delta mean pattern F1": f1[label].mean() - standard.mean(),
-                "Patterns improved": int((delta > 0).sum()), "Patterns worse": int((delta < 0).sum()),
+                "Delta mean pattern F1": mean_delta,
+                "Patterns improved": int((delta > 0).sum()),
+                "Patterns worse": int((delta < 0).sum()),
             })
         table = pd.DataFrame([r for r in rows if r["Algorithm"] == algorithm])
-        base = table[table["Run"] == "standard"].iloc[0]
-        if "F1-Score" in table:
-            table["Delta F1-Score"] = table["F1-Score"] - base["F1-Score"]
-            for r, d in zip([r for r in rows if r["Algorithm"] == algorithm], table["Delta F1-Score"]):
-                r["Delta F1-Score"] = d
 
-        patched = table[table["Run"] != "standard"]
-        best = patched.loc[patched[BEST_BY].idxmax()]
-        print(f"  best by {BEST_BY}: {best['Run']} ({BEST_BY} {best[BEST_BY]:.3f}, standard {base[BEST_BY]:.3f})")
-        plot_radar(algorithm, standard, best["Run"], f1[best["Run"]], f"{OUT_DIR}/{key}_radar_best.png")
+        patched = table[table["Run"] != "standard"].copy()
+
+        best = patched.loc[patched["Delta mean pattern F1"].idxmax()]
+
+        print(
+            f"  best by mean F1 delta: {best['Run']} "
+            f"(mean delta: {best['Delta mean pattern F1']:+.3f})"
+        )
+
+        plot_radar(
+            algorithm,
+            standard,
+            best["Run"],
+            f1[best["Run"]],
+            f"{OUT_DIR}/{key}_radar_best.png"
+        )        
         labels = [label for label, _ in runs[1:]]
         plot_delta(algorithm, labels, {p: [f1[l].get(p, np.nan) - standard.get(p, np.nan) for l in labels]
                                        for p in standard.index}, f"{OUT_DIR}/{key}_f1_delta.png")

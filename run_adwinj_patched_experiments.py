@@ -26,7 +26,7 @@ import os
 import re
 import json
 import pandas as pd
-
+import numpy as np
 import run_adwinj_experiments as rad
 import run_measure_sweep as rms
 
@@ -37,7 +37,7 @@ BASELINE_FILE = (
 )
 
 SOURCE_DIR = "baselines_results/sweep_adwinj"
-OUT_ROOT = "baselines_results/patched_adwinj_new"
+OUT_ROOT = "baselines_results/patched_adwinj"
 
 MODE = "combined"
 ALPHAS = [0.5, 0.3, 0.1, 0.05]
@@ -84,8 +84,7 @@ def load_f1_results(csv_path):
         pattern = normalize_pattern(row["Change Pattern"])
         f1 = pd.to_numeric(row["F1-Score"], errors="coerce")
 
-        if pd.notna(f1):
-            results[pattern] = float(f1)
+        results[pattern] = float(f1) if pd.notna(f1) else np.nan
 
     return results
 
@@ -217,14 +216,23 @@ def select_measures(baseline, measure_results):
             if measure_f1 is None:
                 continue
 
-            improvement = measure_f1 - baseline_f1
+            # Treat an undefined standard F1 as zero for comparison.
+            comparison_baseline_f1 = (
+                0.0 if pd.isna(baseline_f1) else baseline_f1
+            )
 
-            is_improving = measure_f1 > baseline_f1
+            if pd.isna(measure_f1):
+                continue
+
+            improvement = measure_f1 - comparison_baseline_f1
+
+            is_improving = measure_f1 > comparison_baseline_f1
 
             comparison_rows.append({
                 "Change Pattern": pattern,
                 "Measure": measure,
                 "Baseline F1": baseline_f1,
+                "Comparison Baseline F1": comparison_baseline_f1,
                 "Measure F1": measure_f1,
                 "Improvement": improvement,
                 "Selected": is_improving

@@ -7,7 +7,7 @@
 #      (SOURCE_DIR/<measure>/versatility_per_change_pattern.csv, one sweep run per measure).
 #   3. For every change pattern, select all measures whose F1 is higher than the baseline F1 for that pattern.
 #      The patterns are taken from the baseline file, none are hardcoded. A pattern without an improving
-#      measure gets no group, and a pattern whose baseline F1 is NaN is ignored.
+#      measure gets no group
 #   4. Build the groups: one per change pattern, INTERSECTION (measures selected for every pattern that has a
 #      group) and UNION (measures selected for at least one of them).
 #
@@ -28,7 +28,7 @@ import re
 import json
 import pandas as pd
 import multiprocessing
-
+import numpy as np
 import run_bose_experiments as rb
 import run_measure_sweep as rms
 
@@ -42,13 +42,13 @@ PATHS = {
     "J": {
         "baseline": "baselines_results/bose_standard/versatility_per_change_pattern.csv",
         "source": "baselines_results/sweep_bose_J",
-        "out": "baselines_results/patched_bose_new",
+        "out": "baselines_results/patched_bose",
         "prefix": "BOSE",
     },
     "WC": {
         "baseline": "baselines_results/bose_wc_standard/versatility_per_change_pattern.csv",
         "source": "baselines_results/sweep_bose_wc",
-        "out": "baselines_results/patched_bose_wc_new",
+        "out": "baselines_results/patched_bose_wc",
         "prefix": "BOSE_WC",
     },
 }
@@ -103,8 +103,8 @@ def load_f1_results(csv_path):
         pattern = normalize_pattern(row["Change Pattern"])
         f1 = pd.to_numeric(row["F1-Score"], errors="coerce")
 
-        if pd.notna(f1):
-            results[pattern] = float(f1)
+        results[pattern] = float(f1) if pd.notna(f1) else np.nan
+
 
     return results
 
@@ -236,14 +236,23 @@ def select_measures(baseline, measure_results):
             if measure_f1 is None:
                 continue
 
-            improvement = measure_f1 - baseline_f1
+            # Treat an undefined standard F1 as zero for comparison.
+            comparison_baseline_f1 = (
+                0.0 if pd.isna(baseline_f1) else baseline_f1
+            )
 
-            is_improving = measure_f1 > baseline_f1
+            if pd.isna(measure_f1):
+                continue
+
+            improvement = measure_f1 - comparison_baseline_f1
+
+            is_improving = measure_f1 > comparison_baseline_f1
 
             comparison_rows.append({
                 "Change Pattern": pattern,
                 "Measure": measure,
                 "Baseline F1": baseline_f1,
+                "Comparison Baseline F1": comparison_baseline_f1,
                 "Measure F1": measure_f1,
                 "Improvement": improvement,
                 "Selected": is_improving

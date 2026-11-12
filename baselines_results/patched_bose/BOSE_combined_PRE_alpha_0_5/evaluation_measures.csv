@@ -1,0 +1,2 @@
+Algorithm,F1-Score,Precision,Recall,Latency,Latency (Score),Versatility,Scalability,Milliseconds per Case,Milliseconds per Event,Parameter Sensitivity (IQR),Robustness
+BOSE_combined_PRE_alpha_0_5,0.7560975609756098,0.7380952380952381,0.775,52.74193548387096,0.7362903225806452,0.644047619047619,00:17:09,535.8569795628117,20.553465605621156,0.0,0.9224245552190014

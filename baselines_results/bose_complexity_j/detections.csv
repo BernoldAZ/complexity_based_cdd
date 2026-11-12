@@ -1,0 +1,91 @@
+Algorithm,Log Source,Log,Detected Changepoints,Actual Changepoints for Log,Duration (Seconds),Duration
+bose_complexity_j,Ceravolo,sudden_trace_noise0_1000_sw,[],[499],1.2385819649971381,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise10_1000_cb,[],[499],1.2553288460003387,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise0_1000_cd,[],[499],1.2656226490034896,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise0_1000_cf,[],[499],1.2687171779980417,00:00:01
+bose_complexity_j,Bose,bose_log,"[632, 1106, 1896, 2370, 3160, 3634, 4186, 4740, 5056]","[1199, 2399, 3599, 4799]",1.3840339390008012,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise0_1000_pm,[],[499],1.81960848000017,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise0_1000_cp,[],[499],1.8367125219992886,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise10_1000_cf,[],[499],1.8948835560004227,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise0_1000_rp,[],[499],1.914893948000099,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise0_1000_pl,[],[499],1.9330832779996854,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise0_1000_lp,[],[499],2.343744042002072,00:00:02
+bose_complexity_j,Ceravolo,sudden_trace_noise0_1000_re,[],[499],2.3867232209995564,00:00:02
+bose_complexity_j,Ceravolo,sudden_trace_noise0_1000_cb,[],[499],2.4303966229999787,00:00:02
+bose_complexity_j,Ceravolo,sudden_trace_noise10_1000_cp,[],[499],1.2086175479998928,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise10_1000_pm,[],[499],1.225306984000781,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise10_1000_cd,[],[499],2.530656683000416,00:00:02
+bose_complexity_j,Ceravolo,sudden_trace_noise10_1000_lp,[],[499],1.3297794870013604,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise10_1000_rp,[],[499],1.145030671999848,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise10_1000_pl,[],[499],1.9726264179989812,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise10_1000_re,[],[499],1.8530124800017802,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise15_1000_pm,[],[499],1.179565605998505,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise15_1000_re,[],[499],1.1456492529978277,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise15_1000_cb,[],[499],1.8105299140006537,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise15_1000_cd,[],[499],1.82572728300147,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise15_1000_cf,[],[499],1.8383163510006852,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise10_1000_sw,[],[499],1.9454561810016457,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise15_1000_sw,[],[499],1.2033351829995809,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise15_1000_cp,[],[499],2.097105516000738,00:00:02
+bose_complexity_j,Ceravolo,sudden_trace_noise20_1000_cf,[],[499],1.2489017580010113,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise15_1000_lp,[],[499],2.1245608760000323,00:00:02
+bose_complexity_j,Ceravolo,sudden_trace_noise15_1000_pl,[],[499],2.1559672949988453,00:00:02
+bose_complexity_j,Ceravolo,sudden_trace_noise20_1000_cp,[],[499],1.135809627998242,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise15_1000_rp,[],[499],2.279410690996883,00:00:02
+bose_complexity_j,Ceravolo,sudden_trace_noise20_1000_pl,[],[499],1.141123001001688,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise20_1000_sw,[],[499],1.1007051009983115,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise20_1000_cb,[],[499],1.9791406719996303,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise20_1000_cd,[460],[499],1.7078597879990411,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise20_1000_pm,[],[499],1.4796356599981664,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise20_1000_lp,[],[499],1.7322999259995413,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise20_1000_rp,[],[499],1.6843168119994516,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise20_1000_re,[],[499],1.6851945180023904,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise5_1000_cd,[],[499],1.1969283270009328,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise5_1000_pl,[],[499],1.1255810939983348,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise5_1000_sw,[],[499],1.1597702039980504,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise5_1000_re,[],[499],1.1809665680011676,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise5_1000_cb,[],[499],2.0818325680011185,00:00:02
+bose_complexity_j,Ceravolo,sudden_trace_noise5_1000_pm,[],[499],1.6723366980004357,00:00:01
+bose_complexity_j,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval_2,"[546, 896, 1404, 1988, 2340]","[999, 1999]",0.8249808960026712,00:00:00
+bose_complexity_j,Ostovar,Atomic_ConditionalMove_output_ConditionalMove_2,"[976, 1832]","[999, 1999]",1.2274870479996025,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise5_1000_rp,[],[499],1.6974411020019033,00:00:01
+bose_complexity_j,Ostovar,Atomic_ConditionalMove_output_ConditionalMove,"[898, 1522, 1912]","[999, 1999]",1.4551531479992263,00:00:01
+bose_complexity_j,Ostovar,Atomic_ConditionalMove_output_ConditionalMove_5,"[508, 976, 1834, 2496]","[999, 1999]",1.2100693339998543,00:00:01
+bose_complexity_j,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval,"[898, 1170, 1950]","[999, 1999]",1.2223313779977616,00:00:01
+bose_complexity_j,Ceravolo,sudden_trace_noise5_1000_cp,[],[499],2.1667513839965977,00:00:02
+bose_complexity_j,Ceravolo,sudden_trace_noise5_1000_cf,[],[499],2.332410756000172,00:00:02
+bose_complexity_j,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval_5,"[508, 820, 1404, 1560, 1912]","[999, 1999]",0.9434562800015556,00:00:00
+bose_complexity_j,Ceravolo,sudden_trace_noise5_1000_lp,[],[499],2.1620380009990185,00:00:02
+bose_complexity_j,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence_2,"[546, 898, 1444, 1988, 2340, 2534]","[999, 1999]",0.8508873240025423,00:00:00
+bose_complexity_j,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence,"[936, 1326, 1520, 1950, 2300, 2536]","[999, 1999]",0.8945604569998977,00:00:00
+bose_complexity_j,Ostovar,Atomic_Loop_output_Loop_2,"[352, 818, 1288, 1990]","[999, 1999]",1.0275082939988351,00:00:01
+bose_complexity_j,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval,"[936, 1286, 1912, 2380, 2612]","[999, 1999]",0.9596297050011344,00:00:00
+bose_complexity_j,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval_5,"[858, 1366, 1988]","[999, 1999]",0.9016939869979979,00:00:00
+bose_complexity_j,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence,"[976, 1248, 1872]","[999, 1999]",0.9255317319984897,00:00:00
+bose_complexity_j,Ostovar,Atomic_Frequency_output_Frequency_2,"[350, 1052, 1482, 1832, 2106, 2418]","[999, 1999]",1.4278628539977944,00:00:01
+bose_complexity_j,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence_5,"[546, 896, 1444, 1988, 2340, 2536]","[999, 1999]",1.4400883550006256,00:00:01
+bose_complexity_j,Ostovar,Atomic_Frequency_output_Frequency_5,"[350, 586, 1054, 1520, 1834, 2380]","[999, 1999]",1.4843088470006478,00:00:01
+bose_complexity_j,Ostovar,Atomic_Frequency_output_Frequency,"[312, 1092, 1520, 2144, 2418]","[999, 1999]",1.6046856460015988,00:00:01
+bose_complexity_j,Ostovar,Atomic_ParallelMove_output_ParallelMove_2,"[976, 1364, 1560, 1756, 1990, 2456]","[999, 1999]",1.3928722939999716,00:00:01
+bose_complexity_j,Ostovar,Atomic_Loop_output_Loop_5,"[818, 1326, 1988]","[999, 1999]",1.5066091230000893,00:00:01
+bose_complexity_j,Ostovar,Atomic_ParallelMove_output_ParallelMove,"[352, 858, 1248, 1520, 1950, 2146]","[999, 1999]",1.5212560719992325,00:00:01
+bose_complexity_j,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval_2,"[662, 858, 1988, 2418]","[999, 1999]",1.4828755689995887,00:00:01
+bose_complexity_j,Ostovar,Atomic_Loop_output_Loop,"[936, 1288, 1950, 2300]","[999, 1999]",1.7903081769982236,00:00:01
+bose_complexity_j,Ostovar,Atomic_ParallelMove_output_ParallelMove_5,"[820, 1014, 1326, 1832, 1990, 2224]","[999, 1999]",1.7069216939999023,00:00:01
+bose_complexity_j,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence_2,"[1052, 1482, 1676, 2534]","[999, 1999]",0.9412030320017948,00:00:00
+bose_complexity_j,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence_5,"[780, 1248, 1756, 1950, 2456]","[999, 1999]",0.945484479998413,00:00:00
+bose_complexity_j,Ostovar,Atomic_SerialRemoval_output_SerialRemoval,"[312, 976, 1248, 1638, 1912]","[999, 1999]",0.8714100440010952,00:00:00
+bose_complexity_j,Ostovar,Atomic_SerialMove_output_SerialMove,"[428, 1054, 1248, 1482, 1716]","[999, 1999]",0.9457720760001394,00:00:00
+bose_complexity_j,Ostovar,Atomic_SerialMove_output_SerialMove_2,"[352, 742, 1052, 1248, 1444, 1716, 2028, 2224]","[999, 1999]",1.2508344319976459,00:00:01
+bose_complexity_j,Ostovar,Atomic_Skip_output_Skip_5,"[428, 936, 1988, 2300, 2496]","[999, 1999]",1.0761905140025192,00:00:01
+bose_complexity_j,Ostovar,Atomic_SerialMove_output_SerialMove_5,"[818, 976, 1248, 1482, 1756, 2066, 2262]","[999, 1999]",1.3619495679995453,00:00:01
+bose_complexity_j,Ostovar,Atomic_SerialRemoval_output_SerialRemoval_2,"[1014, 1326, 1910, 2340]","[999, 1999]",1.23560419000205,00:00:01
+bose_complexity_j,Ostovar,Atomic_Swap_output_Swap,"[896, 1092, 1540, 2028]","[999, 1999]",0.7854489519995695,00:00:00
+bose_complexity_j,Ostovar,Atomic_SerialRemoval_output_SerialRemoval_5,"[312, 1014, 1326, 1482, 1834]","[999, 1999]",1.3288396680000005,00:00:01
+bose_complexity_j,Ostovar,Atomic_Skip_output_Skip,"[974, 1482, 1988, 2418]","[999, 1999]",1.3202828370012867,00:00:01
+bose_complexity_j,Ostovar,Atomic_Skip_output_Skip_2,"[390, 898, 1248, 1988]","[999, 1999]",1.3156010589991638,00:00:01
+bose_complexity_j,Ostovar,Atomic_Substitute_output_Substitute,"[936, 1132, 1600, 1950, 2378, 2496]","[999, 1999]",1.108811774996866,00:00:01
+bose_complexity_j,Ostovar,Atomic_Substitute_output_Substitute_2,"[896, 1170, 1326, 1988, 2378, 2458]","[999, 1999]",1.1447747419988445,00:00:01
+bose_complexity_j,Ostovar,Atomic_Swap_output_Swap_2,"[1014, 2028, 2224]","[999, 1999]",0.800367642998026,00:00:00
+bose_complexity_j,Ostovar,Atomic_Swap_output_Swap_5,"[818, 1834, 2028, 2458]","[999, 1999]",0.7754330719981226,00:00:00
+bose_complexity_j,Ostovar,Atomic_Substitute_output_Substitute_5,"[896, 1092, 1988, 2302, 2536]","[999, 1999]",1.127783141000691,00:00:01

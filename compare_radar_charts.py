@@ -31,6 +31,7 @@ ROOT = "baselines_results"
 OUT_DIR = f"{ROOT}/comparison"
 ALGORITHMS = {"Bose J": (f"{ROOT}/bose_standard", f"{ROOT}/patched_bose"),
     "Bose WC": (f"{ROOT}/bose_wc_standard", f"{ROOT}/patched_bose_wc"),
+    "Bose WC New": (f"{ROOT}/bose_wc_standard", f"{ROOT}/patched_bose_wc_new"),
     "ADWIN J": (f"{ROOT}/adwin_standard", f"{ROOT}/patched_adwinj"),
     "EMD": (f"{ROOT}/emd_standard", f"{ROOT}/patched_emd"),
     "VCDD": (f"{ROOT}/vc_standard", f"{ROOT}/patched_vc")

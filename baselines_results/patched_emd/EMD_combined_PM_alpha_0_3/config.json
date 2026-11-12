@@ -1,0 +1,19 @@
+{
+  "run_name": "EMD_combined_PM_alpha_0_3",
+  "approach": "EMD_combined_weighted_concat",
+  "feature_mode": "combined",
+  "fusion": "weighted_concat",
+  "alpha": 0.3,
+  "measures": [
+    "deviation_from_random",
+    "estimate_asymptotic_simpson_diversity_abundance_n_gram_species_n2",
+    "exp_shannon_entropy_abundance_n_gram_species_n2",
+    "num_events",
+    "simpson_diversity_abundance_n_gram_species_n2",
+    "trace_length_average"
+  ],
+  "window_size": 300,
+  "step_size": 2,
+  "lag_window": 200,
+  "evaluate_noisy": false
+}

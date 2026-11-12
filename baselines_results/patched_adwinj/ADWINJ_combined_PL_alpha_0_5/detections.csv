@@ -1,0 +1,91 @@
+Algorithm,Log Source,Log,Detected Changepoints,Actual Changepoints for Log,Duration (Seconds),Duration
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise10_1000_cb,[399],[499],5.012404372864694,00:00:05
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise0_1000_pl,[],[499],5.225441701255477,00:00:05
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise10_1000_cd,[],[499],5.642097564094001,00:00:05
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise0_1000_re,[524],[499],5.348376623282093,00:00:05
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise0_1000_cd,[],[499],7.029048970423901,00:00:07
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise10_1000_cf,[349],[499],6.774375094031711,00:00:06
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise0_1000_sw,[],[499],6.976831893392955,00:00:06
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise0_1000_rp,[],[499],8.203307955831406,00:00:08
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise0_1000_pm,[],[499],8.075542339123785,00:00:08
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise0_1000_cf,[349],[499],7.6434682161743694,00:00:07
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise0_1000_lp,[524],[499],9.038073970368714,00:00:09
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise10_1000_cp,[349],[499],5.724990129951038,00:00:05
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise0_1000_cb,[399],[499],8.795877215055953,00:00:08
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise10_1000_lp,[524],[499],6.490498703842604,00:00:06
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise10_1000_pm,[],[499],7.188146816006338,00:00:07
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise10_1000_rp,[],[499],5.9999891412044235,00:00:05
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise0_1000_cp,[524],[499],10.681013896144577,00:00:10
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise15_1000_cb,[],[499],5.211738679336122,00:00:05
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise15_1000_cf,[349],[499],5.0265326184126025,00:00:05
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise10_1000_pl,[],[499],8.162571945187665,00:00:08
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise15_1000_lp,[349],[499],5.668086675897939,00:00:05
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise10_1000_re,[349],[499],7.048559401988314,00:00:07
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise10_1000_sw,[],[499],6.755774338511401,00:00:06
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise15_1000_cp,[399],[499],5.847833348587301,00:00:05
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise15_1000_pm,[],[499],4.599399907343468,00:00:04
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise15_1000_cd,[],[499],8.098246917532379,00:00:08
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise20_1000_cb,[],[499],5.227251337200869,00:00:05
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise20_1000_cd,[],[499],5.558570026416419,00:00:05
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise15_1000_pl,[],[499],8.177758354166144,00:00:08
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise20_1000_cp,[349],[499],4.925081550845789,00:00:04
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise15_1000_rp,[],[499],8.276711962971603,00:00:08
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise15_1000_re,[349],[499],8.179054318730778,00:00:08
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise20_1000_re,[349],[499],5.499496905635169,00:00:05
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise20_1000_pl,[],[499],6.863008431293565,00:00:06
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise20_1000_sw,[],[499],5.753934008174838,00:00:05
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise20_1000_lp,[349],[499],8.446767079312849,00:00:08
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise20_1000_rp,[],[499],5.310660776449367,00:00:05
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise15_1000_sw,[],[499],10.357880765164737,00:00:10
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise20_1000_pm,[],[499],7.386096765356342,00:00:07
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise5_1000_cb,[399],[499],7.736623021988635,00:00:07
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise20_1000_cf,[349],[499],10.484848176343803,00:00:10
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise5_1000_pl,[],[499],5.3358532374149945,00:00:05
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise5_1000_lp,[349],[499],6.187496584680048,00:00:06
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise5_1000_cf,[299],[499],8.44044872228551,00:00:08
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise5_1000_re,[524],[499],5.245514050431666,00:00:05
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise5_1000_cp,[524],[499],9.34110920184321,00:00:09
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise5_1000_sw,[],[499],6.008679027836479,00:00:06
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise5_1000_cd,[],[499],9.545312983125768,00:00:09
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise5_1000_pm,[],[499],9.29831449660196,00:00:09
+ADWINJ_combined_PL_alpha_0_5,Ceravolo,sudden_trace_noise5_1000_rp,[],[499],8.525753854504728,00:00:08
+ADWINJ_combined_PL_alpha_0_5,Bose,bose_log,"[1199, 2350, 3451, 4552]","[1199, 2399, 3599, 4799]",59.051926705331425,00:00:59
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_Frequency_output_Frequency,[],"[999, 1999]",75.02930202999414,00:01:15
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_Frequency_output_Frequency_2,[],"[999, 1999]",104.28273294698738,00:01:44
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval,"[749, 1850]","[999, 1999]",157.08281513599286,00:02:37
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_ConditionalMove_output_ConditionalMove,"[924, 1950]","[999, 1999]",215.30782445810473,00:03:35
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval_2,"[799, 1900]","[999, 1999]",212.731960467725,00:03:32
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_Loop_output_Loop,"[924, 1950]","[999, 1999]",208.3031640562258,00:03:28
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_Frequency_output_Frequency_5,"[1099, 1800]","[999, 1999]",179.1138864781533,00:02:59
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_ConditionalRemoval_output_ConditionalRemoval_5,"[799, 1900]","[999, 1999]",251.09515251133416,00:04:11
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence,"[999, 1975]","[999, 1999]",234.74479805012743,00:03:54
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_ParallelMove_output_ParallelMove,[],"[999, 1999]",212.21807082318264,00:03:32
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_ParallelMove_output_ParallelMove_2,[],"[999, 1999]",255.81470227212048,00:04:15
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_Loop_output_Loop_5,"[699, 2000]","[999, 1999]",257.27061158725337,00:04:17
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval,"[799, 1850]","[999, 1999]",173.6228470748465,00:02:53
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_Loop_output_Loop_2,"[924, 1950]","[999, 1999]",265.08175074809697,00:04:25
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_ParallelMove_output_ParallelMove_5,[],"[999, 1999]",268.08403436296067,00:04:28
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence,[],"[999, 1999]",186.8836854367837,00:03:06
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence_5,"[924, 1950]","[999, 1999]",336.4883223023571,00:05:36
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_ConditionalMove_output_ConditionalMove_2,"[999, 1850]","[999, 1999]",377.35212863360357,00:06:17
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_ConditionalMove_output_ConditionalMove_5,"[999, 1800]","[999, 1999]",393.93074060648723,00:06:33
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_SerialRemoval_output_SerialRemoval,"[924, 1800]","[999, 1999]",166.75118443520114,00:02:46
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_ConditionalToSequence_output_ConditionalToSequence_2,"[924, 1950]","[999, 1999]",400.5206354662296,00:06:40
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval_2,[1899],"[999, 1999]",271.5972475204835,00:04:31
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_SerialRemoval_output_SerialRemoval_2,"[999, 1900]","[999, 1999]",209.01288516734712,00:03:29
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_SerialRemoval_output_SerialRemoval_5,"[999, 1850]","[999, 1999]",198.99571073166226,00:03:18
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_ParallelRemoval_output_ParallelRemoval_5,"[799, 1950]","[999, 1999]",268.33444125881215,00:04:28
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence_2,[1049],"[999, 1999]",299.79297890791713,00:04:59
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_SerialMove_output_SerialMove_5,[1799],"[999, 1999]",283.07211655853826,00:04:43
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_SerialMove_output_SerialMove,[],"[999, 1999]",259.0860928740258,00:04:19
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_ParallelToSequence_output_ParallelToSequence_5,[749],"[999, 1999]",312.8321046868514,00:05:12
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_Skip_output_Skip_2,"[749, 1850]","[999, 1999]",211.85336798733624,00:03:31
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_SerialMove_output_SerialMove_2,[],"[999, 1999]",301.1319747967973,00:05:01
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_Skip_output_Skip_5,"[799, 1900]","[999, 1999]",221.14653041460042,00:03:41
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_Skip_output_Skip,"[999, 1900]","[999, 1999]",218.31533628408215,00:03:38
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_Swap_output_Swap,[],"[999, 1999]",169.24469007801235,00:02:49
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_Substitute_output_Substitute,"[924, 1950]","[999, 1999]",201.0150055290469,00:03:21
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_Swap_output_Swap_2,[],"[999, 1999]",202.94288949875408,00:03:22
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_Swap_output_Swap_5,[1149],"[999, 1999]",195.0677022599084,00:03:15
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_Substitute_output_Substitute_2,"[924, 1850]","[999, 1999]",228.3648594441911,00:03:48
+ADWINJ_combined_PL_alpha_0_5,Ostovar,Atomic_Substitute_output_Substitute_5,"[924, 2025]","[999, 1999]",231.15429270933964,00:03:51

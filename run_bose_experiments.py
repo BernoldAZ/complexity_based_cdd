@@ -44,12 +44,12 @@ from baselines.Bose_J.bose import (
 
 # Experiment settings
 
-MODE = "bose"                 # "bose" | "complexity" | "combined"
+MODE = "complexity"                 # "bose" | "complexity" | "combined"
 MODE_NAME = {"bose": "standard"}.get(MODE, MODE)
-RUN_NAME = f"bose_wc_{MODE_NAME}"
+RUN_NAME = f"bose_{MODE_NAME}"
 
 TEST = "KS"                   # "KS" | "MU"
-BOSE_MEASURE = "WC"             # "J" | "WC"
+BOSE_MEASURE = "J"             # "J" | "WC"
 BOSE_WINDOW = 200
 BOSE_STEP = 2
 MEASURE_WINDOW = None
@@ -163,10 +163,11 @@ def is_atomic(log):
  
  
 # Run
-def _init_worker(alpha):
-    """Initialize worker process with the global ALPHA value."""
-    global ALPHA
+def _init_worker(alpha, bose_measure):
+    """Initialize worker process with the run's configuration values."""
+    global ALPHA, BOSE_MEASURE
     ALPHA = alpha
+    BOSE_MEASURE = bose_measure
 
 def run(run_name, mode, measures, out_root, evaluate_noisy=EVALUATE_NOISY):
     """Runs one configuration (mode, measures; the other settings come from the variables above) and evaluates it."""
@@ -192,7 +193,11 @@ def run(run_name, mode, measures, out_root, evaluate_noisy=EVALUATE_NOISY):
 
     print(f"{run_name}: {len(logs)} logs", flush=True)
     rows = []
-    with ProcessPoolExecutor(max_workers=None, initializer=_init_worker, initargs=(ALPHA,)) as executor:
+    with ProcessPoolExecutor(
+        max_workers=None,
+        initializer=_init_worker,
+        initargs=(ALPHA, BOSE_MEASURE),
+    ) as executor:
         futures = [executor.submit(detect_one, log, measures, mode, run_name) for log in logs]
         for i, future in enumerate(as_completed(futures), 1):
             row = future.result()
@@ -212,6 +217,8 @@ def run(run_name, mode, measures, out_root, evaluate_noisy=EVALUATE_NOISY):
 
 
 if __name__ == "__main__":
-    for key, value in run(RUN_NAME, MODE, MEASURES, OUT_ROOT).items():
-        print(f"{key}: {value}")
+    for BOSE_MEASURE in ("J", "WC"):
+        RUN_NAME = f"bose_{MODE_NAME}_{BOSE_MEASURE.lower()}"
+        for key, value in run(RUN_NAME, MODE, MEASURES, OUT_ROOT).items():
+            print(f"{key}: {value}")
  

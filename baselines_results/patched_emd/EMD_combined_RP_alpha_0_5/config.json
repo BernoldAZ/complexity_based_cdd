@@ -1,0 +1,16 @@
+{
+  "run_name": "EMD_combined_RP_alpha_0_5",
+  "approach": "EMD_combined_weighted_concat",
+  "feature_mode": "combined",
+  "fusion": "weighted_concat",
+  "alpha": 0.5,
+  "measures": [
+    "enriched_normalized_variant_entropy",
+    "estimate_asymptotic_exp_shannon_entropy_abundance_n_gram_species_n3",
+    "variant_entropy"
+  ],
+  "window_size": 300,
+  "step_size": 2,
+  "lag_window": 200,
+  "evaluate_noisy": false
+}

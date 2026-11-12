@@ -1,0 +1,2 @@
+Algorithm,F1-Score,Precision,Recall,Latency,Latency (Score),Versatility,Scalability,Milliseconds per Case,Milliseconds per Event,Parameter Sensitivity (IQR),Robustness
+EMD_combined_CF_alpha_0_05,0.875,0.875,0.875,49.85714285714287,0.7507142857142857,0.8113095238095238,00:03:32,110.40965491062396,4.234900600875741,0.0,0.9397010141371305

@@ -1,0 +1,14 @@
+{
+  "run_name": "EMD_combined_PL_alpha_0_5",
+  "approach": "EMD_combined_weighted_concat",
+  "feature_mode": "combined",
+  "fusion": "weighted_concat",
+  "alpha": 0.5,
+  "measures": [
+    "normalized_variant_entropy"
+  ],
+  "window_size": 300,
+  "step_size": 2,
+  "lag_window": 200,
+  "evaluate_noisy": false
+}

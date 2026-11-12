@@ -36,7 +36,7 @@ import run_measure_sweep as rms
 
 # Settings
 
-BOSE_MEASURE = "WC"   # "J" or "WC", must match BOSE_MEASURE in run_bose_experiments.py
+BOSE_MEASURE = "J"   # "J" or "WC", must match BOSE_MEASURE in run_bose_experiments.py
 
 PATHS = {
     "J": {

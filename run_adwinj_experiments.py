@@ -47,7 +47,7 @@ from baselines.Adwin_J.martjushev import (
 
 # Settings 
 
-MODE = "adwin"                  # "adwin" | "complexity" | "combined"
+MODE = "complexity"                  # "adwin" | "complexity" | "combined"
 MODE_NAME = {"adwin": "standard"}.get(MODE, MODE)
 RUN_NAME = f"adwin_{MODE_NAME}"
 

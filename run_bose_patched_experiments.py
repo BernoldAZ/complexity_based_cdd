@@ -41,7 +41,7 @@ BOSE_MEASURE = "J"   # "J" or "WC", must match BOSE_MEASURE in run_bose_experime
 PATHS = {
     "J": {
         "baseline": "baselines_results/bose_standard/versatility_per_change_pattern.csv",
-        "source": "baselines_results/sweep_bose_J",
+        "source": "baselines_results/sweep_bose_j",
         "out": "baselines_results/patched_bose",
         "prefix": "BOSE",
     },

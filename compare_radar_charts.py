@@ -31,14 +31,18 @@ ROOT = "baselines_results"
 OUT_DIR = f"{ROOT}/comparison"
 ALGORITHMS = {"Bose J": (f"{ROOT}/bose_standard", f"{ROOT}/patched_bose"),
     "Bose WC": (f"{ROOT}/bose_wc_standard", f"{ROOT}/patched_bose_wc"),
-    "Bose WC New": (f"{ROOT}/bose_wc_standard", f"{ROOT}/patched_bose_wc_new"),
     "ADWIN J": (f"{ROOT}/adwin_standard", f"{ROOT}/patched_adwinj"),
     "EMD": (f"{ROOT}/emd_standard", f"{ROOT}/patched_emd"),
-    "VCDD": (f"{ROOT}/vc_standard", f"{ROOT}/patched_vc")
+    "VCDD": (f"{ROOT}/vc_standard", f"{ROOT}/patched_vc"),
+    "Bose J all measures": (f"{ROOT}/bose_standard", f"{ROOT}/patched_bose_all_measures"),
+    "Bose WC all measures": (f"{ROOT}/bose_wc_standard", f"{ROOT}/patched_bose_wc_all_measures"),
+    "ADWIN J all measures": (f"{ROOT}/adwin_standard", f"{ROOT}/patched_adwinj_all_measures"),
+    "VCDD all measures": (f"{ROOT}/vc_standard", f"{ROOT}/patched_vc_all_measures"),
+    "EMD all measures": (f"{ROOT}/emd_standard", f"{ROOT}/patched_emd_all_measures"),
+
 }
 BEST_BY = "Delta mean pattern F1"     # or "F1-Score" (overall F1 of evaluation_measures.csv)
 GRID_COLUMNS = 4
-OVERALL = ["F1-Score", "Precision", "Recall", "Latency", "Versatility"]
 
 
 def label_of(folder):
@@ -68,9 +72,16 @@ def f1_per_pattern(folder):
 
 
 def overall_metrics(folder):
-    """Reads the overall metrics from evaluation_measures.csv and returns a dict with only the OVERALL keys."""
-    row = pd.read_csv(os.path.join(folder, "evaluation_measures.csv")).iloc[0]
-    return {k: row[k] for k in OVERALL if k in row.index}
+    """Read all metrics from evaluation_measures.csv."""
+    df = pd.read_csv(os.path.join(folder, "evaluation_measures.csv"))
+    row = df.iloc[0].to_dict()
+
+    # Keep the comparison algorithm name separate from the
+    # algorithm name stored in evaluation_measures.csv.
+    if "Algorithm" in row:
+        row["Evaluation Algorithm"] = row.pop("Algorithm")
+
+    return row
 
 
 def plot_grid(algorithm, runs, path):

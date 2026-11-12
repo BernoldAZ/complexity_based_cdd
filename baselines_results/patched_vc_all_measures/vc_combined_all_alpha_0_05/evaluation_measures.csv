@@ -1,0 +1,2 @@
+Algorithm,F1-Score,Precision,Recall,Latency,Latency (Score),Versatility,Scalability,Milliseconds per Case,Milliseconds per Event,Parameter Sensitivity (IQR),Robustness
+vc_combined_all_alpha_0_05,0.8918918918918919,0.9705882352941176,0.825,76.21212121212122,0.6189393939393939,0.9035714285714285,00:00:02,1.0874098948200157,0.04170896848377338,0.0,0.9586893853045975

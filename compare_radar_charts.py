@@ -82,7 +82,39 @@ def overall_metrics(folder):
         row["Evaluation Algorithm"] = row.pop("Algorithm")
 
     return row
+def get_run_group(folder):
+    """Identify whether a patched run is UNION, INTERSECTION, or another group."""
+    name = os.path.basename(folder).upper()
 
+    if re.search(r"(^|_)UNION(_|$)", name):
+        return "UNION"
+
+    if re.search(r"(^|_)INTERSECTION(_|$)", name):
+        return "INTERSECTION"
+
+    return None
+
+
+def select_best_run(table, group=None):
+    """
+    Select the run with the highest Delta mean pattern F1.
+    If group is provided, only consider UNION or INTERSECTION runs.
+    """
+    candidates = table[table["Run"] != "standard"].copy()
+
+    if group is not None:
+        candidates = candidates[
+            candidates["Folder"].apply(
+                lambda folder: get_run_group(folder) == group
+            )
+        ]
+
+    candidates = candidates.dropna(subset=["Delta mean pattern F1"])
+
+    if candidates.empty:
+        return None
+
+    return candidates.loc[candidates["Delta mean pattern F1"].idxmax()]
 
 def plot_grid(algorithm, runs, path):
     """Plots the radar charts of all runs in a grid, the standard first."""
@@ -98,7 +130,7 @@ def plot_grid(algorithm, runs, path):
     plt.close(fig)
 
 
-def plot_radar(algorithm, standard, best_label, best, path):
+def plot_radar(algorithm, standard, best_label, best, path, title=None):
     """Plots a radar chart of the standard run and the best patched run."""
     patterns = list(standard.index)
     angles = np.linspace(0, 2 * np.pi, len(patterns), endpoint=False).tolist()
@@ -190,22 +222,67 @@ def main():
             })
         table = pd.DataFrame([r for r in rows if r["Algorithm"] == algorithm])
 
-        patched = table[table["Run"] != "standard"].copy()
+        # ─── Best overall configuration ────────────────────────────────────────
 
-        best = patched.loc[patched["Delta mean pattern F1"].idxmax()]
+        best = select_best_run(table)
 
-        print(
-            f"  best by mean F1 delta: {best['Run']} "
-            f"(mean delta: {best['Delta mean pattern F1']:+.3f})"
-        )
+        if best is not None:
+            print(
+                f"  best overall: {best['Run']} "
+                f"(mean delta: {best['Delta mean pattern F1']:+.3f})"
+            )
 
-        plot_radar(
-            algorithm,
-            standard,
-            best["Run"],
-            f1[best["Run"]],
-            f"{OUT_DIR}/{key}_radar_best.png"
-        )        
+            plot_radar(
+                algorithm,
+                standard,
+                best["Run"],
+                f1[best["Run"]],
+                f"{OUT_DIR}/{key}_radar_best.png"
+            )
+
+
+        # ─── Best UNION configuration ──────────────────────────────────────────
+
+        best_union = select_best_run(table, group="UNION")
+
+        if best_union is not None:
+            print(
+                f"  best UNION: {best_union['Run']} "
+                f"(mean delta: {best_union['Delta mean pattern F1']:+.3f})"
+            )
+
+            plot_radar(
+                algorithm,
+                standard,
+                best_union["Run"],
+                f1[best_union["Run"]],
+                f"{OUT_DIR}/{key}_radar_best_union.png",
+                title=f"{algorithm}: standard vs best UNION"
+            )
+        else:
+            print("  no UNION runs found")
+
+
+        # ─── Best INTERSECTION configuration ──────────────────────────────────
+
+        best_intersection = select_best_run(table, group="INTERSECTION")
+
+        if best_intersection is not None:
+            print(
+                f"  best INTERSECTION: {best_intersection['Run']} "
+                f"(mean delta: {best_intersection['Delta mean pattern F1']:+.3f})"
+            )
+
+            plot_radar(
+                algorithm,
+                standard,
+                best_intersection["Run"],
+                f1[best_intersection["Run"]],
+                f"{OUT_DIR}/{key}_radar_best_intersection.png",
+                title=f"{algorithm}: standard vs best INTERSECTION"
+            )
+        else:
+            print("  no INTERSECTION runs found")        
         labels = [label for label, _ in runs[1:]]
         plot_delta(algorithm, labels, {p: [f1[l].get(p, np.nan) - standard.get(p, np.nan) for l in labels]
                                        for p in standard.index}, f"{OUT_DIR}/{key}_f1_delta.png")

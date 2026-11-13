@@ -18,6 +18,24 @@ runs/<run_name>/         Outputs: config.json, detections.csv, evaluation_measur
                          versatility_per_change_pattern.csv, radar_chart_versatility.png
 ```
 
+### CDrift dataset
+**Characteristics of the CDrift dataset. All drifts are sudden.**
+
+| | **Bose** | **Ceravolo** | **Ostovar** |
+|---|:---:|:---:|:---:|
+| ***Event logs*** | | | |
+| Event logs | 1 | 50 | 39 |
+| Traces per log | 6,000 | 1,000 | 2,999 |
+| Total traces | 6,000 | 50,000 | 116,961 |
+| Noise levels (%) | 0 | 0, 5, 10, 15, 20 | 0, 2, 5 |
+| Change patterns | - | 10 | 13 |
+| ***Drifts*** | | | |
+| Drifts per log | 4 | 1 | 2 |
+| Drift positions | every 1,200 traces | trace 499 | traces 999, 1,999 |
+| Total drifts | 4 | 50 | 78 |
+| ***Change patterns*** | | | |
+| Pattern codes | not given | cb, cd, cf, cp, lp, pl, pm, re, rp, sw | cb, cf, cm, cre, fr, lp, pl, pm, pre, rp, sm, sre, sw |
+
 ## Usage
 
 Build the image once (from this folder, in PowerShell):

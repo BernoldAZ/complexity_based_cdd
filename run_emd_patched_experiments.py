@@ -7,7 +7,7 @@
 #      (SOURCE_DIR/<measure>/versatility_per_change_pattern.csv, one sweep run per measure).
 #   3. For every change pattern, select all measures whose F1 is higher than the baseline F1 for that pattern.
 #      The patterns are taken from the baseline file, none are hardcoded. A pattern without an improving
-#      measure gets no group, and a pattern whose baseline F1 is NaN is ignored.
+#      measure gets no group
 #   4. Build the groups: one per change pattern, INTERSECTION (measures selected for every pattern that has a
 #      group) and UNION (measures selected for at least one of them).
 #

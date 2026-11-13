@@ -1,0 +1,81 @@
+Algorithm,Pattern,Baseline F1,Not perfect,Complementary measures,F1 alpha=0.5,Improved alpha=0.5,F1 alpha=0.3,Improved alpha=0.3,F1 alpha=0.1,Improved alpha=0.1,F1 alpha=0.05,Improved alpha=0.05,Improved any alpha,Runs missing
+Bose J,CB,1.0,False,0,,False,,False,,False,,False,False,0
+Bose J,CD,,True,0,,False,,False,,False,,False,False,0
+Bose J,CF,0.8571428571428572,True,0,,False,,False,,False,,False,False,0
+Bose J,CM,1.0,False,0,,False,,False,,False,,False,False,0
+Bose J,CP,1.0,False,0,,False,,False,,False,,False,False,0
+Bose J,CRE,0.6666666666666666,True,12,0.6666666666666666,False,0.8,True,0.8,True,0.6666666666666666,False,True,0
+Bose J,FR,0.8,True,0,,False,,False,,False,,False,False,0
+Bose J,LP,1.0,False,0,,False,,False,,False,,False,False,0
+Bose J,PL,,True,33,0.8,True,0.4,True,0.5,True,0.5,True,True,0
+Bose J,PM,0.8571428571428572,True,0,,False,,False,,False,,False,False,0
+Bose J,PRE,0.8,True,2,0.8,False,0.8,False,0.8,False,0.8,False,False,0
+Bose J,RE,1.0,False,0,,False,,False,,False,,False,False,0
+Bose J,RP,0.6666666666666666,True,4,0.6666666666666666,False,0.8571428571428572,True,0.6666666666666666,False,0.6666666666666666,False,True,0
+Bose J,SM,0.0,True,28,0.3333333333333333,True,0.3333333333333333,True,0.4,True,0.0,False,True,0
+Bose J,SRE,1.0,False,0,,False,,False,,False,,False,False,0
+Bose J,SW,0.6666666666666666,True,3,0.6666666666666666,False,0.6666666666666666,False,0.6666666666666666,False,0.6666666666666666,False,False,0
+Bose WC,CB,0.8571428571428572,True,0,,False,,False,,False,,False,False,0
+Bose WC,CD,,True,0,,False,,False,,False,,False,False,0
+Bose WC,CF,0.8,True,1,0.75,False,0.75,False,1.0,True,1.0,True,True,0
+Bose WC,CM,1.0,False,0,,False,,False,,False,,False,False,0
+Bose WC,CP,1.0,False,0,,False,,False,,False,,False,False,0
+Bose WC,CRE,0.5,True,26,1.0,True,1.0,True,1.0,True,1.0,True,True,0
+Bose WC,FR,0.8,True,0,,False,,False,,False,,False,False,0
+Bose WC,LP,1.0,False,0,,False,,False,,False,,False,False,0
+Bose WC,PL,,True,33,0.8,True,0.8,True,0.4,True,,False,True,1
+Bose WC,PM,,True,31,0.5,True,0.6666666666666666,True,0.5,True,,False,True,1
+Bose WC,PRE,0.6666666666666666,True,4,0.8,True,1.0,True,1.0,True,1.0,True,True,0
+Bose WC,RE,1.0,False,0,,False,,False,,False,,False,False,0
+Bose WC,RP,1.0,False,0,,False,,False,,False,,False,False,0
+Bose WC,SM,,True,28,0.3333333333333333,True,0.3333333333333333,True,,False,,False,True,2
+Bose WC,SRE,0.8,True,5,1.0,True,1.0,True,1.0,True,1.0,True,True,0
+Bose WC,SW,0.5,True,5,0.2857142857142857,False,0.0,False,0.5,False,0.5,False,False,0
+ADWIN J,CB,0.8,True,3,1.0,True,1.0,True,1.0,True,1.0,True,True,0
+ADWIN J,CD,,True,22,,False,,False,,False,,False,False,4
+ADWIN J,CF,1.0,False,0,,False,,False,,False,,False,False,0
+ADWIN J,CM,1.0,False,0,,False,,False,,False,,False,False,0
+ADWIN J,CP,1.0,False,0,,False,,False,,False,,False,False,0
+ADWIN J,CRE,0.6666666666666666,True,5,1.0,True,1.0,True,0.6666666666666666,False,0.6666666666666666,False,True,0
+ADWIN J,FR,0.6666666666666666,True,2,0.0,False,0.6666666666666666,False,0.6666666666666666,False,0.6666666666666666,False,False,0
+ADWIN J,LP,1.0,False,0,,False,,False,,False,,False,False,0
+ADWIN J,PL,,True,31,,False,,False,,False,,False,False,4
+ADWIN J,PM,0.5,True,13,0.5,False,,False,,False,,False,False,3
+ADWIN J,PRE,0.6666666666666666,True,5,1.0,True,1.0,True,0.6666666666666666,False,0.6666666666666666,False,True,0
+ADWIN J,RE,1.0,False,0,,False,,False,,False,,False,False,0
+ADWIN J,RP,0.8,True,0,,False,,False,,False,,False,False,0
+ADWIN J,SM,,True,19,0.0,False,,False,,False,,False,False,3
+ADWIN J,SRE,1.0,False,0,,False,,False,,False,,False,False,0
+ADWIN J,SW,,True,32,,False,,False,,False,,False,False,4
+EMD,CB,0.8571428571428572,True,8,1.0,True,1.0,True,0.8,False,0.8571428571428572,False,True,0
+EMD,CD,1.0,False,0,,False,,False,,False,,False,False,0
+EMD,CF,0.6666666666666666,True,11,1.0,True,1.0,True,1.0,True,0.8571428571428572,True,True,0
+EMD,CM,1.0,False,0,,False,,False,,False,,False,False,0
+EMD,CP,1.0,False,0,,False,,False,,False,,False,False,0
+EMD,CRE,0.4,True,25,1.0,True,1.0,True,1.0,True,1.0,True,True,0
+EMD,FR,1.0,False,0,,False,,False,,False,,False,False,0
+EMD,LP,0.8571428571428572,True,14,1.0,True,1.0,True,1.0,True,0.8571428571428572,False,True,0
+EMD,PL,0.8,True,1,0.8,False,0.8,False,0.5,False,1.0,True,True,0
+EMD,PM,0.8,True,6,0.8571428571428572,True,0.8571428571428572,True,0.8571428571428572,True,0.8,False,True,0
+EMD,PRE,0.5,True,23,1.0,True,1.0,True,1.0,True,1.0,True,True,0
+EMD,RE,1.0,False,0,,False,,False,,False,,False,False,0
+EMD,RP,0.8571428571428572,True,3,1.0,True,1.0,True,1.0,True,1.0,True,True,0
+EMD,SM,1.0,False,0,,False,,False,,False,,False,False,0
+EMD,SRE,0.8,True,9,1.0,True,1.0,True,1.0,True,1.0,True,True,0
+EMD,SW,1.0,False,0,,False,,False,,False,,False,False,0
+VC,CB,1.0,False,0,,False,,False,,False,,False,False,0
+VC,CD,,True,0,,False,,False,,False,,False,False,0
+VC,CF,1.0,False,0,,False,,False,,False,,False,False,0
+VC,CM,1.0,False,0,,False,,False,,False,,False,False,0
+VC,CP,1.0,False,0,,False,,False,,False,,False,False,0
+VC,CRE,1.0,False,0,,False,,False,,False,,False,False,0
+VC,FR,1.0,False,0,,False,,False,,False,,False,False,0
+VC,LP,1.0,False,0,,False,,False,,False,,False,False,0
+VC,PL,0.8,True,0,,False,,False,,False,,False,False,0
+VC,PM,1.0,False,0,,False,,False,,False,,False,False,0
+VC,PRE,1.0,False,0,,False,,False,,False,,False,False,0
+VC,RE,1.0,False,0,,False,,False,,False,,False,False,0
+VC,RP,1.0,False,0,,False,,False,,False,,False,False,0
+VC,SM,1.0,False,0,,False,,False,,False,,False,False,0
+VC,SRE,1.0,False,0,,False,,False,,False,,False,False,0
+VC,SW,1.0,False,0,,False,,False,,False,,False,False,0

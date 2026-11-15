@@ -11,7 +11,7 @@
 #   <algorithm>_f1_delta.png     F1 of every patched run minus the standard F1, per change pattern (blue = better)
 #   summary.csv                  overall metrics, mean F1 per pattern and the differences to the standard
 #
-# The best run is the one with the highest mean delta (BEST_BY). Note that choosing the best run
+# The best run is the one with the highest overall F1 (BEST_BY). Note that choosing the best run
 # among many on the same logs is optimistic, report it as the best of the sweep.
 
 import glob
@@ -41,7 +41,7 @@ ALGORITHMS = {"Bose J": (f"{ROOT}/bose_standard", f"{ROOT}/patched_bose"),
     "EMD all measures": (f"{ROOT}/emd_standard", f"{ROOT}/patched_emd_all_measures"),
 
 }
-BEST_BY = "Delta mean pattern F1"     # or "F1-Score" (overall F1 of evaluation_measures.csv)
+BEST_BY = "F1-Score"     # or "Delta mean pattern F1"
 GRID_COLUMNS = 4
 
 
@@ -97,7 +97,7 @@ def get_run_group(folder):
 
 def select_best_run(table, group=None):
     """
-    Select the run with the highest Delta mean pattern F1.
+    Select the run with the highest overall F1 (BEST_BY).
     If group is provided, only consider UNION or INTERSECTION runs.
     """
     candidates = table[table["Run"] != "standard"].copy()
@@ -109,12 +109,12 @@ def select_best_run(table, group=None):
             )
         ]
 
-    candidates = candidates.dropna(subset=["Delta mean pattern F1"])
+    candidates = candidates.dropna(subset=[BEST_BY])
 
     if candidates.empty:
         return None
 
-    return candidates.loc[candidates["Delta mean pattern F1"].idxmax()]
+    return candidates.loc[candidates[BEST_BY].idxmax()]
 
 def plot_grid(algorithm, runs, path):
     """Plots the radar charts of all runs in a grid, the standard first."""
@@ -136,21 +136,22 @@ def plot_radar(algorithm, standard, best_label, best, path, title=None):
     angles = np.linspace(0, 2 * np.pi, len(patterns), endpoint=False).tolist()
     angles += angles[:1]
     fig, ax = plt.subplots(subplot_kw=dict(polar=True), figsize=(5, 5))
-    for label, series, color in [("standard", standard, "#7F7F7F"), (best_label, best, "#DB444B")]:
+    pattern, separator, details = best_label.partition(",")
+    best_legend_label = pattern.lower() + separator + details
+    for label, series, color in [("baseline", standard, "#7F7F7F"), (best_legend_label, best, "#DB444B")]:
         values = [0 if np.isnan(series.get(p, np.nan)) else series[p] for p in patterns]
         values += values[:1]
-        is_standard = label == "standard"
+        is_standard = label == "baseline"
         ax.plot(angles, values, color=color, linewidth=2.5, linestyle=":" if is_standard else "-",
             label=label, zorder=3 if is_standard else 2)
         ax.fill(angles, values, color=color, alpha=0.2, zorder=1)
     ax.set_xticks(angles[:-1])
-    ax.set_xticklabels(patterns, fontsize=18, fontweight="bold")
+    ax.set_xticklabels([str(pattern).lower() for pattern in patterns], fontsize=22, fontweight="bold")
     ax.tick_params(axis="x", pad=10)
     ax.set_yticklabels([])
     ax.set_ylim(0, 1)
-    ax.set_title(title or f"{algorithm}: standard vs best patched run", va="bottom", fontsize=16, pad=25)
-    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.1), ncol=1, fontsize=26)
-    fig.savefig(path, dpi=300, bbox_inches="tight")
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.1), ncol=1, fontsize=30)
+    fig.savefig(os.path.splitext(path)[0] + ".pdf", bbox_inches="tight")
     plt.close(fig)
 
 
@@ -230,7 +231,7 @@ def main():
         if best is not None:
             print(
                 f"  best overall: {best['Run']} "
-                f"(mean delta: {best['Delta mean pattern F1']:+.3f})"
+                f"(F1-Score: {best['F1-Score']:.3f})"
             )
 
             plot_radar(
@@ -249,7 +250,7 @@ def main():
         if best_union is not None:
             print(
                 f"  best UNION: {best_union['Run']} "
-                f"(mean delta: {best_union['Delta mean pattern F1']:+.3f})"
+                f"(F1-Score: {best_union['F1-Score']:.3f})"
             )
 
             plot_radar(
@@ -271,7 +272,7 @@ def main():
         if best_intersection is not None:
             print(
                 f"  best INTERSECTION: {best_intersection['Run']} "
-                f"(mean delta: {best_intersection['Delta mean pattern F1']:+.3f})"
+                f"(F1-Score: {best_intersection['F1-Score']:.3f})"
             )
 
             plot_radar(

@@ -36,6 +36,21 @@ runs/<run_name>/         Outputs: config.json, detections.csv, evaluation_measur
 | ***Change patterns*** | | | |
 | Pattern codes | not given | cb, cd, cf, cp, lp, pl, pm, re, rp, sw | cb, cf, cm, cre, fr, lp, pl, pm, pre, rp, sm, sre, sw |
 
+## Pipeline
+
+For each algorithm, in this order:
+
+1. Standard run (alpha 0), e.g. `run_bose_experiments.py` with `MODE = "baseline"`.
+2. Sweep over all single measures with `run_measure_sweep.py`.
+3. Patched runs with `run_<algorithm>_patched_experiments.py`. It reads the standard run and the sweep,
+   writes `measure_comparison.csv` and `selected_measures.json`, and runs one experiment per group and alpha.
+   Finished runs are skipped, so the script can be restarted.
+4. `analyze_results.py`, `compare_radar_charts.py` and `compile_patch_table.py` for the figures and tables.
+   The paths of the standard and patched folders are set at the top of each script.
+
+For Bose, set `BOSE_MEASURE` to `"J"` or `"WC"` in `run_bose_experiments.py` before running, and keep
+the sweep and patched folders of the two variants separate.
+
 ## Usage
 
 Build the image once (from this folder, in PowerShell):

@@ -75,11 +75,6 @@ import pandas as pd
 import ruptures as rpt
 from scipy.stats import iqr
 
-# This repo's cdrift/ only ships evaluation.py and shadows the upstream package; also search the
-# upstream cdrift package on PYTHONPATH so that cdrift.utils can be imported.
-import pkgutil
-import cdrift
-cdrift.__path__ = pkgutil.extend_path(cdrift.__path__, "cdrift")
 from cdrift import evaluation
 
 DATASETS = ["Bose", "Ceravolo", "Ostovar"]

@@ -45,11 +45,10 @@ from baselines.Bose_J.bose import (
 # Experiment settings
 
 MODE = "complexity"                 # "bose" | "complexity" | "combined"
-MODE_NAME = {"bose": "standard"}.get(MODE, MODE)
-RUN_NAME = f"bose_{MODE_NAME}"
-
-TEST = "KS"                   # "KS" | "MU"
 BOSE_MEASURE = "J"             # "J" | "WC"
+MODE_NAME = {"bose": "standard"}.get(MODE, MODE)
+RUN_NAME = f"bose_wc_{MODE_NAME}" if BOSE_MEASURE == "WC" else f"bose_{MODE_NAME}"
+TEST = "KS"                   # "KS" | "MU"
 BOSE_WINDOW = 200
 BOSE_STEP = 2
 MEASURE_WINDOW = None

@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # pm4py looks up its parent process on import, which fails when Python runs as
-# PID 1 (e.g. `docker run selin-cpd python script.py`); tini takes PID 1 instead.
+# PID 1; tini takes PID 1 instead.
 ENTRYPOINT ["tini", "--"]
 
 # Create working directory
